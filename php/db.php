@@ -2,7 +2,7 @@
 
 $server = "localhost";
 $dbUsername = "root";
-$dbPassword = "surfboard";
+$dbPassword = "12345678";
 $dbName = "icon";
 
 $conn = mysqli_connect($server, $dbUsername, $dbPassword, $dbName);
