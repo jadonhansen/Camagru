@@ -12,26 +12,25 @@
 </head>
 <body>
 	<div class="main">
-	<div class="login-bg">
-		<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<a class="navbar-brand" href="">ICON</a>
+
+			<nav class="navbar navbar-inverse">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="">ICON</a>
+					</div>
+					<div class="collapse navbar-collapse" id="myNavbar">
+						<ul class="nav navbar-nav">
+							<li><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Forgot password?</button></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="create.html"><span class="glyphicon glyphicon-log-in"></span> Create an account</a></li>
+						</ul>
+					</div>
 				</div>
-				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav">
-						<li><button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Forgot password?</button></li>
-						<!-- <li><a href="forgettery.html">Forgot password?</a></li> -->
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="create.html"><span class="glyphicon glyphicon-log-in"></span> Create an account</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
+			</nav>
 
 		<div class="container-fluid">
-			<section class="row justify-content-center">
+			<section class="row">
 				<section class="col-12 col-sm-6 col-md-3">
 					<form class="form-container" action="../php/login.php" method="POST">
 						<div class="form-group">
@@ -47,7 +46,13 @@
 				</section>
 			</section>    
 		</div>
-	</div>
+		
+
+		<div class="footer1">
+			<p>©jhansen</p>
+		</div>
+		
+
 	</div>
 
 
@@ -76,9 +81,5 @@
 	</div>
 	  
 
-	<footer class="container-fluid text-center">
-		<p>©jhansen</p>
-	</footer>
-	
 </body>
 </html>
