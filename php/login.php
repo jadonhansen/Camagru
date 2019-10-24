@@ -1,8 +1,8 @@
 <?php
 
-require 'db.php';
 
 if (isset($_POST['submit'])) {
+	require 'db.php';
 
 	$username = $_POST['password'];
 	$password = $_POST['username'];

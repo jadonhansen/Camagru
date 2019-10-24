@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 if (isset($_GET['key'])) {
     require 'db.php';
@@ -35,7 +32,7 @@ if (isset($_GET['key'])) {
     mysqli_close($conn);
 }
 else {
-    echo "<h1>Your verification key is not valid!</h1>";
+    echo "<h1>You do not have a verification key!</h1>";
     echo "<h2>Please try again:</h2>";
     echo "<button onclick=window.location.href = '../pages/create.html';'>Create account</button>";
     exit();
