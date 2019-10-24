@@ -1,0 +1,6 @@
+#bground {
+    margin: 0;
+    background: no-repeat;
+    background-size: cover;
+    background-image: url(./../images/loginbg.jpeg);
+}

@@ -1,12 +1,19 @@
 <?php
 
+require 'db.php';
+
 if (isset($_POST['submit'])) {
     $username = $_POST['login'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $new_password = $_POST['new_password'];
     $repeat = $_POST['repeat'];
 
-	if (empty($password) || empty($username) || empty($email)) {
+	if ($new_password !== $repeat) {
+		echo "<script>alert('Your passwords do not match! Please try again.')</script>";
+		echo "<script>window.open('../pages/forgettery.html?error=passwordsdifference','_self')</script>";
+		exit();		
+	}
+	if (empty($new_password) || empty($username) || empty($email)) {
 		echo "<script>window.open('../pages/forgettery.html?error=emptyfields','_self')</script>";
 		exit();
 	}
@@ -18,11 +25,11 @@ if (isset($_POST['submit'])) {
 			exit();
 		}
 		else {
-            $hashed = $password;
+            $hashed = $new_password;
 			mysqli_stmt_bind_param($stmt, "sss", $hashed, $email, $username);
 			mysqli_stmt_execute($stmt);
 			echo "<script>alert('Welcome $username! Please login with your new details.')</script>";
-			echo "<script>window.open('login.html?','_self')</script>";
+			echo "<script>window.open('../pages/login.html','_self')</script>";
 				exit();
 		}
         mysqli_stmt_close($stmt);

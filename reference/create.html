@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ICON | Create Account</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../css/forms.css">
+</head>
+<body>
+	<div class="create-bg">
+		
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">ICON</a>
+				</div>
+			</div>
+		</nav>
+		
+		<div class="container-fluid">
+			<section class="row">
+				<section class="col-12 col-sm-6 col-md-3">
+					<form class="form-container" action="../php/create.php" method="POST">
+						<div class="form-group">
+							<label for="exampleInputEmail1">Name</label>
+							<input type="text" name = "name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name" required>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Surname</label>
+							<input type="text" name = "surname" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter surname" required>
+						</div>
+						<div class="form-group">
+						<label for="exampleInputEmail1">Email</label>
+						<input type="email" name = "email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Username</label>
+						<input type="text" name = "username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username" required>
+					</div>
+					<div class="form-group">
+						<label for="exampleInputPassword1">Password</label>
+						<input type="password" name = "password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+					</div>
+					<button type="submit" name="submit" class="btn btn-primary btn-block">Submit</button>
+					<hr />
+					<a href="../pages/login.html" class="btn btn-primary btn-block back-btn">Back to login page</a>
+				</form>
+			</section>
+		</section>    
+	</div>
+	
+</div>
+
+	<footer class="footer">
+		<p>©jhansen</p>
+	</footer>
+	
+</body>
+</html>

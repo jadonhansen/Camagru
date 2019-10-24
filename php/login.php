@@ -1,4 +1,5 @@
 <?php
+
 require 'db.php';
 
 if (isset($_POST['submit'])) {
@@ -26,7 +27,7 @@ if (isset($_POST['submit'])) {
 			if ($result == 1) {
 				session_start();
 				$_SESSION['username'] = $username;
-				echo "<script>alert('Welcome $username! Please login with your new details.')</script>";
+				echo "<script>alert('Welcome $username!')</script>";
 				echo "<script>window.open('feed.html?home=$username','_self')</script>";
 				exit();
 			}

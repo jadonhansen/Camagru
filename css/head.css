@@ -1,0 +1,46 @@
+.head {
+    background-color: rgb(39, 37, 37);
+    height: 50px;
+    width: 100%;
+    border-radius: 7px;
+}
+
+.icon{
+    font-size: 25;
+    padding-top: 10px;
+    padding-left: 10px;
+    color: grey;
+    float: left;
+}
+
+.create{
+    padding-top: 12px;
+    padding-right: 8px;
+    float: right;
+    position: right;
+}
+
+#link{
+    text-decoration: none;
+    /* font-family: ; */
+    font-size: 20;
+    color: grey;
+}
+
+.line{
+    height: 100%;
+    border-left: solid thick whitesmoke;
+    float: right;
+    position: right;
+    padding-right: 7px;
+}
+
+.options {
+  width: 40px;
+    border-top: solid thick grey;
+    padding-top: 8px;
+}
+
+.other_option{
+    padding-top: 8px;
+}
