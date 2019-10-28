@@ -9,18 +9,18 @@ if (isset($_POST['submit'])) {
 
 	if ($new_password !== $repeat) {
 		echo "<script>alert('Your passwords do not match! Please try again.')</script>";
-		echo "<script>window.open('../pages/forgettery.html?error=passwordsdifference','_self')</script>";
+		echo "<script>window.open('../pages/forgettery.php?error=passwordsdifference','_self')</script>";
 		exit();		
 	}
 	if (empty($new_password) || empty($username) || empty($email)) {
-		echo "<script>window.open('../pages/forgettery.html?error=emptyfields','_self')</script>";
+		echo "<script>window.open('../pages/forgettery.php?error=emptyfields','_self')</script>";
 		exit();
 	}
 	else {
         $sql = "UPDATE users SET passwd=? WHERE email=? AND username=?";
 		$stmt = mysqli_stmt_init($conn);
 		if (!mysqli_stmt_prepare($stmt, $sql)) {
-			echo "<script>window.open('../pages/forgettery.html?error=sqlerror','_self')</script>";
+			echo "<script>window.open('../pages/forgettery.php?error=sqlerror','_self')</script>";
 			exit();
 		}
 		else {
@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
 			mysqli_stmt_bind_param($stmt, "sss", $hashed, $email, $username);
 			mysqli_stmt_execute($stmt);
 			echo "<script>alert('Welcome $username! Please login with your new details.')</script>";
-			echo "<script>window.open('../pages/login.html','_self')</script>";
+			echo "<script>window.open('../pages/login.php','_self')</script>";
 				exit();
 		}
         mysqli_stmt_close($stmt);
@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
 	}
 }
 else {
-    echo "<script>window.open('../pages/forgettery.html','_self')</script>";
+    echo "<script>window.open('../pages/forgettery.php','_self')</script>";
     exit();
 }
 

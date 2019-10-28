@@ -3,38 +3,34 @@
 if (isset($_GET['key'])) {
     require 'db.php';
     $key = $_GET['key'];
-    $sql = "SELECT * FROM users WHERE verif_key=?";
-    $stmt = mysqli_stmt_init($conn);
-
-    if (!mysqli_stmt_prepare($stmt, $sql)) {
-        echo "<script>window.open('../php/verify_account.php?error=sqlerror','_self')</script>";
+    $stmt = $conn->prepare("SELECT * FROM users WHERE verif_key= :verifkey");
+    $stmt->bindParam(':verifkey', $key);
+    if (!$stmt->execute()) {
+        echo "SQL ERROR: 1";
         exit();
     }
-    else {
-        mysqli_stmt_bind_param($stmt, "s", $key);
-        mysqli_execute($stmt);
-        $result = mysqli_stmt_num_rows($stmt);
-        if ($result == 1) {
-            $sql = "UPDATE users SET verified=1 WHERE verif_key=?";
-            $stmt = mysqli_stmt_init($conn);
-            mysqli_stmt_bind_param($stmt, "s", $key);
-            mysqli_stmt_execute($stmt);
-            echo "<h2>Account has been verified</h2>";
-            echo "<h4>Please login with your details to begin:</h4>";
-            echo "<button onclick=window.location.href = '../pages/login.html';'>Login</button>";
+    $result = $stmt->fetch();
+    if ($result) {
+        $stmt = $conn->prepare("UPDATE users SET verified=1 WHERE verif_key= :verifkey");
+        $stmt->bindParam(':verifkey', $key);
+        if (!$stmt->execute()) {
+            echo "SQL ERROR: 1";
             exit();
         }
-        else {                          //
-            echo "No user data added!"; //for testing
-        }                               //
+        echo "<h2>Account has been verified</h2>";
+        echo "<h4>Please login with your details to begin:</h4>";
+        echo "<button onclick=window.location.href = '../pages/login.php';'>Login</button>";
+        exit();        
     }
-    mysqli_stmt_close($stmt);
-    mysqli_close($conn);
+    else {
+        echo "Your details were not found! Please try again.";
+    }
+    $conn = NULL;
 }
 else {
-    echo "<h1>You do not have a verification key!</h1>";
+    echo "<h1>No verification key detected!</h1>";
     echo "<h2>Please try again:</h2>";
-    echo "<button onclick=window.location.href = '../pages/create.html';'>Create account</button>";
+    echo "<button onclick=window.location.href = '../pages/create.php';'>Create account</button>";
     exit();
 }
 
