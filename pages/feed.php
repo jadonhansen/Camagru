@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="../css/head.css">
     </head>
     <!-- background is the body id -->
-    <body id=bground>
+    <body class="bg">
     
     <div class="head">
 
@@ -20,10 +20,10 @@
       <div class="options"></div>
     </button>
       <div id="myDropdown" class="dropdown-content">
-        <a href="#home">Profile</a>
-        <a href="#about">Gallery</a>
-        <a href="#contact">Feed</a>
-        <a href="#contact">Gallery</a>
+        <a href="profile.php">Profile</a>
+        <a href="gallery.php">Gallery</a>
+        <a href="feed.php">Feed</a>
+        <a href="upload.php">Upload</a>
       </div>
     </div>  
 
@@ -43,11 +43,11 @@
       } else { ?>
       <!-- login -->
     <div class="create">
-      <a id="link" href="../reference(bootstrap)/create.html">create account</a>
+      <a id="link" href="create.php">create account</a>
     </div>
     <!-- <div class="line"></div> -->
     <div class="create">
-      <a id="link" href="../reference(bootstrap)/create.html">Login</a>
+      <a id="link" href="login.php">Login</a>
     </div>
     <?php
     }

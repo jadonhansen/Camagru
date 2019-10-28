@@ -11,30 +11,15 @@
     
     <div class="head">
 
-<!-- the drop down button -->
-    
-    <div class="dropdown">
-      <button onclick="myFunction()" class="dropbtn">
-      <div class="other_option"></div>
-      <div class="options"></div>
-      <div class="options"></div>
-      <div class="options"></div>
-    </button>
-      <div id="myDropdown" class="dropdown-content">
-        <a href="#home">Profile</a>
-        <a href="#about">Gallery</a>
-        <a href="#contact">Feed</a>
-        <a href="#contact">Gallery</a>
-      </div>
-    </div>  
-
       <!-- Icon -->
     
       <div class="icon">
       ICON
     </div>
 
+    <!-- forgot password -->
 
+    <a href="pass_reset.php" class="forgot">forgot password</a>
 
     <!-- the differing logins and outs -->
     <?php if($_SESSION["loggedIn"] == "yes") {                    
@@ -81,13 +66,23 @@
 <!-- this is the form box -->
 
 <div class="box">
-    <div class="info">
-      things
+        <!-- the form -->
+        <div class="header">
+            Login
+        </div>
+        <div class="info">
+            <form action="" method="post">
+                <input type="text" name="Name" id="field" placeholder="Username">
+                <input type="text" name="Email" id="field" placeholder="Password">
+                <input type="submit" value="Done?" id="submit">
+            </form>
+        </div>
+
+        <!-- free browsing button -->
+        <button class="free" onclick="window.location.href = 'feed.php';">
+            Browse for Free
+        </button>
     </div>
-    <div class="button">
-      more things
-    </div>
-  </div>
 
  <!-- the foot -->
         <div class="foot"></div>

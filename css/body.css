@@ -1,3 +1,9 @@
+.bg{
+    background-size: cover;
+    margin: 0;
+    background-image: url(../images/loginbg.jpeg);
+}
+
 .bglogin{
     background-size: cover;
     margin: 0;

@@ -21,10 +21,10 @@
       <div class="options"></div>
     </button>
       <div id="myDropdown" class="dropdown-content">
-        <a href="#home">Profile</a>
-        <a href="#about">Gallery</a>
-        <a href="#contact">Feed</a>
-        <a href="#contact">Gallery</a>
+      <a href="profile.php">Profile</a>
+        <a href="gallery.php">Gallery</a>
+        <a href="feed.php">Feed</a>
+        <a href="upload.php">Upload</a>
       </div>
     </div>  
 
@@ -48,7 +48,7 @@
     </div>
     <!-- <div class="line"></div> -->
     <div class="create">
-      <a id="link" href="./login">Login</a>
+      <a id="link" href="./login.php">Login</a>
     </div>
     <?php
     }
@@ -85,13 +85,22 @@
 <!-- this is the form box -->
 
 <div class="box">
-    <div class="info">
-      things
+        <!-- the form -->
+        <div class="header">
+            please enter your email adress, we'll send you an email with a password reset link
+        </div>
+        <div class="info">
+            <form action="" method="post">
+                <input type="text" name="Email" id="field" placeholder="Email">
+                <input type="submit" value="Done?" id="submit">
+            </form>
+        </div>
+
+        <!-- free browsing button -->
+        <button class="free" onclick="window.location.href = 'feed.php';">
+            Browse for Free
+        </button>
     </div>
-    <div class="button">
-      more things
-    </div>
-  </div>
 
   <!-- the foot -->
         <div class="foot"></div>

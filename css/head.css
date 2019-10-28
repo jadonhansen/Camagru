@@ -44,3 +44,11 @@
 .other_option{
     padding-top: 8px;
 }
+
+.forgot{
+    position: absolute;
+    padding-top: 15px;
+    padding-left: 15px;
+    text-decoration: none;
+    color: white;
+}

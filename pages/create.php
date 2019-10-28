@@ -21,10 +21,10 @@
       <div class="options"></div>
     </button>
       <div id="myDropdown" class="dropdown-content">
-        <a href="#home">Profile</a>
-        <a href="#about">Gallery</a>
-        <a href="#contact">Feed</a>
-        <a href="#contact">Gallery</a>
+      <a href="profile.php">Profile</a>
+        <a href="gallery.php">Gallery</a>
+        <a href="feed.php">Feed</a>
+        <a href="upload.php">Upload</a>
       </div>
     </div>  
 
@@ -43,9 +43,6 @@
       session_destroy();
       } else { ?>
       <!-- login -->
-    <div class="create">
-      <a id="link" href="./create.php">create account</a>
-    </div>
     <!-- <div class="line"></div> -->
     <div class="create">
       <a id="link" href="./login.php">Login</a>
@@ -84,15 +81,27 @@
 
 <!-- this is the form box -->
 
-<div class="box">
-  <!-- make the div class below info -->
-    <div>
-      things
+<    <div class="box">
+        <!-- the form -->
+        <div class="header">
+            Create Account
+        </div>
+        <div class="info">
+            <form action="" method="post">
+                <input type="text" name="Name" id="field" placeholder="First Name">
+                <input type="text" name="Email" id="field" placeholder="Surname">
+                <input type="text" name="Email" id="field" placeholder="Email">
+                <input type="text" name="Email" id="field" placeholder="Username">
+                <input type="text" name="Email" id="field" placeholder="Password">
+                <input type="submit" value="Done?" id="submit">
+            </form>
+        </div>
+
+        <!-- free browsing button -->
+        <button class="free" onclick="window.location.href = 'feed.php';">
+            Browse for Free
+        </button>
     </div>
-    <div class="button">
-      more things
-    </div>
-  </div>
 
   <!-- the foot -->
         <div class="foot"></div>

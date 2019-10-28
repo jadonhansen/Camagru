@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<htmL>
+	<head>
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="style.css">
+		<title>SurfLOCAL</title>
+	</head>
+	<body style="overflow-y:hidden;">
+​
+		<div class="account-background">
+			<div class="background-layer">
+				
+			</div>
+		</div>
+​
+		<div class="nav-section" id="custom-nav">
+			<div class="nav-items">
+				<ul>
+					<li><a href="../index.html"><img src="../images/Logo.png" alt="My Logo" class="logo"></a></li>
+					<li><a href="../index.html">Home</a></li>
+					<li><a href="products.html">Products</a></li>
+				</ul>
+			</div>
+			<div class="right-nav">
+				<ul>
+					<li style="margin-right:8%;"><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>	
+				</ul>
+			</div>
+		</div>
+​
+		<div class="content-section">
+			<div class="box" style="height:70vh;top: 50%;left: 50%;transform: translate(-50%, 5%);">
+				<div class="box-inner-section" style="height:60vh;">
+					<div class="deletion_heading" style="text-align:center;">
+							<h4>Create user</h5>
+					</div>
+					<form action="../php/create_user.php" method="post">
+						<div class="input-section">
+							<div class="input-tag">
+								<h5>Name</h5>
+							</div>
+							<input type="text" name="name" class="login-user" required>
+						</div>
+						<div class="input-section">
+							<div class="input-tag">
+								<h5>Surname</h5>
+							</div>
+							<input type="text" name="surname" class="login-user" required>
+						</div>
+						<div class="input-section">
+							<div class="input-tag">
+								<h5>Username</h5>
+							</div>
+							<input type="text" name="username" class="login-user" required>
+						</div>
+						<div class="input-section">
+							<div class="input-tag">
+								<h5>Password</h5>
+							</div>
+							<input type="password" name="password" class="login-pass" required>
+						</div>
+						<div class="input-section" style="text-align:center;">
+							<input type="submit" name="createaccount" class="login-submit">
+						</div>
+						<div class="input-section" style="text-align:center;">
+							<p><a href="login.html" style="color: black;">login</a></p>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+​
+	</body>
+</htmL>

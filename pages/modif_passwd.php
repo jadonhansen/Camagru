@@ -20,10 +20,10 @@
       <div class="options"></div>
     </button>
       <div id="myDropdown" class="dropdown-content">
-        <a href="#home">Profile</a>
-        <a href="#about">Gallery</a>
-        <a href="#contact">Feed</a>
-        <a href="#contact">Gallery</a>
+      <a href="profile.php">Profile</a>
+        <a href="gallery.php">Gallery</a>
+        <a href="feed.php">Feed</a>
+        <a href="upload.php">Upload</a>
       </div>
     </div>  
 
