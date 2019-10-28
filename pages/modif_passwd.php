@@ -1,19 +1,13 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="../dropdown.css">
-    <link rel="stylesheet" href="../head.css">
-  </head>
-  <body>
-
-
-
-<!-- 
-          <BODY
-          INJECT -->
-
-
-
-
+    <head>
+        <link rel="stylesheet" href="../css/dropdown.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="../css/body.css">
+        <link rel="stylesheet" href="../css/head.css">
+    </head>
+    <!-- background is the body id -->
+    <body id=bground>
+    
     <div class="head">
 
 <!-- the drop down button -->
@@ -86,18 +80,6 @@
     }
   }
 </script>
-
-
-
-
-
-
-
-    <!-- INJECT
-          DONE   -->
-
-
-
-
+        <div class="foot"></div>
     </body>
 </html>

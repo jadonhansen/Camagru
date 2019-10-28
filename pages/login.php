@@ -1,19 +1,14 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="../dropdown.css">
-    <link rel="stylesheet" href="../head.css">
-  </head>
-  <body>
-
-
-
-<!-- 
-          <BODY
-          INJECT -->
-
-
-
-
+    <head>
+      <link rel="stylesheet" href="../css/dropdown.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="../css/body.css">
+        <link rel="stylesheet" href="../css/head.css">
+        <link rel="stylesheet" href="../css/block.css">
+    </head>
+    <!-- background is the body id -->
+    <body class="bglogin">
+    
     <div class="head">
 
 <!-- the drop down button -->
@@ -49,17 +44,13 @@
       } else { ?>
       <!-- login -->
     <div class="create">
-      <a id="link" href="../reference(bootstrap)/create.html">create account</a>
+      <a id="link" href="./create.php">create account</a>
     </div>
     <!-- <div class="line"></div> -->
-    <div class="create">
-      <a id="link" href="../reference(bootstrap)/create.html">Login</a>
-    </div>
     <?php
     }
 ?>
     </div>
-
 
 
     <!-- drop script -->
@@ -87,17 +78,18 @@
   }
 </script>
 
+<!-- this is the form box -->
 
+<div class="box">
+    <div class="info">
+      things
+    </div>
+    <div class="button">
+      more things
+    </div>
+  </div>
 
-
-
-
-
-    <!-- INJECT
-          DONE   -->
-
-
-
-
+ <!-- the foot -->
+        <div class="foot"></div>
     </body>
 </html>

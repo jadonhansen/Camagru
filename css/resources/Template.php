@@ -1,19 +1,19 @@
 <html>
-  <head>
-    <link rel="stylesheet" href="../dropdown.css">
-    <link rel="stylesheet" href="../head.css">
-  </head>
-  <body>
-
-
-
-<!-- 
-          <BODY
-          INJECT -->
-
-
-
-
+    <head>
+        <link rel="stylesheet" href="../dropdown.css">
+        <link rel="stylesheet" href="../footer.css">
+        <link rel="stylesheet" href="../body.css">
+        <link rel="stylesheet" href="../head.css">
+        <link rel="stylesheet" href="../block.css">
+    </head>
+    <!-- background is the body id -->
+    <body id=bground>
+<!--
+profile
+gallery
+upload
+feed
+-->    
     <div class="head">
 
 <!-- the drop down button -->
@@ -39,7 +39,7 @@
       ICON
     </div>
 
-
+  
 
     <!-- the differing logins and outs -->
     <?php if($_SESSION["loggedIn"] == "yes") {                    
@@ -49,18 +49,16 @@
       } else { ?>
       <!-- login -->
     <div class="create">
-      <a id="link" href="../reference(bootstrap)/create.html">create account</a>
+      <a id="link" href="./create.php">create account</a>
     </div>
     <!-- <div class="line"></div> -->
     <div class="create">
-      <a id="link" href="../reference(bootstrap)/create.html">Login</a>
+      <a id="link" href="./create.php">Login</a>
     </div>
     <?php
     }
 ?>
     </div>
-
-
 
     <!-- drop script -->
 <script>
@@ -87,17 +85,18 @@
   }
 </script>
 
+<!-- this is the form box -->
 
+  <div class="box">
+    <div class="info">
+      things
+    </div>
+    <div class="button">
+      more things
+    </div>
+  </div>
 
-
-
-
-
-    <!-- INJECT
-          DONE   -->
-
-
-
-
+  <!-- the foot -->
+        <div class="foot"></div>
     </body>
 </html>

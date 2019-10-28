@@ -1,6 +1,17 @@
-#bground {
-    margin: 0;
-    background: no-repeat;
+.bglogin{
     background-size: cover;
-    background-image: url(./../images/loginbg.jpeg);
+    margin: 0;
+    background-image: url(../images/loginbg.jpeg);
+}
+
+.bgcreate{
+    background-size: cover;
+    margin: 0;
+    background-image: url(../images/createbg.jpg);
+}
+
+.bgforgot{
+    background-size: cover;
+    margin: 0;
+    background-image: url(../images/forgetterybg.jpg);
 }
