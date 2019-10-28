@@ -1,5 +1,7 @@
 <?php
 
+//needs Gabriels magical touch to make this pretty :)
+
 if (isset($_GET['key'])) {
     require 'db.php';
     $key = $_GET['key'];

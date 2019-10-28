@@ -72,9 +72,9 @@
         </div>
         <div class="info">
             <form action="../php/login.php" method="post">
-                <input type="text" name="name" id="field" placeholder="Username" required>
+                <input type="text" name="username" id="field" placeholder="Username" required>
                 <input type="password" name="password" id="field" placeholder="Password" required>
-                <input type="submit" name="submit "value="Login" id="submit">
+                <input type="submit" name="submit" value="Login" id="submit">
             </form>
         </div>
 
