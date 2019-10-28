@@ -87,12 +87,12 @@
             Create Account
         </div>
         <div class="info">
-            <form action="" method="post">
-                <input type="text" name="Name" id="field" placeholder="First Name">
-                <input type="text" name="Email" id="field" placeholder="Surname">
-                <input type="text" name="Email" id="field" placeholder="Email">
-                <input type="text" name="Email" id="field" placeholder="Username">
-                <input type="text" name="Email" id="field" placeholder="Password">
+            <form action="../php/create.php" method="post">
+                <input type="text" name="name" id="field" placeholder="First Name" required>
+                <input type="text" name="surname" id="field" placeholder="Surname" required>
+                <input type="text" name="email" id="field" placeholder="Email" required>
+                <input type="text" name="username" id="field" placeholder="Username" required>
+                <input type="text" name="password" id="field" placeholder="Password" required>
                 <input type="submit" value="Done?" id="submit">
             </form>
         </div>

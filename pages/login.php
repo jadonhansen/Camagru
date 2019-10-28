@@ -71,9 +71,9 @@
             Login
         </div>
         <div class="info">
-            <form action="" method="post">
-                <input type="text" name="Name" id="field" placeholder="Username">
-                <input type="text" name="Email" id="field" placeholder="Password">
+            <form action="../php/login.php" method="post">
+                <input type="text" name="name" id="field" placeholder="Username" required>
+                <input type="text" name="password" id="field" placeholder="Password" required>
                 <input type="submit" value="Done?" id="submit">
             </form>
         </div>

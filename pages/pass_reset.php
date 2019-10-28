@@ -87,11 +87,11 @@
 <div class="box">
         <!-- the form -->
         <div class="header">
-            please enter your email adress, we'll send you an email with a password reset link
+            please enter your email address, we will send you an email with a password reset link
         </div>
         <div class="info">
-            <form action="" method="post">
-                <input type="text" name="Email" id="field" placeholder="Email">
+            <form action="../php/email_prompt.php" method="post">
+                <input type="text" name="email" id="field" placeholder="Email">
                 <input type="submit" value="Done?" id="submit">
             </form>
         </div>
