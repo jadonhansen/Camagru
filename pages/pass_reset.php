@@ -91,8 +91,8 @@
         </div>
         <div class="info">
             <form action="../php/email_prompt.php" method="post">
-                <input type="text" name="email" id="field" placeholder="Email">
-                <input type="submit" value="Done?" id="submit">
+                <input type="email" name="email" id="field" placeholder="Email">
+                <input type="submit" name="submit" value="Send email" id="submit">
             </form>
         </div>
 

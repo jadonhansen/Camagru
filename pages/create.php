@@ -81,19 +81,19 @@
 
 <!-- this is the form box -->
 
-<    <div class="box">
+    <div class="box">
         <!-- the form -->
         <div class="header">
             Create Account
         </div>
         <div class="info">
-            <form action="../php/create.php" method="post">
+            <form action="../php/create.php" method="POST">
                 <input type="text" name="name" id="field" placeholder="First Name" required>
                 <input type="text" name="surname" id="field" placeholder="Surname" required>
-                <input type="text" name="email" id="field" placeholder="Email" required>
+                <input type="email" name="email" id="field" placeholder="Email" required>
                 <input type="text" name="username" id="field" placeholder="Username" required>
-                <input type="text" name="password" id="field" placeholder="Password" required>
-                <input type="submit" value="Done?" id="submit">
+                <input type="password" name="password" id="field" placeholder="Password" required>
+                <input type="submit" name="submit" value="Create" id="submit">
             </form>
         </div>
 

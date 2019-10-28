@@ -73,8 +73,8 @@
         <div class="info">
             <form action="../php/login.php" method="post">
                 <input type="text" name="name" id="field" placeholder="Username" required>
-                <input type="text" name="password" id="field" placeholder="Password" required>
-                <input type="submit" value="Done?" id="submit">
+                <input type="password" name="password" id="field" placeholder="Password" required>
+                <input type="submit" name="submit "value="Login" id="submit">
             </form>
         </div>
 
