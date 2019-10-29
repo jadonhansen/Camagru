@@ -11,23 +11,6 @@
     
     <div class="head">
 
-<!-- the drop down button -->
-    
-    <div class="dropdown">
-      <button onclick="myFunction()" class="dropbtn">
-      <div class="other_option"></div>
-      <div class="options"></div>
-      <div class="options"></div>
-      <div class="options"></div>
-    </button>
-      <div id="myDropdown" class="dropdown-content">
-      <a href="profile.php">Profile</a>
-        <a href="gallery.php">Gallery</a>
-        <a href="feed.php">Feed</a>
-        <a href="upload.php">Upload</a>
-      </div>
-    </div>  
-
       <!-- Icon -->
     
       <div class="icon">

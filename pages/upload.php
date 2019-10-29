@@ -34,7 +34,6 @@
     </div>
 
 
-
     <!-- the differing logins and outs -->
     <?php if($_SESSION["loggedIn"] == "yes") {                    
           // logout 
@@ -80,6 +79,10 @@
     }
   }
 </script>
+<div class="pokemon">
+  things
+</div>
+
         <div class="foot"></div>
     </body>
 </html>
