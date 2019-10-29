@@ -21,7 +21,7 @@ if (isset($_POST['submit'])) {
 	require 'db.php';
 	$name = $_POST['name'];
 	$surname = $_POST['surname'];
-	$username = $_POST['username'];
+	$username = $_POST['username']; //check all params for max lengths
 	$password = $_POST['password']; //check password for complexity 
 	$email = $_POST['email'];
 	$verified = 0;
