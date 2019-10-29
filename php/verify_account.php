@@ -8,7 +8,7 @@ if (isset($_GET['key'])) {
     $stmt = $conn->prepare("SELECT * FROM users WHERE verif_key= :verifkey");
     $stmt->bindParam(':verifkey', $key);
     if (!$stmt->execute()) {
-        echo "SQL ERROR: 1";
+        echo "<h2>SQL ERROR: 1</h2>";
         exit();
     }
     $result = $stmt->fetch();
@@ -16,16 +16,16 @@ if (isset($_GET['key'])) {
         $stmt = $conn->prepare("UPDATE users SET verified=1 WHERE verif_key= :verifkey");
         $stmt->bindParam(':verifkey', $key);
         if (!$stmt->execute()) {
-            echo "SQL ERROR: 1";
+            echo "<h2>SQL ERROR: 2</h2>";
             exit();
         }
-        echo "<h2>Account has been verified</h2>";
+        echo "<h2>Account has been verified!</h2>";
         echo "<h4>Please login with your details to begin:</h4>";
-        echo "<button onclick=window.location.href = '../pages/login.php';'>Login</button>";
-        exit();        
+        echo "<button onclick=window.location.href = '../pages/login.php';'>Login page</button>";
+        exit();
     }
     else {
-        echo "Your details were not found! Please try again.";
+        echo "<h2>Your details were not found! Please try again.<h2>";
     }
     $conn = NULL;
 }

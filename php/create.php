@@ -63,7 +63,7 @@ if (isset($_POST['submit'])) {
 					exit();
 				}
 			} catch (PDOException $exception) {
-				echo $sql . "<br>" . $exception->getMessage();
+				echo $sql . "<br>" . $exception->getMessage(); //dont need for final?
                 echo "<script>alert('SQL ERROR: 3')</script>";
                 echo "<script>window.open('../pages/create.php','_self')</script>";
 				exit();
