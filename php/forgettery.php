@@ -1,5 +1,5 @@
 <?php
-
+//needs to be tested
 if (isset($_POST['submit'])) {
 	require 'db.php';
     $username = $_POST['login'];
