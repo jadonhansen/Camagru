@@ -23,6 +23,14 @@ function complex_check($pass) {
 		echo "<script>window.open('../pages/create.php','_self')</script>";
 		exit();
 	}
+	$containsLetter  = preg_match('/[a-zA-Z]/', $pass);
+	$containsDigit   = preg_match('/\d/', $pass);
+	$containsSpecial = preg_match('/[^a-zA-Z\d]/', $pass);
+	if (!$containsLetter || !$containsDigit || !$containsSpecial) {
+		echo "<script>alert('Please make sure your password has an array of lowercase letters, uppercase letters, at least one digit and at least one special character.')</script>";
+		echo "<script>window.open('../pages/create.php','_self')</script>";
+		exit();
+	}
 	//must consist of 0-9 && A-Z && a-z && special chars
 }
 
@@ -32,16 +40,16 @@ function char_check($nam, $srnam, $usrnam, $eml) {
 		echo "<script>window.open('../pages/create.php?error=emptyfields','_self')</script>";
 		exit();
 	}
-	else if (!preg_match("/^[a-zA-Z0-9]*$/", $usrnam)) {
-		echo "<script>alert('Please make sure your username only consists of either uppercase letters, lowercase letters or number characters.')</script>";
+	else if (!preg_match("/^[a-zA-Z0-9]*$/", $usrnam) || strlen($usrnam) >= 15 || strlen($usrnam) <= 1) {
+		echo "<script>alert('Please make sure your username only consists of either uppercase letters, lowercase letters or number characters and that it is bigger than 1 character and smaller than 15 characters.')</script>";
 		echo "<script>window.open('../pages/create.php','_self')</script>";
 	}
-	else if (!preg_match("/^[a-zA-Z]*$/", $nam)) {
-		echo "<script>alert('Please make sure the name field only consists of uppercase or lowercase letters')</script>";
+	else if (!preg_match("/^[a-zA-Z]*$/", $nam) || strlen(nam) >= 20 || strlen($nam) <= 1) {
+		echo "<script>alert('Please make sure the name field only consists of uppercase or lowercase letters and that it is bigger than 1 character and smaller than 20 characters.')</script>";
 		echo "<script>window.open('../pages/create.php','_self')</script>";
 	}
-	else if (!preg_match("/^[a-zA-Z]*$/", $surname)) {
-		echo "<script>alert('Please make sure the surname field only consists of uppercase or lowercase letters')</script>";
+	else if (!preg_match("/^[a-zA-Z]*$/", $srnam) || strlen($srnam) >= 20 || strlen($srnam) <= 1) {
+		echo "<script>alert('Please make sure the surname field only consists of uppercase or lowercase letters and that it is bigger than 1 character and smaller than 20 characters.')</script>";
 		echo "<script>window.open('../pages/create.php','_self')</script>";
 	}
 }
