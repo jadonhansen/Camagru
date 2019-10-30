@@ -2,31 +2,17 @@
 <!-- submit to forgetter.php -->
 
 <html>
-  <head>
-    <link rel="stylesheet" href="../css/dropdown.css">
-    <link rel="stylesheet" href="../css/head.css">
-  </head>
-  <body>
-
-
-    <div class="head">
-
-<!-- the drop down button -->
+    <head>
+      <link rel="stylesheet" href="../css/dropdown.css">
+      <link rel="stylesheet" href="../css/footer.css">
+      <link rel="stylesheet" href="../css/body.css">
+      <link rel="stylesheet" href="../css/head.css">
+      <link rel="stylesheet" href="../css/block.css">
+    </head>
+    <!-- background is the body id -->
+    <body class="background">
     
-    <div class="dropdown">
-      <button onclick="myFunction()" class="dropbtn">
-      <div class="other_option"></div>
-      <div class="options"></div>
-      <div class="options"></div>
-      <div class="options"></div>
-    </button>
-      <div id="myDropdown" class="dropdown-content">
-        <a href="#home">Profile</a>
-        <a href="#about">Gallery</a>
-        <a href="#contact">Feed</a>
-        <a href="#contact">Gallery</a>
-      </div>
-    </div>  
+    <div class="head">
 
       <!-- Icon -->
     
@@ -43,12 +29,9 @@
       session_destroy();
       } else { ?>
       <!-- login -->
-    <div class="create">
-      <a id="link" href="../reference(bootstrap)/create.html">create account</a>
-    </div>
     <!-- <div class="line"></div> -->
     <div class="create">
-      <a id="link" href="../reference(bootstrap)/create.html">Login</a>
+      <a id="link" href="./login.php">Login</a>
     </div>
     <?php
     }
@@ -82,5 +65,25 @@
   }
 </script>
 
+<!-- this is the form box -->
+
+    <div class="box">
+        <!-- the form -->
+        <div class="header">
+            Reset Password
+        </div>
+        <div class="info">
+            <form action="../php/forgettery.php" method="POST">
+                <input type="text" name="login" id="field" placeholder="Username" required>
+                <input type="password" name="new_password" id="field" placeholder="New Password" required>
+                <input type="password" name="repeat" id="field" placeholder="Repeat Password" required>
+                <input type="submit" name="submit" value="Reset Password" id="submit">
+            </form>
+        </div>
+
+    </div>
+
+  <!-- the foot -->
+        <div class="foot"></div>
     </body>
 </html>
