@@ -26,7 +26,7 @@ function complex_check($pass) {
 	$containsLower = preg_match('/[a-z]/', $pass);
 	$containsUpper = preg_match('/[A-Z]/', $pass);
 	$containsDigit = preg_match('/[0-9]/', $pass);
-	$containsSpecial = preg_match('/[\W]+/', $pass);
+	$containsSpecial = preg_match('/[\W]+/', $pass); //needs to be tested
 	if (!$containsUpper || !$containsLower || !$containsDigit || !$containsSpecial) {
 		echo "<script>alert('Please make sure your password has an array of lowercase letters, uppercase letters, at least one digit and at least one special character.')</script>";
 		echo "<script>window.open('../pages/create.php','_self')</script>";
