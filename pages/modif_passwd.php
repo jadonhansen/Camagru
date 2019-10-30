@@ -12,20 +12,26 @@
 
 <!-- the drop down button -->
     
-    <div class="dropdown">
-      <button onclick="myFunction()" class="dropbtn">
-      <div class="other_option"></div>
-      <div class="options"></div>
-      <div class="options"></div>
-      <div class="options"></div>
+<?php
+          session_start();
+          if(isset($_SESSION['username']))
+          echo("
+    <div class='dropdown'>
+      <button onclick='myFunction()' class='dropbtn'>
+      <div class='other_option'></div>
+      <div class='options'></div>
+      <div class='options'></div>
+      <div class='options'></div>
     </button>
-      <div id="myDropdown" class="dropdown-content">
-      <a href="profile.php">Profile</a>
-        <a href="gallery.php">Gallery</a>
-        <a href="feed.php">Feed</a>
-        <a href="upload.php">Upload</a>
+      <div id='myDropdown' class='dropdown-content'>
+      <a href='profile.php'>Profile</a>
+        <a href='gallery.php'>Gallery</a>
+        <a href='feed.php'>Feed</a>
+        <a href='upload.php'>Upload</a>
       </div>
-    </div>  
+    </div> 
+    "); 
+    ?>
 
       <!-- Icon -->
     
@@ -36,22 +42,24 @@
 
 
     <!-- the differing logins and outs -->
-    <?php if($_SESSION["loggedIn"] == "yes") {                    
-          // logout 
-      session_start();    
-      session_destroy();
-      } else { ?>
-      <!-- login -->
-    <div class="create">
-      <a id="link" href="../reference(bootstrap)/create.html">create account</a>
-    </div>
-    <!-- <div class="line"></div> -->
-    <div class="create">
-      <a id="link" href="../reference(bootstrap)/create.html">Login</a>
-    </div>
     <?php
-    }
-?>
+      session_start();
+      if(isset($_SESSION['username']))
+      {
+        echo("<a id='logout' href='../php/logout.php'>Logout</a>"); 
+      }
+      else
+      { 
+        echo("
+        <div class='create'>
+          <a id='link' href='create.php'>create account</a>
+        </div>
+        <div class='create'>
+          <a id='link' href='login.php'>Login</a>
+        </div>
+        ");
+      }
+    ?>
     </div>
 
 
