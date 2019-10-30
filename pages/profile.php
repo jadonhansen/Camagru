@@ -1,22 +1,9 @@
-<html>
-    <head>
-    <link rel="stylesheet" href="../css/dropdown.css">
-        <link rel="stylesheet" href="../css/footer.css">
-        <link rel="stylesheet" href="../css/body.css">
-        <link rel="stylesheet" href="../css/head.css">
-    </head>
-    <!-- background is the body id -->
-    <body id=bground>
+<?php
 
-    <!-- php script -->
-    <?php
-
-require 'db.php';
+require '../php/db.php';
 session_start();
 
 try {
-    $_SESSION['username'] = "jhansen"; //for testing
-    
     $logged_on = $_SESSION['username'];
     $stmt = $conn->query("SELECT username, name_user, surname, email, user_img FROM users WHERE username = '$logged_on' AND verified=1");
     $info = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -36,15 +23,41 @@ else {
         $display = "<img src='data:image/jpeg;base64,{$encoded_image}' width='25%' height='25%'>";        
     }
     else {
-        $display = "<img src='../images/user_img.png' width='6%' height='10%'>";
+        $display = "<img src='../images/user_img.png'>";
     }
-    // echo '<hr />'; 
-    // echo '<hr />'; 
+
+    // echo $display;
+    // echo "<h2>@" . $info['username'] . "</h2>";
+    // echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>";
+    // echo "<i>" . $info['email'] . "</i>";
 }
 
 $conn = NULL;
-
 ?>
+
+
+
+<html>
+    <head>
+    <link rel="stylesheet" href="../css/dropdown.css">
+        <link rel="stylesheet" href="../css/footer.css">
+        <link rel="stylesheet" href="../css/body.css">
+        <link rel="stylesheet" href="../css/head.css">
+    </head>
+    <!-- background is the body id -->
+    <body id=bground>
+
+    <!-- php script -->
+
+
+
+
+
+
+
+
+
+
 
     <div class="head">
 
@@ -130,17 +143,16 @@ $conn = NULL;
 
 <!-- user details -->
     <div class="details">
-      <div class="profile_pic"> 
-        <?php    echo $display; ?> 
+      <div class="profile_pic">
+        <?php    echo "<img src='../images/user_img.png'>"; ?>  
       </div>
       <div class="biography">
         <?php echo "<h2>@" . $info['username'] . "</h2>"; ?>
       </div>
       <br/>
       <div class="biography1">
-        <?php echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>"; ?> 
+        <?php echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>"; ?>
       </div>
-
       <div class="option_block_1">
       <?php  echo "<i>" . $info['email'] . "</i>"; ?>
       </div>
