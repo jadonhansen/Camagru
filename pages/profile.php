@@ -7,7 +7,45 @@
     </head>
     <!-- background is the body id -->
     <body id=bground>
+
+    <!-- php script -->
+    <?php
+
+require 'db.php';
+session_start();
+
+try {
+    $_SESSION['username'] = "jhansen"; //for testing
     
+    $logged_on = $_SESSION['username'];
+    $stmt = $conn->query("SELECT username, name_user, surname, email, user_img FROM users WHERE username = '$logged_on' AND verified=1");
+    $info = $stmt->fetch(PDO::FETCH_ASSOC);
+} catch (PDOException $exception) {
+    echo $sql . "<br>" . $exception->getMessage();      //dont need for final?
+    echo "<script>alert('SQL ERROR: 1')</script>";
+    echo "<script>window.open('./profile.php','_self')</script>";
+    exit();
+}
+
+if (!$info) {
+    echo "<h2>Oops! Your information could not be displayed :(</h2>";
+}
+else {
+    if ($info['user_img']) {
+        $encoded_image = base64_encode($info['user_img']);
+        $display = "<img src='data:image/jpeg;base64,{$encoded_image}' width='25%' height='25%'>";        
+    }
+    else {
+        $display = "<img src='../images/user_img.png' width='6%' height='10%'>";
+    }
+    // echo '<hr />'; 
+    // echo '<hr />'; 
+}
+
+$conn = NULL;
+
+?>
+
     <div class="head">
 
 <!-- the drop down button -->
@@ -84,19 +122,19 @@
 
 <!-- user details -->
     <div class="details">
-      <div class="profile_pic">
-        <img class="qazplm" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpmLbYqzTEg3Pl5Vw_8k1O4UtUHPlIgZ4qK-8PGRNahxqauPbj&s" alt="Profile Picture">
+      <div class="profile_pic"> 
+        <?php    echo $display; ?> 
       </div>
       <div class="biography">
-      Username
+        <?php echo "<h2>@" . $info['username'] . "</h2>"; ?>
       </div>
       <br/>
       <div class="biography1">
-      Text
+        <?php echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>"; ?> 
       </div>
 
       <div class="option_block_1">
-      option block1
+      <?php  echo "<i>" . $info['email'] . "</i>"; ?>
       </div>
       <div class="option_block_2">
       option block2

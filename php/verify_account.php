@@ -21,7 +21,7 @@ if (isset($_GET['key'])) {
         }
         echo "<h2>Account has been verified!</h2>";
         echo "<h4>Please login with your details to begin:</h4>";
-        echo "<button onclick=window.location.href = '../pages/login.php';'>Login page</button>";
+        echo "<button onclick='window.location.href = '..//pages//login.php';'>Login</button>";
         exit();
     }
     else {
@@ -32,7 +32,7 @@ if (isset($_GET['key'])) {
 else {
     echo "<h1>No verification key detected!</h1>";
     echo "<h2>Please try again:</h2>";
-    echo "<button onclick=window.location.href = '../pages/create.php';'>Create account</button>";
+    echo "<button onclick='window.location.href = '..//pages//create.php';'>Create account</button>";
     exit();
 }
 

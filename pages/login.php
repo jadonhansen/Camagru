@@ -85,6 +85,6 @@
     </div>
 
  <!-- the foot -->
-        <div class="foot"></div>
+        <div class="foot"><button onclick="window.location.href = '../pages/login.php';">Login</button></div>
     </body>
 </html>
