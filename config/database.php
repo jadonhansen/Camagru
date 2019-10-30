@@ -1,3 +1,9 @@
+<?php
+
+require 'db.php';
+
+CREATE DATABASE IF NOT EXISTS icon;
+
 CREATE TABLE users(
  	username varchar(15) PRIMARY KEY NOT NULL,
     passwd varchar(4096) NOT NULL,
@@ -13,6 +19,11 @@ CREATE TABLE feed (
     image_id int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
     img LONGBLOB NOT NULL,
     username varchar(15) NOT NULL,
-    upload_date date NOT NULL
-    likes BIGINT NOT NULL
+    upload_date date NOT NULL,
+    comments varchar(100),
+    likes BIGINT
 );
+
+$conn = NULL;
+
+?>

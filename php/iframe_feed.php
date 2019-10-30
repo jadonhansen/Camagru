@@ -23,6 +23,7 @@ foreach ($posts as $row) {
     echo "<h4>@" . $row['username'] . "</h4>";
     echo $display;
     echo "<h4>Likes " . $row['likes'] . "</h4>";
+    echo "<h4>Comments " . $row['comments'] . "</h4>";
     echo "<i>Posted " . $row['upload_date'] . "</i>";
     echo '<hr />';
 }

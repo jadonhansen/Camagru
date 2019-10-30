@@ -2,7 +2,7 @@
 
 $server = "localhost";
 $username = "root";
-$password = "12345678";
+$password = "surfboard";
 
 try {
     $conn = new PDO("mysql:host=$server;dbname=icon", $username, $password);

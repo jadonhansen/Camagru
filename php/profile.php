@@ -5,7 +5,7 @@ session_start();
 
 try {
     $_SESSION['username'] = "jhansen"; //for testing
-    
+
     $logged_on = $_SESSION['username'];
     $stmt = $conn->query("SELECT username, name_user, surname, email, user_img FROM users WHERE username = '$logged_on' AND verified=1");
     $info = $stmt->fetch(PDO::FETCH_ASSOC);

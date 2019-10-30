@@ -7,7 +7,7 @@ function email_send($email, $key) {
 	$headers .= "MINE-Version: 1.0"."\r\n";
 	$headers .= "Content-type:text/html;charset=UTF-8"."\r\n";
 	$res = mail($email, $subject, $message, $headers);
-	if ($res == TRUE) {
+	if ($res) {
 		echo "<script>alert('Please activate your account with the verification link we have sent to your email address.')</script>";
 		echo "<script>window.open('../pages/create.php','_self')</script>";
 	}
@@ -17,18 +17,34 @@ function email_send($email, $key) {
 	}
 }
 
+function complex_check($pass) {
+	if (strlen($pass) < 8) {
+		echo "<script>alert('Please make sure your password is 8 characters or longer.')</script>";
+		echo "<script>window.open('../pages/create.php?error=emptyfields','_self')</script>";
+		return (false);
+	}
+	//must consist of 0-9 && A-Z && a-z && special chars
+}
+
+function char_check($nam, $srnam, $usrnam) {
+
+}
+
 if (isset($_POST['submit'])) {
 	require 'db.php';
 	$name = $_POST['name'];
 	$surname = $_POST['surname'];
-	$username = $_POST['username']; //check all params for max lengths
-	$password = $_POST['password']; //check password for complexity 
+	$username = $_POST['username'];
+	$password = $_POST['password'];
 	$email = $_POST['email'];
 	$verified = 0;
-	
+
 	if (empty($email) || empty($password) || empty($username) || empty($name) || empty($surname)) {
 		echo "<script>alert('Please fill in all fields!')</script>";
 		echo "<script>window.open('../pages/create.php?error=emptyfields','_self')</script>";
+		exit();
+	}
+	if (!complex_check($password) && !char_check($name, $surname, $username)){
 		exit();
 	}
 	else {
