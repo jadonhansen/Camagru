@@ -26,6 +26,16 @@
 #link{
     text-decoration: none;
     /* font-family: ; */
+    font-size: 15px;
+    color: grey;
+}
+
+#logout{
+    position: relative;
+    left: 750px;
+    top: 12px;
+    text-decoration: none;
+    /* font-family: ; */
     font-size: 20;
     color: grey;
 }

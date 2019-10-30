@@ -23,19 +23,24 @@
 
 
     <!-- the differing logins and outs -->
-    <?php if($_SESSION["loggedIn"] == "yes") {                    
-          // logout 
-      session_start();    
-      session_destroy();
-      } else { ?>
-      <!-- login -->
-    <!-- <div class="line"></div> -->
-    <div class="create">
-      <a id="link" href="./login.php">Login</a>
-    </div>
     <?php
-    }
-?>
+      session_start();
+      if(isset($_SESSION['username']))
+      {
+        echo("<a id='logout' href='../php/logout.php'>Logout</a>"); 
+      }
+      else
+      { 
+        echo("
+        <div class='create'>
+          <a id='link' href='create.php'>create account</a>
+        </div>
+        <div class='create'>
+          <a id='link' href='login.php'>Login</a>
+        </div>
+        ");
+      }
+    ?>
     </div>
 
 
