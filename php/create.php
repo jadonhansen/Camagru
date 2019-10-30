@@ -32,7 +32,18 @@ function char_check($nam, $srnam, $usrnam, $eml) {
 		echo "<script>window.open('../pages/create.php?error=emptyfields','_self')</script>";
 		exit();
 	}
-	//check 
+	else if (!preg_match("/^[a-zA-Z0-9]*$/", $usrnam)) {
+		echo "<script>alert('Please make sure your username only consists of either uppercase letters, lowercase letters or number characters.')</script>";
+		echo "<script>window.open('../pages/create.php','_self')</script>";
+	}
+	else if (!preg_match("/^[a-zA-Z]*$/", $nam)) {
+		echo "<script>alert('Please make sure the name field only consists of uppercase or lowercase letters')</script>";
+		echo "<script>window.open('../pages/create.php','_self')</script>";
+	}
+	else if (!preg_match("/^[a-zA-Z]*$/", $surname)) {
+		echo "<script>alert('Please make sure the surname field only consists of uppercase or lowercase letters')</script>";
+		echo "<script>window.open('../pages/create.php','_self')</script>";
+	}
 }
 
 if (isset($_POST['submit'])) {
@@ -43,7 +54,6 @@ if (isset($_POST['submit'])) {
 	$password = $_POST['password'];
 	$email = $_POST['email'];
 	$verified = 0;
-
 
 	complex_check($password);
 	char_check($name, $surname, $username, $email);
