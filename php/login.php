@@ -3,11 +3,11 @@
 if (isset($_POST['submit'])) {
 	require 'db.php';
 
-	session_start(); //probably dont need this. Cause logged in users wont have acces to login page
-	if ($_SESSION['username'] === $_POST['username']) {
-		echo "<script>alert('You are already logged in!')</script>";
+	session_start();
+	if (isset($_SESSION['username'])) {
+		echo "<script>alert('Please go logout first!!')</script>";
 		echo "<script>window.open('../pages/login.php','_self')</script>";
-	}	//
+	}
 
 	$password = hash("whirlpool", $_POST['password']);
 	$username = $_POST['username'];

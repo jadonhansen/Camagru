@@ -23,10 +23,11 @@ function complex_check($pass) {
 		echo "<script>window.open('../pages/create.php','_self')</script>";
 		exit();
 	}
-	$containsLetter  = preg_match('/[a-zA-Z]/', $pass);
-	$containsDigit   = preg_match('/\d/', $pass);
-	$containsSpecial = preg_match('/[^a-zA-Z\d]/', $pass);
-	if (!$containsLetter || !$containsDigit || !$containsSpecial) {
+	$containsLower = preg_match('/[a-z]/', $pass);
+	$containsUpper = preg_match('/[A-Z]/', $pass);
+	$containsDigit = preg_match('/[0-9]/', $pass);
+	$containsSpecial = preg_match('/[\W]+/', $pass);
+	if (!$containsUpper || !$containsLower || !$containsDigit || !$containsSpecial) {
 		echo "<script>alert('Please make sure your password has an array of lowercase letters, uppercase letters, at least one digit and at least one special character.')</script>";
 		echo "<script>window.open('../pages/create.php','_self')</script>";
 		exit();
