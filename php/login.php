@@ -5,7 +5,7 @@ if (isset($_POST['submit'])) {
 
 	session_start();
 	if (isset($_SESSION['username'])) {
-		echo "<script>alert('Please go logout first!!')</script>";
+		echo "<script>alert('Please logout first!!')</script>";
 		echo "<script>window.open('../pages/login.php','_self')</script>";
 	}
 

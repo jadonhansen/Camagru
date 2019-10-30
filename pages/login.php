@@ -27,7 +27,7 @@
       if(isset($_SESSION['username']))
       {
         echo "<form method='post' action='../php/logout.php' >";
-        echo("<button type='submit' id='logout' >Logout</a>");
+        echo"<button type='submit' id='logout' >Logout</button>";
         echo "</form>";
       }
       else
