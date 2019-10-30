@@ -1,5 +1,7 @@
 <?php
 
+//check that this email exists in the DB
+
 if (isset($_POST['submit'])) {
     $to = $_POST['email'];
     $subject = "ICON - Password Reset";

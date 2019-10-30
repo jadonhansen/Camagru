@@ -1,13 +1,14 @@
 <?php
-//needs to be tested
+
+//check that the username entered does exist
+
 if (isset($_POST['submit'])) {
 	require 'db.php';
     $username = $_POST['login'];
-    $email = $_POST['email'];
     $new_password = $_POST['new_password'];
 	$repeat = $_POST['repeat'];
 
-	if (empty($new_password) || empty($username) || empty($email)) {
+	if (empty($new_password) || empty($username) || empty($repeat)) {
 		echo "<script>alert('Please fill in all fields!')</script>";
 		echo "<script>window.open('../pages/forgettery.php?error=emptyfields','_self')</script>";
 		exit();
@@ -18,9 +19,8 @@ if (isset($_POST['submit'])) {
 		exit();		
 	}
 	$new = hash("whirlpool", $new_password);
-	$stmt = $conn->prepare("UPDATE users SET passwd= :pass WHERE email= :eml AND username= :usrn");
+	$stmt = $conn->prepare("UPDATE users SET passwd= :pass WHERE username= :usrn");
 	$stmt->bindParam(':pass', $new);
-	$stmt->bindParam(':eml', $email);
 	$stmt->bindParam(':usrn', $username);
 	if (!$stmt->execute()) {
 		echo "<script>alert('SQL ERROR: 1')</script>";
