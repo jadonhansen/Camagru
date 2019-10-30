@@ -17,18 +17,18 @@ function email_send($email, $key) {
 	}
 }
 
-function complex_check($pass) {
-	if (strlen($pass) < 8) {
-		echo "<script>alert('Please make sure your password is 8 characters or longer.')</script>";
-		echo "<script>window.open('../pages/create.php?error=emptyfields','_self')</script>";
-		return (false);
-	}
-	//must consist of 0-9 && A-Z && a-z && special chars
-}
+// function complex_check($pass) {
+// 	if (strlen($pass) < 8) {
+// 		echo "<script>alert('Please make sure your password is 8 characters or longer.')</script>";
+// 		echo "<script>window.open('../pages/create.php?error=emptyfields','_self')</script>";
+// 		return (false);
+// 	}
+// 	//must consist of 0-9 && A-Z && a-z && special chars
+// }
 
-function char_check($nam, $srnam, $usrnam) {
+// function char_check($nam, $srnam, $usrnam) {
 
-}
+// }
 
 if (isset($_POST['submit'])) {
 	require 'db.php';
@@ -39,12 +39,12 @@ if (isset($_POST['submit'])) {
 	$email = $_POST['email'];
 	$verified = 0;
 
+	// if (!complex_check($password) && !char_check($name, $surname, $username)){
+	// 	exit();
+	// }
 	if (empty($email) || empty($password) || empty($username) || empty($name) || empty($surname)) {
 		echo "<script>alert('Please fill in all fields!')</script>";
 		echo "<script>window.open('../pages/create.php?error=emptyfields','_self')</script>";
-		exit();
-	}
-	if (!complex_check($password) && !char_check($name, $surname, $username)){
 		exit();
 	}
 	else {
