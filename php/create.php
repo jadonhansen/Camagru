@@ -27,12 +27,12 @@ function complex_check($pass) {
 }
 
 function char_check($nam, $srnam, $usrnam, $eml) {
-	if (empty($nam) || empty($srnam) || empty($usrname) || empty($eml)) {
+	if (empty($nam) || empty($srnam) || empty($usrnam) || empty($eml)) {
 		echo "<script>alert('Please fill in all fields!')</script>";
 		echo "<script>window.open('../pages/create.php?error=emptyfields','_self')</script>";
 		exit();
 	}
-	//check 
+	//check all normal characters
 }
 
 if (isset($_POST['submit'])) {
@@ -44,9 +44,8 @@ if (isset($_POST['submit'])) {
 	$email = $_POST['email'];
 	$verified = 0;
 
-
 	complex_check($password);
-	char_check($name, $surname, $username, $eml);
+	char_check($name, $surname, $username, $email);
 	$stmt = $conn->prepare("SELECT username FROM users WHERE username= :search");
 	$stmt->bindParam(':search', $username);
 	if (!$stmt->execute()) {

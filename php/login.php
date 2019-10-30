@@ -3,7 +3,7 @@
 if (isset($_POST['submit'])) {
 	require 'db.php';
 
-	session_start(); //probably dont need this. Caus elogged in users wont have acces to login page
+	session_start(); //probably dont need this. Cause logged in users wont have acces to login page
 	if ($_SESSION['username'] === $_POST['username']) {
 		echo "<script>alert('You are already logged in!')</script>";
 		echo "<script>window.open('../pages/login.php','_self')</script>";
