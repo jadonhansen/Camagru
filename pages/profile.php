@@ -1,3 +1,42 @@
+<?php
+
+require '../php/db.php';
+session_start();
+
+try {
+    $logged_on = $_SESSION['username'];
+    $stmt = $conn->query("SELECT username, name_user, surname, email, user_img FROM users WHERE username = '$logged_on' AND verified=1");
+    $info = $stmt->fetch(PDO::FETCH_ASSOC);
+} catch (PDOException $exception) {
+    echo $sql . "<br>" . $exception->getMessage();      //dont need for final?
+    echo "<script>alert('SQL ERROR: 1')</script>";
+    echo "<script>window.open('./profile.php','_self')</script>";
+    exit();
+}
+
+if (!$info) {
+    echo "<h2>Oops! Your information could not be displayed :(</h2>";
+}
+else {
+    if ($info['user_img']) {
+        $encoded_image = base64_encode($info['user_img']);
+        $display = "<img src='data:image/jpeg;base64,{$encoded_image}' width='25%' height='25%'>";        
+    }
+    else {
+        $display = "<img src='../images/user_img.png'>";
+    }
+
+    // echo $display;
+    // echo "<h2>@" . $info['username'] . "</h2>";
+    // echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>";
+    // echo "<i>" . $info['email'] . "</i>";
+}
+
+$conn = NULL;
+?>
+
+
+
 <html>
     <head>
     <link rel="stylesheet" href="../css/dropdown.css">
@@ -9,6 +48,15 @@
     <body id=bground>
 
     <!-- php script -->
+
+
+
+
+
+
+
+
+
 
 
     <div class="head">
@@ -95,19 +143,18 @@
 
 <!-- user details -->
     <div class="details">
-      <div class="profile_pic"> 
-        <!-- <?php    echo $display; ?>  -->
+      <div class="profile_pic">
+        <?php    echo "<img src='../images/user_img.png'>"; ?>  
       </div>
       <div class="biography">
-        <!-- <?php echo "<h2>@" . $info['username'] . "</h2>"; ?>/ -->
+        <?php echo "<h2>@" . $info['username'] . "</h2>"; ?>
       </div>
       <br/>
       <div class="biography1">
-        <!-- <?php echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>"; ?>  -->
+        <?php echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>"; ?>
       </div>
-
       <div class="option_block_1">
-      <!-- <?php  echo "<i>" . $info['email'] . "</i>"; ?> -->
+      <?php  echo "<i>" . $info['email'] . "</i>"; ?>
       </div>
       <div class="option_block_2">
       option block2
