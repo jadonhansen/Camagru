@@ -36,7 +36,7 @@
 
 
     <!-- the differing logins and outs -->
-    <?php if($_SESSION["loggedIn"] == "yes") {                    
+    <?php if($_SESSION["username"] == "yes") {                    
           // logout 
       session_start();    
       session_destroy();
