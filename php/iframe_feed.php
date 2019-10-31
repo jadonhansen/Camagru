@@ -1,6 +1,6 @@
 <?php
 
-//needs to be given html - Gabriel
+//needs to be given css - Gabriel
 
 require 'db.php';
 

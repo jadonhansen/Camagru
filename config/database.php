@@ -20,8 +20,15 @@ CREATE TABLE feed (
     img LONGBLOB NOT NULL,
     username varchar(15) NOT NULL,
     upload_date date NOT NULL,
-    comments varchar(100),
     likes BIGINT
+);
+
+CREATE TABLE comments (
+    comm_id int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    image_id int(11) NOT NULL,
+    comment varchar(200) NOT NULL,
+    username varchar(15) NOT NULL,
+    comm_date date NOT NULL
 );
 
 $conn = NULL;
