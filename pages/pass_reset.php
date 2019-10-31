@@ -95,12 +95,12 @@
 <div class="box">
         <!-- the form -->
         <div class="header">
-            please enter your email address, we will send you an email with a password reset link
+            Please enter your email address below. An email will be sent to your inbox with a password reset link.
         </div>
         <div class="info">
             <form action="../php/email_prompt.php" method="post">
-                <input type="email" name="email" id="field" placeholder="Email">
-                <input type="submit" name="submit" value="Send email" id="submit">
+                <input type="email" name="email" id="field" placeholder="Email" required>
+                <input type="submit" name="submit" value="Send email" id="submit" required>
             </form>
         </div>
 

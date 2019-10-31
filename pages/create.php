@@ -23,15 +23,9 @@
     <?php
       session_start();
       if(isset($_SESSION['username']))
-      {
         echo("<a id='logout' href='../php/logout.php'>Logout</a>"); 
-      }
-      else
-      { 
+      else {
         echo("
-        <div class='create'>
-          <a id='link' href='create.php'>create account</a>
-        </div>
         <div class='create'>
           <a id='link' href='login.php'>Login</a>
         </div>
@@ -87,7 +81,7 @@
 
         <!-- free browsing button -->
         <button class="free" onclick="window.location.href = 'feed.php';">
-            Browse for Free
+            Guest Browse
         </button>
     </div>
 

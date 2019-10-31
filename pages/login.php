@@ -36,9 +36,6 @@
         <div class='create'>
           <a id='link' href='create.php'>create account</a>
         </div>
-        <div class='create'>
-          <a id='link' href='login.php'>Login</a>
-        </div>
         ");
       }
     ?>
@@ -87,7 +84,7 @@
 
         <!-- free browsing button -->
         <button class="free" onclick="window.location.href = 'feed.php';">
-            Browse for Free
+            Guest Browse
         </button>
     </div>
 
