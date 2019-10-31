@@ -7,7 +7,7 @@ function upload() {
     $img = //;
     $likes = 0;
     $dt = date("Y-m-d", time());
-
+    //upload all details as new post to feed
 }
 
 function like($img_id) {    //all user have access
