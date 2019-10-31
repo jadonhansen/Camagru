@@ -1,5 +1,7 @@
 <?php
 
+//needs to be given html - Gabriel
+
 require 'db.php';
 
 try {
@@ -8,7 +10,6 @@ try {
 } catch (PDOException $exception) {
     echo $sql . "<br>" . $exception->getMessage();      //dont need for final?
     echo "<script>alert('SQL ERROR: 1')</script>";
-    echo "<script>window.open('./iframe_feed.php','_self')</script>";
     exit();
 }
 

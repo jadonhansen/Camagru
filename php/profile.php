@@ -1,5 +1,7 @@
 <?php
 
+//gabriel is working on this. Remove file when he's done
+
 require 'db.php';
 session_start();
 
@@ -27,12 +29,10 @@ else {
     else {
         $display = "<img src='../images/user_img.png' width='6%' height='10%'>";
     }
-    echo '<hr />'; //not needed
     echo $display;
     echo "<h2>@" . $info['username'] . "</h2>";
     echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>";
     echo "<i>" . $info['email'] . "</i>";
-    echo '<hr />'; //not needed
 }
 
 $conn = NULL;
