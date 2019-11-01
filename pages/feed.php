@@ -43,11 +43,9 @@
     <?php
       session_start();
       if(isset($_SESSION['username']))
-      {
         echo("<a id='logout' href='../php/logout.php'>Logout</a>"); 
-      }
       else
-      { 
+      {
         echo("
         <div class='create'>
           <a id='link' href='create.php'>create account</a>

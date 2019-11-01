@@ -45,7 +45,7 @@ function char_check($nam, $srnam, $usrnam, $eml) {
 		echo "<script>alert('Please make sure your username only consists of either uppercase letters, lowercase letters or number characters and that it is bigger than 1 character and smaller than 15 characters.')</script>";
 		echo "<script>window.open('../pages/create.php','_self')</script>";
 	}
-	else if (!preg_match("/^[a-zA-Z]*$/", $nam) || strlen(nam) >= 20 || strlen($nam) <= 1) {
+	else if (!preg_match("/^[a-zA-Z]*$/", $nam) || strlen($nam) >= 20 || strlen($nam) <= 1) {
 		echo "<script>alert('Please make sure the name field only consists of uppercase or lowercase letters and that it is bigger than 1 character and smaller than 20 characters.')</script>";
 		echo "<script>window.open('../pages/create.php','_self')</script>";
 	}
@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
 	$stmt->bindParam(':search', $username);
 	if (!$stmt->execute()) {
 		echo "<script>alert('SQL ERROR: 1')</script>";
-		echo "<script>window.open('../pages/create.php?error=usernametaken','_self')</script>";
+		echo "<script>window.open('../pages/create.php?error=sql','_self')</script>";
 		exit();
 	}
 	$result = $stmt->fetch();
