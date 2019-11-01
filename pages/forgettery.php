@@ -2,13 +2,14 @@
 <!-- submit to forgetter.php -->
 
 <html>
-    <head>
-      <link rel="stylesheet" href="../css/dropdown.css">
-      <link rel="stylesheet" href="../css/footer.css">
-      <link rel="stylesheet" href="../css/body.css">
-      <link rel="stylesheet" href="../css/head.css">
-      <link rel="stylesheet" href="../css/block.css">
-    </head>
+  <head>
+    <title>ICON | Password Reset</title>
+    <link rel="stylesheet" href="../css/dropdown.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/body.css">
+    <link rel="stylesheet" href="../css/head.css">
+    <link rel="stylesheet" href="../css/block.css">
+  </head>
     <!-- background is the body id -->
     <body class="background">
     

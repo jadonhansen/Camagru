@@ -37,12 +37,13 @@ $conn = NULL;
 
 
 <html>
-    <head>
+  <head>
+    <title>ICON | Profile</title>
     <link rel="stylesheet" href="../css/dropdown.css">
-        <link rel="stylesheet" href="../css/footer.css">
-        <link rel="stylesheet" href="../css/body.css">
-        <link rel="stylesheet" href="../css/head.css">
-    </head>
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/body.css">
+    <link rel="stylesheet" href="../css/head.css">
+  </head>
     <!-- background is the body id -->
     <body id=bground>
 
