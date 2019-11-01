@@ -9,13 +9,12 @@ function complex_check($pass) {
 	$containsLower = preg_match('/[a-z]/', $pass);
 	$containsUpper = preg_match('/[A-Z]/', $pass);
 	$containsDigit = preg_match('/[0-9]/', $pass);
-	$containsSpecial = preg_match('/[\W]+/', $pass); //needs to be tested
+	$containsSpecial = preg_match('/[\W]+/', $pass);
 	if (!$containsUpper || !$containsLower || !$containsDigit || !$containsSpecial) {
 		echo "<script>alert('Please make sure your password has an array of lowercase letters, uppercase letters, at least one digit and at least one special character.')</script>";
 		echo "<script>window.open('../pages/profile.php','_self')</script>";
 		exit();
 	}
-	//must consist of 0-9 && A-Z && a-z && special chars
 }
 
 function pass_modi() {
@@ -48,7 +47,7 @@ function pass_modi() {
 }
 
 function nam_modi() {
-    if (empty($_POST['new_nam']) || empty($_POST['new_surnam'])) {      //no repeat here. Takes in a name and a surname.
+    if (empty($_POST['new_nam']) || empty($_POST['new_surnam'])) {
         echo "<script>alert('Please fill in all fields correctly.')</script>";
         echo "<script>window.open('../pages/profile.php','_self')</script>";
         exit();

@@ -39,23 +39,31 @@ function delete($img_id) {      //only users who own this post will have access 
     //delete * from comments where image_id == img_id
 }
 
-if (isset($_POST['upload'])) {
-    upload();
-}
-if (isset($_POST['like'])){
-    //getting image_id from where in the html????
-    like($img_id);
-}
-else if (isset($_POST['comment'])) {
-    //getting image_id from where in the html????
-    $commt = $_POST['comment'];
-    comment($commt, $img_id);
-}
-else if (isset($_POST['delete'])) {
-    //getting image_id from where in the html????
-    delete($img_id);
+session_start();
+if (isset($_SESSION['username'])) {
+    if (isset($_POST['upload'])) {
+        upload();
+    }
+    if (isset($_POST['like'])){
+        //getting image_id from where in the html????
+        like($img_id);
+    }
+    else if (isset($_POST['comment'])) {
+        //getting image_id from where in the html????
+        $commt = $_POST['comment'];
+        comment($commt, $img_id);
+    }
+    else if (isset($_POST['delete'])) {
+        //getting image_id from where in the html????
+        delete($img_id);
+    }
+    else {
+        echo "<script>window.open('../pages/feed.php','_self')</script>";
+    }    
 }
 else {
-    echo "<script>window.open('../pages/feed.php','_self')</script>";
+    echo "<script>alert('Please login first before trying this action.')</script>";
+    echo "<script>window.open('../pages/login.php','_self')</script>"; 
 }
+
 ?>
