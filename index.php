@@ -2,8 +2,8 @@
 
 session_start();
 
-if (isset($_SESSION['login'])) {
-	$username = $_SESSION['login'];
+if (isset($_SESSION['username'])) {
+	$username = $_SESSION['username'];
 	echo "<script>window.open('./pages/feed.php?$username,'_self')</script>";
 }
 else

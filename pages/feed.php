@@ -9,6 +9,8 @@
     <!-- background is the body id -->
     <body class="bg">
     
+      <iframe src="../php/iframe_feed.php" frameborder="0"></iframe>    <!-- apply styling to this iframe. about 20% margins on either side. full vertical view -->
+
     <div class="head">
 
 <!-- the drop down button -->
@@ -85,9 +87,11 @@
     }
   }
 </script>
-  <div class="fd">
-    
-  </div>
+
+  <!-- <div class="fd">
+      //this was the weird blue rectangle block lol
+  </div> -->
+
         <div class="foot"></div>
     </body>
 </html>

@@ -1,15 +1,5 @@
 <?php
 
-function upload() {
-    require 'db.php';
-    session_start();
-    $username = $_SESSION['username'];
-    $img = //;
-    $likes = 0;
-    $dt = date("Y-m-d", time());
-    //upload all details as new post to feed
-}
-
 function like($img_id) {    //all user have access
     require 'db.php';
     session_start();
@@ -41,9 +31,6 @@ function delete($img_id) {      //only users who own this post will have access 
 
 session_start();
 if (isset($_SESSION['username'])) {
-    if (isset($_POST['upload'])) {
-        upload();
-    }
     if (isset($_POST['like'])){
         //getting image_id from where in the html????
         like($img_id);

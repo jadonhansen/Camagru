@@ -21,12 +21,21 @@ if (!$posts) {
 foreach ($posts as $row) {
     $encoded_image = base64_encode($row['img']);
     $display = "<img src='data:image/jpeg;base64,{$encoded_image}' width='40%' height='40%' >";
-    echo "<h4>@" . $row['username'] . "</h4>";
-    echo $display;
-    echo "<h4>Likes " . $row['likes'] . "</h4>";
-    echo "<h4>Comments " . $row['comments'] . "</h4>";
-    echo "<i>Posted " . $row['upload_date'] . "</i>";
-    echo '<hr />';
+    session_start();
+    if (isset($_SESSION['username'])) {
+        echo "<h4>@" . $row['username'] . "</h4>";
+        echo $display;
+        echo "<h4>Likes " . $row['likes'] . "</h4>";    //add button to like the picture. Only available for logged in users
+        echo "<i>Posted " . $row['upload_date'] . "</i>";
+        echo '<hr />';
+    }
+    else {
+        echo "<h4>@" . $row['username'] . "</h4>";
+        echo $display;
+        echo "<h4>Likes " . $row['likes'] . "</h4>";
+        echo "<i>Posted " . $row['upload_date'] . "</i>";
+        echo '<hr />';
+    }
 }
 
 $conn = NULL;
