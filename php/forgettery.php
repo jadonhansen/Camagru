@@ -1,5 +1,22 @@
 <?php
 
+function complex_check($pass) {
+	if (strlen($pass) < 8) {
+		echo "<script>alert('Please make sure your password is 8 characters or longer.')</script>";
+		echo "<script>window.open('../pages/forgettery.php','_self')</script>";
+		exit();
+	}
+	$containsLower = preg_match('/[a-z]/', $pass);
+	$containsUpper = preg_match('/[A-Z]/', $pass);
+	$containsDigit = preg_match('/[0-9]/', $pass);
+	$containsSpecial = preg_match('/[\W]+/', $pass);
+	if (!$containsUpper || !$containsLower || !$containsDigit || !$containsSpecial) {
+		echo "<script>alert('Please make sure your password has an array of lowercase letters, uppercase letters, at least one digit and at least one special character.')</script>";
+		echo "<script>window.open('../pages/forgettery.php','_self')</script>";
+		exit();
+	}
+}
+
 if (isset($_POST['submit'])) {
 	require 'db.php';
 	$username = $_POST['login'];
@@ -10,6 +27,7 @@ if (isset($_POST['submit'])) {
 		echo "<script>window.open('../pages/forgettery.php?error=emptyfields','_self')</script>";
 		exit();
 	}
+	complex_check($new_password);
 	if ($new_password !== $repeat) {
 		echo "<script>alert('Your passwords do not match! Please try again.')</script>";
 		echo "<script>window.open('../pages/forgettery.php?error=passwordsdifference','_self')</script>";
