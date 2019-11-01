@@ -10,7 +10,6 @@ try {
 } catch (PDOException $exception) {
     echo $sql . "<br>" . $exception->getMessage();      //dont need for final?
     echo "<script>alert('SQL ERROR: 1')</script>";
-    echo "<script>window.open('./profile.php','_self')</script>";
     exit();
 }
 
@@ -48,12 +47,6 @@ $conn = NULL;
     <body id=bground>
 
     <!-- php script -->
-
-
-
-
-
-
 
 
 
@@ -170,3 +163,31 @@ $conn = NULL;
     <div class="foot"></div>
     </body>
 </html>
+
+
+
+THE FORMS FOR MODIFYING ALL DETAILS. A BUTTON FOR EACH MUST THEN DISPLAY THE RESPECTIVE FORM BELOW IT. DON'T EDIT.
+
+  <!-- <form action="../php/profile_modify.php" method="post">
+    <input type="text" name="new_usr" placeholder="New username">
+    <input type="text" name="rep_usr" placeholder="Repeat username">
+    <input type="submit" name="usrnam_mod" value="Modify username">
+  </form>
+
+  <form action="../php/profile_modify.php" method="post">
+    <input type="password" name="new_pass" placeholder="New password">
+    <input type="password" name="rep_pass" placeholder="Repeat password">
+    <input type="submit" name="pass_mod" value="Modify password">
+  </form>
+
+  <form action="../php/profile_modify.php" method="post">
+    <input type="text" name="new_nam" placeholder="Name">
+    <input type="text" name="new_surnam" placeholder="Surname">
+    <input type="submit" name="nam_mod" value="Modify name and surname">
+  </form>
+
+  <form action="../php/profile_modify.php" method="post">
+    <input type="email" name="new_eml" placeholder="New email">
+    <input type="email" name="rep_eml" placeholder="Repeat email">
+    <input type="submit" name="eml_mod" value="Modify email">
+  </form> -->

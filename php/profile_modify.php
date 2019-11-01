@@ -32,12 +32,12 @@ function pass_modi() {
     complex_check($_POST['new_pass']);
     require 'db.php';
     session_start();
-    $passwd = $_POST['new_pass'];
     $usrnam = $_SESSION['username'];
+    $passwd = $_POST['new_pass'];
     $new = hash("whirlpool", $passwd);
     $stmt = $conn->prepare("UPDATE users SET passwd = :pass WHERE username = :usrn");
     $stmt->bindParam(':pass', $new);
-    $stmt->bindParam(':usrn', $usernam);
+    $stmt->bindParam(':usrn', $usrnam);
     if (!$stmt->execute()) {
         echo "<script>alert('SQL ERROR: 1')</script>";
         echo "<script>window.open('../pages/profile.php?error=sqlerror','_self')</script>";
@@ -145,7 +145,7 @@ function eml_modi() {
     $usrnam = $_SESSION['username'];
     $stmt = $conn->prepare("UPDATE users SET email = :eml WHERE username = :usrn");
     $stmt->bindParam(':eml', $email);
-    $stmt->bindParam(':usrn', $usernam);
+    $stmt->bindParam(':usrn', $usrnam);
     if (!$stmt->execute()) {
         echo "<script>alert('SQL ERROR: 1')</script>";
         echo "<script>window.open('../pages/profile.php?error=sqlerror','_self')</script>";
@@ -155,15 +155,21 @@ function eml_modi() {
     echo "<script>window.open('../pages/profile.php','_self')</script>";
 }
 
+session_start();
+
 if (isset($_SESSION['username'])) {
-    if (isset($_POST['pass_mod']))
+    if (isset($_POST['pass_mod'])) {
         pass_modi();
-    else if (isset($_POST['nam_mod']))
+    }
+    else if (isset($_POST['nam_mod'])) {
         nam_modi();
-    else if (isset($_POST['usrnam_mod']))
+    }
+    else if (isset($_POST['usrnam_mod'])) {
         usrnam_modi();
-    else if (isset($_POST['eml_mod']))
+    }
+    else if (isset($_POST['eml_mod'])) {
         eml_modi();
+    }
     else {
         echo "<script>window.open('../pages/profile.php','_self')</script>";
     }
@@ -171,7 +177,7 @@ if (isset($_SESSION['username'])) {
 }
 else {
     echo "<script>alert('Please login first!')</script>";
-    echo "<script>window.open('../pages/profile.php','_self')</script>";
+    echo "<script>window.open('../pages/login.php','_self')</script>";
 }
 
 ?>
