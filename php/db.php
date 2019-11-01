@@ -7,10 +7,10 @@ $password = "surfboard";
 try {
     $conn = new PDO("mysql:host=$server;dbname=icon", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
-	} 
+    echo "<script>alert('Connected successfully')</script>";
+} 
 catch(PDOException $exception) {
-    echo "Connection failed: " . $exception->getMessage();
+    echo "Connection failed: " . $exception->getMessage(); //get this to echo an alert
 }
 
 ?>
