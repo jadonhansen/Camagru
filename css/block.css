@@ -1,12 +1,11 @@
 .box{
     position: absolute;
-    background-color: rgb(185, 181, 181);
+    background-color: rgb(226, 221, 221);
     height: 400px;
     width: 300px;
     padding: 50px;
     padding-top: 15px;
     border-radius: 7px;
-    /* box-shadow: 1px 1px 1px 1px black; */
     top: 50%;
     left: 50%;
     margin-top: -350px;
