@@ -1,3 +1,5 @@
+/* main styling */
+
 .dropbtn {
     /* background-color: #3498DB; */
     background-color: rgb(39, 37, 37);
@@ -7,16 +9,22 @@
     cursor: pointer;
   }
   
+/* color on hover */
+
   .dropbtn:hover, .dropbtn:focus {
     background-color: #2980B9;
   }
-  
+
+  /* button location */
+
   .dropdown {
-      padding-left: 7px;
+    padding-left: 7px;
     position: relative;
     float: left;
   }
   
+/* is the box and then also hides it */
+
   .dropdown-content {
     display: none;
     position: absolute;
@@ -27,6 +35,8 @@
     z-index: 1;
   }
   
+/* is the formatting for the box items */
+
   .dropdown-content a {
     color: black;
     padding: 12px 16px;

@@ -63,13 +63,13 @@ $conn = NULL;
           echo("
     <div class='dropdown'>
       <button onclick='myFunction()' class='dropbtn'>
-      <div class='other_option'></div>
-      <div class='options'></div>
-      <div class='options'></div>
-      <div class='options'></div>
-    </button>
+        <div class='other_option'></div>
+        <div class='options'></div>
+        <div class='options'></div>
+        <div class='options'></div>
+      </button>
       <div id='myDropdown' class='dropdown-content'>
-      <a href='profile.php'>Profile</a>
+        <a href='profile.php'>Profile</a>
         <a href='gallery.php'>Gallery</a>
         <a href='feed.php'>Feed</a>
         <a href='upload.php'>Upload</a>
@@ -109,7 +109,8 @@ $conn = NULL;
 
 
 
-    <!-- drop script -->
+    <!-- drop scriptsssss -->
+
 <script>
   function myFunction()
   {
@@ -118,7 +119,7 @@ $conn = NULL;
   
   window.onclick = function(event)
   {
-    if (!event.target.matches('.dropbtn')) 
+    if (!event.target.matches('.dropbtn'))
     {
       var dropdowns = document.getElementsByClassName("dropdown-content");
       var i;
@@ -134,28 +135,102 @@ $conn = NULL;
   }
 </script>
 
+<script>
+  function drop4()
+  {
+    document.getElementById("dropper4").classList.toggle("show4");
+  }
+</script>
+
+<script>
+  function drop3()
+  {
+    document.getElementById("dropper3").classList.toggle("show3");
+  }
+</script>
+
+<script>
+  function drop2()
+  {
+    document.getElementById("dropper2").classList.toggle("show2");
+  }
+</script>
+
+<script>
+  function drop1()
+  {
+    document.getElementById("dropper1").classList.toggle("show1");
+  }
+</script>
+
+
+
+
 
 <!-- user details -->
     <div class="details">
-      <div class="profile_pic">
-        <?php    echo "<img src='../images/user_img.png'>"; ?>  
-      </div>
+      
+      <!-- profile pic (div had to go :'(...) -->
+      <?php    echo "<img src='../images/user_img.png' class='profile_pic'>"; ?>
+
       <div class="biography">
         <?php echo "<h2>@" . $info['username'] . "</h2>"; ?>
       </div>
       <br/>
+
       <div class="biography1">
         <?php echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>"; ?>
       </div>
+
+
       <div class="option_block_1">
-      <?php  echo "<i>" . $info['email'] . "</i>"; ?>
+        <button onclick='drop1()' class='dropsies' id="butsize"> modify username</button>
+        <div id='dropper1' class='box_1'>
+          <form action="../php/profile_modify.php" method="post">
+            <input type="text" name="new_usr" placeholder="New username">
+            <input type="text" name="rep_usr" placeholder="Repeat username">
+            <input type="submit" name="usrnam_mod" value="Modify username">
+          </form>
+        </div>
       </div>
+
+
       <div class="option_block_2">
-      option block2
+        <button onclick='drop2()' class='dropsies' id="butsize"> moddify password</button>
+        <div id='dropper2' class='box_2'>
+          <form action="../php/profile_modify.php" method="post">
+            <input type="password" name="new_pass" placeholder="New password">
+            <input type="password" name="rep_pass" placeholder="Repeat password">
+            <input type="submit" name="pass_mod" value="Modify password">
+          </form>
+        </div>
       </div>
+
+
       <div class="option_block_3">
-      option block3
+        <button onclick='drop3()' class='dropsies' id="butsize"> modify personal details</button>
+        <div id='dropper3' class='box_3'>
+          <form action="../php/profile_modify.php" method="post">
+            <input type="text" name="new_nam" placeholder="Name">
+            <input type="text" name="new_surnam" placeholder="Surname">
+            <input type="submit" name="nam_mod" value="Modify name and surname">
+          </form>
+        </div>
       </div>
+
+
+      <div class='option_block_4'>
+        <button onclick='drop4()' class='dropsies' id="butsize"> change email</button>
+        <div id='dropper4' class='box_4'>
+          <form action="../php/profile_modify.php" method="post">
+            <input type="email" name="new_eml" placeholder="New email">
+            <input type="email" name="rep_eml" placeholder="Repeat email">
+            <input type="submit" name="eml_mod" value="Modify email">
+          </form>
+        </div>
+      </div>
+        
+
     </div>
 
     
@@ -167,27 +242,27 @@ $conn = NULL;
 
 
 
-THE FORMS FOR MODIFYING ALL DETAILS. A BUTTON FOR EACH MUST THEN DISPLAY THE RESPECTIVE FORM BELOW IT. DON'T EDIT.
+<!-- THE FORMS FOR MODIFYING ALL DETAILS. A BUTTON FOR EACH MUST THEN DISPLAY THE RESPECTIVE FORM BELOW IT. DON'T EDIT. -->
 
   <!-- <form action="../php/profile_modify.php" method="post">
     <input type="text" name="new_usr" placeholder="New username">
     <input type="text" name="rep_usr" placeholder="Repeat username">
     <input type="submit" name="usrnam_mod" value="Modify username">
-  </form>
+  </form> -->
 
-  <form action="../php/profile_modify.php" method="post">
+  <!-- <form action="../php/profile_modify.php" method="post">
     <input type="password" name="new_pass" placeholder="New password">
     <input type="password" name="rep_pass" placeholder="Repeat password">
     <input type="submit" name="pass_mod" value="Modify password">
-  </form>
+  </form> -->
 
-  <form action="../php/profile_modify.php" method="post">
+  <!-- <form action="../php/profile_modify.php" method="post">
     <input type="text" name="new_nam" placeholder="Name">
     <input type="text" name="new_surnam" placeholder="Surname">
     <input type="submit" name="nam_mod" value="Modify name and surname">
-  </form>
+  </form> -->
 
-  <form action="../php/profile_modify.php" method="post">
+  <!-- <form action="../php/profile_modify.php" method="post">
     <input type="email" name="new_eml" placeholder="New email">
     <input type="email" name="rep_eml" placeholder="Repeat email">
     <input type="submit" name="eml_mod" value="Modify email">

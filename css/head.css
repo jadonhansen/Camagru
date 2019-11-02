@@ -49,12 +49,14 @@
 }
 
 .options {
-  width: 40px;
+    pointer-events: none;
+    width: 40px;
     border-top: solid thick grey;
     padding-top: 8px;
 }
 
 .other_option{
+    pointer-events: none;
     padding-top: 8px;
 }
 
