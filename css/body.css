@@ -36,7 +36,18 @@
     background-color: cornflowerblue;
 }
 
+.white-border {
+    height: 100%;
+    width: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
 
+.feed-img {
+    position: relative;
+    top: 50px;
+    left: 8%;
+}
 
 .details {
     position: relative;
@@ -162,3 +173,4 @@
     height: 92%;
     background-color: white;
 }
+

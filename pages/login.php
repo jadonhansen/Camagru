@@ -71,7 +71,7 @@
         <form action="../php/login.php" method="POST">
           <input type="text" name="username" class="field" placeholder="Username" onfocus="this.placeholder = ''" required>
           <input type="password" name="password" class="field" placeholder="Password" required>
-          <input type="submit" name="submit" value="Create" class="form">
+          <input type="submit" name="submit" value="Login" class="form">
         </form>
       </div>
                 
