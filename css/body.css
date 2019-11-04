@@ -47,7 +47,7 @@
 
 .profile_pic {
     top: 100px;
-    left: 15%;
+    left: 10%;
     position: relative;
     height: 200px;
     width: 200px;
@@ -59,16 +59,16 @@
     position: relative;
     left: 20px;
     padding-left: 45%;
-    top: -100px;
+    top: -110px;
     width: 51.5%;
 }
 
 .biography1 {
     position: relative;
     font-size: 30;
-    left: 72px;
+    left: 76px;
     padding-left: 45%;
-    top: -100px;
+    top: -210px;
     width: 43%;
 }
 
