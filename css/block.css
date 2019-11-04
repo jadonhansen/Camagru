@@ -19,6 +19,15 @@
     color: black;
 }
 
+/* some kinda css magic (removes input highliting on click)*/
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 .free {
     /* border-color: transparent; */
     font-size: 20px;

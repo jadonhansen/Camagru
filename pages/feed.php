@@ -9,7 +9,7 @@
     <!-- background is the body id -->
     <body class="bg">
     
-      <iframe src="../php/iframe_feed.php" frameborder="0"></iframe>    <!-- apply styling to this iframe. about 20% margins on either side. full vertical view -->
+    
 
     <div class="head">
 
@@ -91,6 +91,9 @@
   <!-- <div class="fd">
       //this was the weird blue rectangle block lol
   </div> -->
+
+  <iframe src="../php/iframe_feed.php" frameborder="0" class="frame-feed">
+  </iframe>    <!-- apply styling to this iframe. about 20% margins on either side. full vertical view -->
 
         <div class="foot"></div>
     </body>
