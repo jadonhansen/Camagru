@@ -20,5 +20,9 @@ if (isset($_SESSION['username'])) {
         //upload all details as new post to feed
     }
 }
+else {
+    echo "<script>alert('Please login first!')</script>";
+    echo "<script>window.open('../pages/login.php','_self')</script>";
+}
 
 ?>

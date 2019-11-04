@@ -76,8 +76,12 @@ $conn = NULL;
         <a href='upload.php'>Upload</a>
       </div>
     </div> 
-    "); 
-    ?>
+    ");
+    else {
+      echo "<script>alert('Please login first!')</script>";
+      echo "<script>window.open('./login.php','_self')</script>";
+    }
+?>
 
       <!-- Icon -->
     
@@ -88,24 +92,24 @@ $conn = NULL;
 
 
     <!-- the differing logins and outs -->
-    <?php
-      session_start();
-      if(isset($_SESSION['username']))
-      {
-        echo("<a id='logout' href='../php/logout.php'>Logout</a>"); 
-      }
-      else
-      { 
-        echo("
-        <div class='create'>
-          <a id='link' href='create.php'>create account</a>
-        </div>
-        <div class='create'>
-          <a id='link' href='login.php'>Login</a>
-        </div>
-        ");
-      }
-    ?>
+<?php
+  session_start();
+  if(isset($_SESSION['username']))
+  {
+    echo("<a id='logout' href='../php/logout.php'>Logout</a>"); 
+  }
+  else
+  { 
+    echo("
+    <div class='create'>
+      <a id='link' href='create.php'>create account</a>
+    </div>
+    <div class='create'>
+      <a id='link' href='login.php'>Login</a>
+    </div>
+    ");
+  }
+?>
     </div>
 
 

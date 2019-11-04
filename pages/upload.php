@@ -12,51 +12,55 @@
     <div class="head">
 
 <!-- the drop down button -->
-    <?php
-          session_start();
-          if(isset($_SESSION['username']))
-          echo("
-    <div class='dropdown'>
+<?php
+  session_start();
+  if(isset($_SESSION['username']))
+    echo("
+      <div class='dropdown'>
       <button onclick='myFunction()' class='dropbtn'>
       <div class='other_option'></div>
       <div class='options'></div>
       <div class='options'></div>
       <div class='options'></div>
-    </button>
+      </button>
       <div id='myDropdown' class='dropdown-content'>
       <a href='profile.php'>Profile</a>
-        <a href='gallery.php'>Gallery</a>
-        <a href='feed.php'>Feed</a>
-        <a href='upload.php'>Upload</a>
+      <a href='gallery.php'>Gallery</a>
+      <a href='feed.php'>Feed</a>
+      <a href='upload.php'>Upload</a>
       </div>
-    </div> 
-    "); 
-    ?>
-      <!-- Icon -->
-    
-      <div class="icon">
-      ICON
-    </div>
+      </div> 
+      ");
+  else {
+    echo "<script>alert('Please login first!')</script>";
+    echo "<script>window.open('./login.php','_self')</script>";
+  }
+?>
+
+  <!-- Icon -->
+  <div class="icon">
+    ICON
+  </div>
 
 
     <!-- the differing logins and outs -->
-    <?php
-      if(isset($_SESSION['username']))
-      {
-        echo("<a id='logout' href='../php/logout.php'>Logout</a>"); 
-      }
-      else
-      { 
-        echo("
-        <div class='create'>
-          <a id='link' href='create.php'>create account</a>
-        </div>
-        <div class='create'>
-          <a id='link' href='login.php'>Login</a>
-        </div>
-        ");
-      }
-    ?>
+<?php
+  if(isset($_SESSION['username']))
+  {
+    echo("<a id='logout' href='../php/logout.php'>Logout</a>"); 
+  }
+  else
+  { 
+    echo("
+    <div class='create'>
+      <a id='link' href='create.php'>create account</a>
+    </div>
+    <div class='create'>
+      <a id='link' href='login.php'>Login</a>
+    </div>
+    ");
+  }
+?>
     </div>
 
 
@@ -86,7 +90,11 @@
   }
 </script>
 <div class="pokemon">
-  things
+  <form action="../php/upload.php" method="post" enctype="multipart/form-data">
+    Upload from device:
+    <input type="file" name="upload" id="fileToUpload">
+    <input type="submit" name="submit" value="Upload Image">
+  </form>
 </div>
 
         <div class="foot"></div>
