@@ -92,8 +92,8 @@
 <div class="pokemon">
   <form action="../php/upload.php" method="post" enctype="multipart/form-data">
     Upload from device:
-    <input type="file" name="upload" id="fileToUpload">
-    <input type="submit" name="submit" value="Upload Image">
+    <input type="file" name="uploadedFile" id="fileToUpload">
+    <input type="submit" name="uploadBtn" value="Upload Image">
   </form>
 </div>
 

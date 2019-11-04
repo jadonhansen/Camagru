@@ -25,7 +25,7 @@ foreach ($posts as $row) {
     if (isset($_SESSION['username'])) {
         echo "<h4>@" . $row['username'] . "</h4>";
         echo $display;
-        echo "<h4>Likes " . $row['likes'] . "</h4>";    //add button to like the picture. Only available for logged in users
+        echo "<h4>Likes " . $row['likes'] . "</h4>";
         echo "<i>Posted " . $row['upload_date'] . "</i>";
         echo '<hr />';
     }
