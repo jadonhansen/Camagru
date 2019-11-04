@@ -155,8 +155,10 @@
 }
 
 .frame-feed {
-    padding-top: 50px;
     position: absolute;
-    width: 100%;
+    top: 50px;
+    left: 12%;
+    width: 76%;
     height: 92%;
+    background-color: white;
 }

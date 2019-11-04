@@ -20,26 +20,27 @@ if (!$posts) {
 
 foreach ($posts as $row) {
     $encoded_image = base64_encode($row['img']);
-    $display = "<img src='data:image/jpeg;base64,{$encoded_image}' width='40%' height='40%' >";
+    $display = "<img src='data:image/jpeg;base64,{$encoded_image}' width='85%' height='60%' >";
     session_start();
     if (isset($_SESSION['username'])) {
-        echo "<h4 style='position:absolute; padding-left:32.%;'>@" . $row['username'] . "</h4>";
-        echo "<i style=''>Posted " . $row['upload_date'] . "</i>";
-        echo "<div style='position:relative; left:32.5%;'>" . $display . "</div>";
-        echo "<h4 style='padding-left:32.5%'>Likes " . $row['likes'] . "</h4>";
+        echo "<h4 style='position:relative; padding-left:15%; top:38px;'>@" . $row['username'] . "</h4>";
+        echo "<i style='position:relative; float:right; right:70%; top:69%;'>Posted " . $row['upload_date'] . "</i>";
+        echo "<div style='position:relative; padding-left:15%;'>" . $display . "</div>";
+        echo "<h4 style='padding-left:20.5%'>Likes " . $row['likes'] . "</h4>";
         
-        // likes
+        // like button
         echo "  <form action='../php/likes.php' method='post'>
-                    <input style='position:relative; top:-40px; float:right; right:28%;' type='submit' value='Like'>           
+                    <input style='position:relative; top:-40px; float:right; right:80.5%;' type='submit' value='Like'>           
                 </form>";
         
                 // comments
         echo "<form action='../php/comments.php' method='post'>
-                    <input style='position:relative; left:32.5%;' type='comment' name='comment' required>
-                    <input style='position:relative; left:32.5%;' type='submit' value='Post'>
+                    <input style='position:relative; left:15%; width:40%; type='comment' name='comment'>
+                    <input style='position:relative; left:15%;' type='submit' value='Post'>
                 </form>";
 
-        echo '<hr />';
+        echo "<div style='width:100%; height:3%;'>  </div>";
+        echo "<hr />";
     }
     else {
         echo "<h4>@" . $row['username'] . "</h4>";
