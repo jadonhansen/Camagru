@@ -11,6 +11,7 @@ function like($img_id) {
         echo "<script>window.open('../pages/feed.php','_self')</script>";   //needs to return to where request came from
         exit();
     }
+    echo "<script>window.open('../pages/feed.php','_self')</script>"; //do not need when below is done
     //needs to return to where request came from
 }
 
@@ -25,19 +26,22 @@ function comment($commt, $img_id) {
     session_start();
     $username = $_SESSION['username'];
     $dt = date("Y-m-d", time());
-    
-    $stmt = $conn->prepare("INSERT INTO comments (image_id, username, comm_date, comment) values ($img_id, $username, $dt, :comm)");
-    $stmt->bindParams(':comm', $commt);
-    if (!$stmt->execute()) {
-		echo "<script>alert('SQL ERROR: 1')</script>";
-		echo "<script>window.open('../pages/feed.php?error=sql','_self')</script>"; //needs to return to where request came from
-		exit();
+    try {
+        $stmt = $conn->prepare("INSERT INTO comments (image_id, comment, username, comm_date) values ($img_id, :comm, $username, $dt)");
+        $stmt->bindParams(':comm', $commt);
+        if (!$stmt->execute()) {
+            echo "<script>alert('SQL ERROR: 1')</script>";
+            echo "<script>window.open('../pages/feed.php?error=sql','_self')</script>"; //needs to return to where request came from
+            exit();
+        }
+    } catch (PDOException $exception) {
+        echo $sql . "<br>" . $exception->getMessage(); //dont need for final?
+        echo "<script>alert('SQL ERROR: 2')</script>";
+        exit();
     }
-    else {
-        echo "<script>alert('Comment posted!')</script>"; //do not need when below is done 
-        //cool comment posted thingy
-        //needs to return to where request came from
-    }
+    echo "<script>alert('Comment posted!')</script>"; //do not need when below is done 
+    //cool comment posted thingy
+    //needs to return to where request came from
 }
 
 function delete($img_id) {

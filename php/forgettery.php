@@ -57,6 +57,7 @@ if (isset($_POST['submit'])) {
 			exit();
 		}
 		echo "<script>alert('Saved! Please login with your new details, $username.')</script>";
+		session_start();
 		$_SESSION['username'] = "";
 		session_destroy();
 		echo "<script>window.open('../pages/login.php','_self')</script>";		
