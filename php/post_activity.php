@@ -1,13 +1,13 @@
 <?php
 
-function like($img_id) {    //all user have access
+function like($img_id) {    //logged in user have access
     require 'db.php';
     session_start();
     $username = $_SESSION['username'];
     //get count of likes for image_id in feed. Increment by one and add it
 }
 
-function comment($commt, $img_id) {     //all users have access
+function comment($commt, $img_id) {     //logged in users have access
     if (strlen($commt) >= 200) {
         echo "<script>alert('Please make sure your comment is 200 characters or less.')</script>";
         echo "<script>window.open('../pages/feed.php','_self')</script>";       //needs to return to where request came from
@@ -25,6 +25,7 @@ function delete($img_id) {      //only users who own this post will have access 
     require 'db.php';
     session_start();
     $username = $_SESSION['username'];
+
     //delete * from feed where image_id == img_id
     //delete * from comments where image_id == img_id
 }
@@ -32,17 +33,14 @@ function delete($img_id) {      //only users who own this post will have access 
 session_start();
 if (isset($_SESSION['username'])) {
     if (isset($_POST['like'])){
-        //getting image_id from where in the html????
-        like($img_id);
+        like($_POST['id']);
     }
     else if (isset($_POST['comment'])) {
-        //getting image_id from where in the html????
-        $commt = $_POST['comment'];
-        comment($commt, $img_id);
+        $commt = $_POST['comment_box'];
+        comment($commt, $_POST['id']);
     }
     else if (isset($_POST['delete'])) {
-        //getting image_id from where in the html????
-        delete($img_id);
+        delete($_POST['id']);
     }
     else {
         echo "<script>window.open('../pages/feed.php','_self')</script>";
