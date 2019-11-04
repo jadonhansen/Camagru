@@ -27,16 +27,18 @@ foreach ($posts as $row) {
         echo "<i style='position:relative; float:right; right:70%; top:69%;'>Posted " . $row['upload_date'] . "</i>";
         echo "<div style='position:relative; padding-left:15%;'>" . $display . "</div>";
         echo "<h4 style='padding-left:20.5%'>Likes " . $row['likes'] . "</h4>";
-        
+
         // like button
-        echo "  <form action='../php/likes.php' method='post'>
-                    <input style='position:relative; top:-40px; float:right; right:80.5%;' type='submit' value='Like'>           
+        echo "  <form action='../php/post_activity.php' method='post'>
+                    <input type='hidden' name='id' value='{$row['image_id']}'>
+                    <input style='position:relative; top:-40px; float:right; right:80.5%;' type='submit' name='like' value='Like'>
                 </form>";
         
                 // comments
-        echo "<form action='../php/comments.php' method='post'>
-                    <input style='position:relative; left:15%; width:40%; type='comment' name='comment'>
-                    <input style='position:relative; left:15%;' type='submit' value='Post'>
+        echo "<form action='../php/post_activity.php' method='post'>
+                    <input type='hidden' name='id' value='{$row['image_id']}'>
+                    <input style='position:relative; left:15%; width:40%; type='text' name='comment_box'>
+                    <input style='position:relative; left:15%;' type='submit' name='comment' value='Post Comment'>
                 </form>";
 
         echo "<div style='width:100%; height:3%;'>  </div>";
