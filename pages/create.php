@@ -64,27 +64,29 @@
 
 <!-- this is the form box -->
 
-    <div class="box">
-        <!-- the form -->
-        <div class="header">
-            Create Account
-        </div>
-        <div class="info">
-            <form action="../php/create.php" method="POST">
-                <input type="text" name="name" id="field" placeholder="First Name" required>
-                <input type="text" name="surname" id="field" placeholder="Surname" required>
-                <input type="email" name="email" id="field" placeholder="Email" required>
-                <input type="text" name="username" id="field" placeholder="Username" required>
-                <input type="password" name="password" id="field" placeholder="Password" required>
-                <input type="submit" name="submit" value="Create" id="submit">
-            </form>
-        </div>
+<div class="box">
+                <!-- the form -->
+                <div class="header">
+                    Create Account
+                </div>
+                <div class="info">
+                    <form action="../php/create.php" method="POST">
+                        <input type="text" name="name" class="field" placeholder="Name" required>
+                        <input type="text" name="surname" class="field" placeholder="Surname" required>
+                        <input type="text" name="username" class="field" placeholder="Username" required>
+                        <input type="email" name="email" class="field" placeholder="Email" required>
+                        <input type="password" name="password" class="field" placeholder="Password" required>
+                        <input type="submit" name="submit" value="Create" class="form">
+                    </form>
+                </div>
+                
+                <!-- <hr class="the-line">   -->
 
-        <!-- free browsing button -->
-        <button class="free" onclick="window.location.href = 'feed.php';">
-            Guest Browse
-        </button>
-    </div>
+                <!-- free browsing button -->
+                <button class="free" onclick="window.location.href = 'feed.php';">
+                    Guest Browse
+                </button>
+            </div>
 
   <!-- the foot -->
         <div class="foot"></div>

@@ -6,7 +6,7 @@
 .bglogin{
     background-size: cover;
     margin: 0;
-    background-image: url(../images/loginbg.jpeg);
+    /* background-image: url(../images/loginbg.jpeg); */
 }
 
 .bgcreate{

@@ -1,11 +1,11 @@
 .box{
     position: absolute;
-    background-color: rgb(226, 221, 221);
+    /* background-color: rgb(226, 221, 221); */
     height: 400px;
     width: 300px;
     padding: 50px;
     padding-top: 15px;
-    border-radius: 7px;
+    /* border-radius: 7px; */
     top: 50%;
     left: 50%;
     margin-top: -350px;
@@ -13,17 +13,23 @@
     height: 450px;
 }
 
+::placeholder {
+    text-align: center;
+    font-size: 20px;
+    color: black;
+}
+
 .free {
-    border-color: transparent;
+    /* border-color: transparent; */
     font-size: 20px;
     border-radius: 7px;
-    margin-bottom: -55px;
+    margin-bottom: -100px;
     margin-left: -50px;
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 50px;
-    background-color: white;
+    background-color: rgb(226, 226, 226);
     /* box-shadow: 5px 5px 5px grey; */
 }
 
@@ -32,21 +38,25 @@
     height: 150px;
 }
 
-#field {
-    border-color: transparent;
-    border-width: 1;
-    margin-top: 40px;
-    border-radius: 12px;
+.field {
+    width: fit-content;
+    text-align: center;
     position: relative;
+    background-color: transparent;
+    margin-top: 40px;
     font-size: 25px;
+    border: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
 }
 
-#submit {
+.form{
     position: relative;
-    width: 120px;
-    margin-left: 72px;
+    width: 80px;
+    margin-left: 88px;
     margin-top: 40px;
-    font-size: 50px;
+    font-size: 20px;
+    background-color: rgb(238, 238, 238);
     /* padding-top: 50px; */
 }
 
@@ -56,7 +66,20 @@
 }
 
 .header{
-    /* position: absolute; */
+    text-align: center;
+    top: -25px;
+    position: relative;
+    right: 25px;
+    width: 100%;
     font-size: 40px;
     padding-left: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.the-line {
+    position: relative;
+    top: -250px;
+    height: 550px;
+    width: 400px;
+    left: -50px;
 }

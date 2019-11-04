@@ -94,22 +94,24 @@
 <!-- this is the form box -->
 
 <div class="box">
-        <!-- the form -->
-        <div class="header">
-            Please enter your email address below. An email will be sent to your inbox with a password reset link.
-        </div>
-        <div class="info">
-            <form action="../php/email_prompt.php" method="post">
-                <input type="email" name="email" id="field" placeholder="Email" required>
-                <input type="submit" name="submit" value="Send email" id="submit" required>
-            </form>
-        </div>
+                <!-- the form -->
+                <div class="header">
+                    Please enter your email:
+                </div>
+                <div class="info">
+                    <form action="../php/create.php" method="POST">
+                        <input type="email" name="email" class="field" placeholder="Email" required>
+                        <input type="submit" name="submit" value="Create" class="form">
+                    </form>
+                </div>
+                
+                <!-- <hr class="the-line">   -->
 
-        <!-- free browsing button -->
-        <button class="free" onclick="window.location.href = 'feed.php';">
-            Browse for Free
-        </button>
-    </div>
+                <!-- free browsing button -->
+                <button class="free" onclick="window.location.href = 'feed.php';">
+                    Guest Browse
+                </button>
+            </div>
 
   <!-- the foot -->
         <div class="foot"></div>

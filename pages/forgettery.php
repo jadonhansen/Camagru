@@ -53,20 +53,23 @@
 <!-- this is the form box -->
 
     <div class="box">
-        <!-- the form -->
-        <div class="header">
-            Reset Password
-        </div>
-        <div class="info">
-            <form action="../php/forgettery.php" method="POST">
-                <input type="text" name="login" id="field" placeholder="Username" required>
-                <input type="password" name="new_password" id="field" placeholder="New Password" required>
-                <input type="password" name="repeat" id="field" placeholder="Repeat Password" required>
-                <input type="submit" name="submit" value="Reset Password" id="submit">
-            </form>
-        </div>
+                <!-- the form -->
+                <div class="header">
+                    Reset Password
+                </div>
+                <div class="info">
+                    <form action="../php/create.php" method="POST">
+                      <input type="text" name="login" class="field" placeholder="Username" required>
+                      <input type="password" name="new_password" class="field" placeholder="New Password" required>
+                      <input type="password" name="repeat" class="field" placeholder="Repeat Password" required>
+                      <input type="submit" name="submit" value="Reset Password" class="form">
+                    </form>
+                </div>
+                
+                <!-- <hr class="the-line">   -->
 
-    </div>
+                <!-- free browsing button -->
+            </div>
 
   <!-- the foot -->
         <div class="foot"></div>

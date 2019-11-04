@@ -35,7 +35,7 @@
       { 
         echo("
         <div class='create'>
-          <a id='link' href='create.php'>create account</a>
+          <h1><a id='link' href='create.php'>create account</a></h1>
         </div>
         ");
       }
@@ -71,23 +71,25 @@
 <!-- this is the form box -->
 
 <div class="box">
-        <!-- the form -->
-        <div class="header">
-            Login
-        </div>
-        <div class="info">
-            <form action="../php/login.php" method="post">
-                <input type="text" name="username" id="field" placeholder="Username" required>
-                <input type="password" name="password" id="field" placeholder="Password" required>
-                <input type="submit" name="submit" value="Login" id="submit">
-            </form>
-        </div>
+                <!-- the form -->
+                <div class="header">
+                    Login
+                </div>
+                <div class="info">
+                    <form action="../php/login.php" method="POST">
+                        <input type="text" name="username" class="field" placeholder="Username" required>
+                        <input type="password" name="password" class="field" placeholder="Password" required>
+                        <input type="submit" name="submit" value="Create" class="form">
+                    </form>
+                </div>
+                
+                <!-- <hr class="the-line">   -->
 
-        <!-- free browsing button -->
-        <button class="free" onclick="window.location.href = 'feed.php';">
-            Guest Browse
-        </button>
-    </div>
+                <!-- free browsing button -->
+                <button class="free" onclick="window.location.href = 'feed.php';">
+                    Guest Browse
+                </button>
+            </div>
 
  <!-- the foot -->
         <div class="foot"></div>
