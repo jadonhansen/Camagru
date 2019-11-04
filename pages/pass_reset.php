@@ -99,9 +99,9 @@
                     Please enter your email:
                 </div>
                 <div class="info">
-                    <form action="../php/create.php" method="POST">
+                    <form action="../php/email_prompt.php" method="POST">
                         <input type="email" name="email" class="field" placeholder="Email" required>
-                        <input type="submit" name="submit" value="Create" class="form">
+                        <input type="submit" name="submit" value="Send" class="form">
                     </form>
                 </div>
                 

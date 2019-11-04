@@ -7,20 +7,15 @@
     <link rel="stylesheet" href="../css/head.css">
     <link rel="stylesheet" href="../css/block.css">
   </head>
-    <!-- background is the body id -->
-    <body class="bglogin">
-    
+
+  <body class="bglogin">    
     <div class="head">
-
-      <!-- Icon -->
-    
+      <!-- Icon -->    
       <div class="icon">
-      ICON
-    </div>
-
-    <!-- forgot password -->
-
-    <a href="pass_reset.php" class="forgot">forgot password</a>
+        ICON
+      </div>
+      <!-- forgot password -->
+      <a href="pass_reset.php" class="forgot">forgot password</a>
 
     <!-- the differing logins and outs -->
     <?php

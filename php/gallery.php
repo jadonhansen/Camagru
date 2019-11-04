@@ -30,7 +30,7 @@ function paginate() {
 }
 ?>
 
-<!-- needs testing -->
+<!-- needs testing infinite scrolling -->
 
 <script type="text/javascript">
     window.addEventListener('scroll', function() {
@@ -39,3 +39,4 @@ function paginate() {
         }
     })
 </script>
+<!-- do thiiiiiiiiiiiiis aboooooooove -->
