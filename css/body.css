@@ -153,3 +153,12 @@
     height: 200px;
     width: 100px;
 }
+
+.frame-feed {
+    position: absolute;
+    top: 50px;
+    left: 12%;
+    width: 76%;
+    height: 92%;
+    background-color: white;
+}
