@@ -1,13 +1,20 @@
 <?php
 
-function like($img_id) {    //logged in user have access
+function like($img_id) {
     require 'db.php';
     session_start();
     $username = $_SESSION['username'];
-    //get count of likes for image_id in feed. Increment by one and add it
+    $sql = "UPDATE feed SET likes=likes+1 WHERE image_id=$img_id";
+    $stmt = $conn->query($sql);
+    if (!$stmt) {
+        echo "<script>alert('Sorry, you can not like this post!')</script>";
+        echo "<script>window.open('../pages/feed.php','_self')</script>";   //needs to return to where request came from
+        exit();
+    }
+    //needs to return to where request came from
 }
 
-function comment($commt, $img_id) {     //logged in users have access
+function comment($commt, $img_id) {
     if (strlen($commt) >= 200) {
         echo "<script>alert('Please make sure your comment is 200 characters or less.')</script>";
         echo "<script>window.open('../pages/feed.php','_self')</script>";       //needs to return to where request came from
@@ -18,16 +25,39 @@ function comment($commt, $img_id) {     //logged in users have access
     session_start();
     $username = $_SESSION['username'];
     $dt = date("Y-m-d", time());
-    //insert into comments (image_id, username, comm_date, comment) values ($img_id, $username, dt, $commt)
+    
+    $stmt = $conn->prepare("INSERT INTO comments (image_id, username, comm_date, comment) values ($img_id, $username, $dt, :comm)");
+    $stmt->bindParams(':comm', $commt);
+    if (!$stmt->execute()) {
+		echo "<script>alert('SQL ERROR: 1')</script>";
+		echo "<script>window.open('../pages/feed.php?error=sql','_self')</script>"; //needs to return to where request came from
+		exit();
+    }
+    else {
+        echo "<script>alert('Comment posted!')</script>"; //do not need when below is done 
+        //cool comment posted thingy
+        //needs to return to where request came from
+    }
 }
 
-function delete($img_id) {      //only users who own this post will have access to this button (done in html file)
+function delete($img_id) {
     require 'db.php';
     session_start();
     $username = $_SESSION['username'];
-
-    //delete * from feed where image_id == img_id
-    //delete * from comments where image_id == img_id
+    $stmt = $conn->query("DELETE * FROM feed WHERE image_id=$img_id");
+    if (!$stmt->execute()) {
+        echo "<script>alert('Sorry, you can not delete this post!')</script>";
+        echo "<script>window.open('../pages/gallery.php','_self')</script>"; //needs to return to where request came from
+        exit();
+    }
+    $stmt = $conn->query("DELETE * FROM comments WHERE image_id=$img_id");
+    if (!$stmt->execute()) {
+        echo "<script>alert('Sorry, you can not delete this post!')</script>";
+        echo "<script>window.open('../pages/gallery.php','_self')</script>"; //needs to return to where request came from
+        exit();
+    }
+    //cool delete post thingy
+    //needs to return to where request came from
 }
 
 session_start();
