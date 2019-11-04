@@ -27,7 +27,7 @@ if (isset($_POST['uploadBtn'])) {
         $image = base64_encode(file_get_contents($_FILES['file']['tmp_name']));
 
         try {
-            $sql = "INSERT INTO feed (img, username, upload_date, likes) VALUES ('".$image."', $username, $dt, $likes)";
+            $sql = "INSERT INTO feed (img, username, upload_date, likes) VALUES ($image, $username, $dt, $likes)";
             $stmt = $conn->query($sql);
             if ($stmt) {
                 echo "<script>alert('Posted!')</script>";
@@ -40,7 +40,7 @@ if (isset($_POST['uploadBtn'])) {
         } catch (PDOException $exception) {
             echo $sql . "<br>" . $exception->getMessage(); //dont need for final?
             echo "<script>alert('SQL ERROR: 1')</script>";
-            echo "<script>window.open('../pages/upload.php','_self')</script>";
+            // echo "<script>window.open('../pages/upload.php','_self')</script>";
             exit();
         }
         
