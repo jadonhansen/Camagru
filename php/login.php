@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
 		if ($result && ($result['verified'])) {
 			session_start();
 			$_SESSION['username'] = $username;
-			echo "<script>alert('Welcome $username!')</script>";
+			echo "<script>alert('Welcome $username!')</script>"; //replace with special notification
 			echo "<script>window.open('../pages/feed.php?home=$username','_self')</script>";
 			exit();
 		}

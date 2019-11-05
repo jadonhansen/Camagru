@@ -1,6 +1,7 @@
 <!-- needs to be given css - Gabriel -->
 
 <?php
+
 function paginate() {
     require 'db.php';
     session_start();

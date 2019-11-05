@@ -9,7 +9,7 @@ function email_send($email, $key) {
 	$res = mail($email, $subject, $message, $headers);
 	if ($res) {
 		echo "<script>alert('Please activate your account with the verification link we have sent to your email address.')</script>";
-		echo "<script>window.open('../pages/create.php','_self')</script>";
+		echo "<script>window.open('../pages/login.php','_self')</script>";
 	}
 	else {
 		echo "<script>alert('Failed to send email!')</script>";

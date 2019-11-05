@@ -84,8 +84,7 @@
       {
         $stmt = $conn->query("SELECT * FROM feed ORDER BY upload_date DESC");
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      }
-      catch (PDOException $exception)
+      } catch (PDOException $exception)
       {
         echo $sql . "<br>" . $exception->getMessage();      //dont need for final?
         echo "<script>alert('SQL ERROR: 1')</script>";
@@ -110,17 +109,26 @@
           // echo "<h4 style='padding-left:20.5%'>Likes " . $row['likes'] . "</h4>";
 
           // like button
-          // echo "<form action='../php/post_activity.php' method='post'>
-          //         <input type='hidden' name='id' value='{$row['image_id']}'>
-          //         <input style='position:relative; top:-40px; float:right; right:80.5%;' type='submit' name='like' value='Like'>
-          //       </form>";
+          echo "<form action='../php/post_activity.php' method='post'>
+                  <input type='hidden' name='id' value='{$row['image_id']}'>
+                  <input style='position:relative; top:-40px; float:right; right:80.5%;' type='submit' name='like' value='Like'>
+                </form>";
         
           // comments
-          // echo "<form action='../php/post_activity.php' method='post'>
-          //         <input type='hidden' name='id' value='{$row['image_id']}'>
-          //         <input style='position:relative; left:15%; width:40%; type='text' name='comment_box'>
-          //         <input style='position:relative; left:15%;' type='submit' name='comment' value='Post Comment'>
-          //       </form>";
+          echo "<form action='../php/post_activity.php' method='post'>
+                  <input type='hidden' name='id' value='{$row['image_id']}'>
+                  <input style='position:relative; left:15%; width:40%; type='text' name='comment_box'>
+                  <input style='position:relative; left:15%;' type='submit' name='comment' value='Post Comment'>
+                </form>";
+
+          // delete button
+          if ($_SESSION['username'] === $row['username']) {
+            echo "<form action='../php/post_activity.php' method='post'>
+            <input type='hidden' name='id' value='{$row['image_id']}'>
+            <input style='position:relative; left:15%;' type='submit' name='delete' value='Delete post'>
+              </form>";
+          }
+          
 
           echo "<div style='width:100%; height:3%;'>  </div>";
           echo "<hr />";

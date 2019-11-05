@@ -4,13 +4,14 @@ function like($img_id) {
     require 'db.php';
     session_start();
     $username = $_SESSION['username'];
-    $sql = "UPDATE feed SET likes=likes+1 WHERE image_id=$img_id";
+    $sql = "UPDATE feed SET likes=likes+1 WHERE image_id='$img_id'";
     $stmt = $conn->query($sql);
     if (!$stmt) {
-        echo "<script>alert('Sorry, you can not like this post!')</script>";
+        echo "<script>alert('Sorry, this action could not be completed!')</script>";
         echo "<script>window.open('../pages/feed.php','_self')</script>";   //needs to return to where request came from
         exit();
     }
+    $conn = NULL;
     echo "<script>window.open('../pages/feed.php','_self')</script>"; //do not need when below is done
     //needs to return to where request came from
 }
@@ -27,8 +28,8 @@ function comment($commt, $img_id) {
     $username = $_SESSION['username'];
     $dt = date("Y-m-d", time());
     try {
-        $stmt = $conn->prepare("INSERT INTO comments (image_id, comment, username, comm_date) values ($img_id, :comm, $username, $dt)");
-        $stmt->bindParams(':comm', $commt);
+        $stmt = $conn->prepare("INSERT INTO comments (image_id, comment, username, comm_date) values ('$img_id', :comm, '$username', '$dt')");
+        $stmt->bindParam(':comm', $commt);
         if (!$stmt->execute()) {
             echo "<script>alert('SQL ERROR: 1')</script>";
             echo "<script>window.open('../pages/feed.php?error=sql','_self')</script>"; //needs to return to where request came from
@@ -39,7 +40,8 @@ function comment($commt, $img_id) {
         echo "<script>alert('SQL ERROR: 2')</script>";
         exit();
     }
-    echo "<script>alert('Comment posted!')</script>"; //do not need when below is done 
+    $conn = NULL;
+    echo "<script>alert('Comment posted!')</script>"; //do not need when below is done
     //cool comment posted thingy
     //needs to return to where request came from
 }
@@ -48,19 +50,17 @@ function delete($img_id) {
     require 'db.php';
     session_start();
     $username = $_SESSION['username'];
-    $stmt = $conn->query("DELETE * FROM feed WHERE image_id=$img_id");
-    if (!$stmt->execute()) {
-        echo "<script>alert('Sorry, you can not delete this post!')</script>";
-        echo "<script>window.open('../pages/gallery.php','_self')</script>"; //needs to return to where request came from
-        exit();
+
+    $num = $conn->exec("DELETE FROM feed WHERE image_id='$img_id' AND username='$username'");
+    if (!$num) {
+        echo "<script>alert('Could not be deleted!')</script>";
     }
-    $stmt = $conn->query("DELETE * FROM comments WHERE image_id=$img_id");
-    if (!$stmt->execute()) {
-        echo "<script>alert('Sorry, you can not delete this post!')</script>";
-        echo "<script>window.open('../pages/gallery.php','_self')</script>"; //needs to return to where request came from
-        exit();
+    else {
+        $num = $conn->exec("DELETE FROM comments WHERE image_id='$img_id'");
+        echo "<script>alert('Deleted!')</script>"; //do not need when below is done
+        //cool delete post thingy
     }
-    //cool delete post thingy
+    $conn = NULL;
     //needs to return to where request came from
 }
 
