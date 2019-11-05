@@ -154,6 +154,10 @@ function eml_modi() {
     echo "<script>window.open('../pages/profile.php','_self')</script>";
 }
 
+function pic_modi() {
+    
+}
+
 session_start();
 
 if (isset($_SESSION['username'])) {
@@ -168,6 +172,9 @@ if (isset($_SESSION['username'])) {
     }
     else if (isset($_POST['eml_mod'])) {
         eml_modi();
+    }
+    else if (isset($_POST['pic_mod'])) {
+        pic_modi();
     }
     else {
         echo "<script>window.open('../pages/profile.php','_self')</script>";

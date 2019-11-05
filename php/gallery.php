@@ -3,8 +3,15 @@
 <?php
 
 function paginate() {
-    require 'db.php';
+
     session_start();
+    if (!isset($_SESSION['username'])) {
+        echo "<script>alert('Please login first!')</script>";
+        echo "<script>window.open('../pages/login.php','_self')</script>";
+        exit();
+    }
+    require 'db.php';
+
     $logged_on = $_SESSION['username'];
     try {
         $stmt = $conn->query("SELECT * FROM feed WHERE username= '$logged_on' LIMIT 5");

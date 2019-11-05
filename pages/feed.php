@@ -128,7 +128,6 @@
             <input style='position:relative; left:15%;' type='submit' name='delete' value='Delete post'>
               </form>";
           }
-          
 
           echo "<div style='width:100%; height:3%;'>  </div>";
           echo "<hr />";

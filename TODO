@@ -1,0 +1,17 @@
+Gabriel: 
+- Styling for:  feed
+                profile
+                gallery (Test infinite scroll thing in gallery wiht js)
+                upload
+                verify_account.php
+- do those cool notification bar things
+- add profile pic change button to profile.php
+
+Jadon:
+- Upload images correctly
+- Test infinite scroll thing in gallery with js
+- Add auto refresh to profile and to feed (might not be needed)
+- Add superimpose function to upload page
+- Add filter images to upload page
+- Upload user image parameter to profile
+- Find a way to return to previous page for likes, comments, deletions and all profile updates -> AJAX

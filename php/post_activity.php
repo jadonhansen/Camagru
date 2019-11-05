@@ -8,18 +8,18 @@ function like($img_id) {
     $stmt = $conn->query($sql);
     if (!$stmt) {
         echo "<script>alert('Sorry, this action could not be completed!')</script>";
-        echo "<script>window.open('../pages/feed.php','_self')</script>";   //needs to return to where request came from
+        echo "<script>window.open('../pages/feed.php','_self')</script>";
         exit();
     }
     $conn = NULL;
-    echo "<script>window.open('../pages/feed.php','_self')</script>"; //do not need when below is done
-    //needs to return to where request came from
+    echo "<script>window.open('../pages/feed.php','_self')</script>";
+     
 }
 
 function comment($commt, $img_id) {
     if (strlen($commt) >= 200) {
         echo "<script>alert('Please make sure your comment is 200 characters or less.')</script>";
-        echo "<script>window.open('../pages/feed.php','_self')</script>";       //needs to return to where request came from
+        echo "<script>window.open('../pages/feed.php','_self')</script>";
         exit();
     }
     require 'db.php';
@@ -32,7 +32,7 @@ function comment($commt, $img_id) {
         $stmt->bindParam(':comm', $commt);
         if (!$stmt->execute()) {
             echo "<script>alert('SQL ERROR: 1')</script>";
-            echo "<script>window.open('../pages/feed.php?error=sql','_self')</script>"; //needs to return to where request came from
+            echo "<script>window.open('../pages/feed.php?error=sql','_self')</script>";
             exit();
         }
     } catch (PDOException $exception) {
@@ -43,7 +43,7 @@ function comment($commt, $img_id) {
     $conn = NULL;
     echo "<script>alert('Comment posted!')</script>"; //do not need when below is done
     //cool comment posted thingy
-    //needs to return to where request came from
+    echo "<script>window.open('../pages/feed.php','_self')</script>";
 }
 
 function delete($img_id) {
@@ -61,7 +61,7 @@ function delete($img_id) {
         //cool delete post thingy
     }
     $conn = NULL;
-    //needs to return to where request came from
+    echo "<script>window.open('../pages/feed.php','_self')</script>";
 }
 
 session_start();
@@ -78,11 +78,11 @@ if (isset($_SESSION['username'])) {
     }
     else {
         echo "<script>window.open('../pages/feed.php','_self')</script>";
-    }    
+    }
 }
 else {
     echo "<script>alert('Please login first before trying this action.')</script>";
-    echo "<script>window.open('../pages/login.php','_self')</script>"; 
+    echo "<script>window.open('../pages/login.php','_self')</script>";
 }
 
 ?>
