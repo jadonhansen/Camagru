@@ -2,40 +2,24 @@
   require '../php/db.php';
   session_start();
 
-  try
-  {
-    $logged_on = $_SESSION['username'];
-    $stmt = $conn->query("SELECT username, name_user, surname, email, user_img FROM users WHERE username = '$logged_on' AND verified=1");
-    $info = $stmt->fetch(PDO::FETCH_ASSOC);
+  if (!isset($_SESSION['username'])) {
+		echo "<script>alert('Please login first before accessing this page!')</script>";
+    echo "<script>window.open('./lopgin.php','_self')</script>";
+    exit();
   }
 
-  catch (PDOException $exception)
-  {
+  $logged_on = $_SESSION['username'];
+  try {
+    $stmt = $conn->query("SELECT username, name_user, surname, email, user_img FROM users WHERE username = '$logged_on' AND verified=1");
+    $info = $stmt->fetch(PDO::FETCH_ASSOC);
+  } catch (PDOException $exception) {
     echo $sql . "<br>" . $exception->getMessage();      //dont need for final?
     echo "<script>alert('SQL ERROR: 1')</script>";
     exit();
   }
 
-  if (!$info)
-  {
+  if (!$info) {
     echo "<h2>Oops! Your information could not be displayed :(</h2>";
-  }
-
-  else
-  {
-    if ($info['user_img'])
-    {
-        $encoded_image = base64_encode($info['user_img']);
-        $display = "<img src='data:image/jpeg;base64,{$encoded_image}' width='25%' height='25%'>";        
-    }
-    else
-    {
-        $display = "<img src='../images/user_img.png'>";
-    }
-    // echo $display;
-    // echo "<h2>@" . $info['username'] . "</h2>";
-    // echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>";
-    // echo "<i>" . $info['email'] . "</i>";
   }
   $conn = NULL;
 ?>
@@ -158,7 +142,15 @@
 
     <!-- user details -->
     <div class="details">      
-      <?php    echo "<img src='../images/user_img.png' class='profile_pic'>"; ?>
+      <?php
+        if (!$info['user_img'])
+          echo "<img src='../images/user_img.png' class='profile_pic'>";
+        else {
+          $encoded_image = $info['user_img'];
+          $display = "<img src='data:image;base64,{$encoded_image}' class='profile_pic'>";
+          echo "<div class='feed-img'>" . $display . "</div>";
+        }
+      ?>
       <div class="biography">
         <?php echo "<h2>@" . $info['username'] . "</h2>"; ?>
       </div>
@@ -166,6 +158,26 @@
       <div class="biography1">
         <?php echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>"; ?>
       </div>
+
+
+
+
+
+
+
+
+      <!-- this needs styling (updating user image icon) -->
+      <form action="../php/profile_modify.php" method="post" enctype="multipart/form-data">
+      Change user image:
+        <input type="file" name="uploadedFile" id="fileToUpload">
+        <input type="submit" name="pic_mod" value="Apply">
+      </form>
+
+
+
+
+
+
 
       <div class="option_block_1">
         <button onclick='drop1()' class='dropsies' id="butsize"> modify username</button>
@@ -179,7 +191,7 @@
       </div>
 
       <div class="option_block_2">
-        <button onclick='drop2()' class='dropsies' id="butsize"> moddify password</button>
+        <button onclick='drop2()' class='dropsies' id="butsize"> modify password</button>
         <div id='dropper2' class='box_2'>
           <form action="../php/profile_modify.php" method="post">
             <input type="password" name="new_pass" placeholder="New password" class="field">

@@ -96,10 +96,9 @@
         exit();
       }
       echo "<div class=white-border>";
-      foreach ($posts as $row)
-      {
-        $encoded_image = base64_encode($row['img']);
-        $display = "<img src='data:image/jpeg;base64,{$encoded_image}' width='85%' height='60%' >";
+      foreach ($posts as $row) {
+        $encoded_image = $row['img'];
+        $display = "<img src='data:image;base64,{$encoded_image}' width='85%' height='60%' >";
         session_start();
         if (isset($_SESSION['username']))
         {

@@ -19,11 +19,11 @@ if (isset($_POST['uploadBtn'])) {
         if ($fileExtension !== "jpg" && $fileExtension !== "jpeg" && $fileExtension !== "png" && $fileExtension !== "gif") {
             echo "<script>alert('Please select an image with a valid file type!')</script>"; //special notification thing
             echo "<script>window.open('../pages/upload.php','_self')</script>";
+            exit();
         }
-        echo "<script>alert('$fileExtension, $fileNameCmps, $fileName')</script>"; //debug
         $likes = 0;
         $dt = date("Y-m-d", time());
-        $image = base64_encode(file_get_contents($_FILES['file']['tmp_name']));
+        $image = base64_encode(file_get_contents($_FILES['uploadedFile']['tmp_name']));
         try {
             $sql = "INSERT INTO feed (img, username, upload_date, likes) VALUES ('$image', '$username', '$dt', '$likes')";
             $stmt = $conn->query($sql);

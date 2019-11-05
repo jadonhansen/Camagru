@@ -155,7 +155,35 @@ function eml_modi() {
 }
 
 function pic_modi() {
-    
+    require 'db.php';
+    $username = $_SESSION['username'];
+    $fileName = $_FILES['uploadedFile']['name'];
+    $fileNameCmps = explode(".", $fileName);
+    $fileExtension = strtolower(end($fileNameCmps));
+
+    if (isset($_FILES['uploadedFile']) && $_FILES['uploadedFile']['error'] === UPLOAD_ERR_OK) {
+        if ($fileExtension !== "jpg" && $fileExtension !== "jpeg" && $fileExtension !== "png" && $fileExtension !== "gif") {
+            echo "<script>alert('Please select an image with a valid file type!')</script>";
+            echo "<script>window.open('../pages/profile.php','_self')</script>";
+            exit();
+        }
+        $image = base64_encode(file_get_contents($_FILES['uploadedFile']['tmp_name']));
+        $sql = "UPDATE users SET user_img= '$image' WHERE username='$username'";
+        $stmt = $conn->query($sql);
+        if ($stmt) {
+            echo "<script>alert('Details saved!')</script>";
+            echo "<script>window.open('../pages/profile.php','_self')</script>";
+        }
+        else {
+            echo "<script>alert('Sorry, we could not update your profile!')</script>";
+            echo "<script>window.open('../pages/profile.php','_self')</script>";
+        }
+    }
+    else {
+        echo "<script>alert('Please select an image to upload first!')</script>";
+        echo "<script>window.open('../pages/profile.php','_self')</script>";
+    }
+    $conn = NULL;
 }
 
 session_start();
