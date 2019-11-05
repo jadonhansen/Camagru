@@ -1,15 +1,18 @@
+! = Important
+
 Gabriel:
-- Styling for:  feed
-                profile
-                gallery (Test infinite scroll thing in gallery wiht js)
-                upload
-                verify_account.php
-- do those cool notification bar things (for profile updates and post notifications and uploading)
-- add profile pic change button to profile.php
+- Styling for pages:   ! feed.php
+                       ! profile.php
+                       ! gallery.php (Test infinite scroll thing in gallery with js)
+                       ! upload.php (need a box for webcam, filters sidebar and bottom section for post button & browse file button...anything else?)
+                       ! verify_account.php
+- do those cool notification bar things (for profile updates and post notifications and uploading - I can research this)
+- footer text (I can do that, just needs your styling)
+- username to display on header when a user is logged in (I can do that, just needs your styling)
 
 Jadon:
 - Test infinite scroll thing in gallery with js
-- Add auto refresh to profile and to feed (might not be needed)
+- Add auto refresh to feed (might not be needed)
 - Add superimpose function to upload page
 - Add filter images to upload page as selectable
-- Find a way to return to previous page for likes, comments, deletions and all profile updates -> AJAX
+- Find a way to return to previous page *position* for likes, comments, deletions -> AJAX
