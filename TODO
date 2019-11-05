@@ -16,3 +16,6 @@ Jadon:
 - Add superimpose function to upload page
 - Add filter images to upload page as selectable
 - Find a way to return to previous page *position* for likes, comments, deletions -> AJAX
+
+- Images in Feed are loading as source code
+- Index page isnt redirecting (going to localhost:8080/camagru loads a blank page)

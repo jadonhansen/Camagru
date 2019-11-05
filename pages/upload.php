@@ -82,8 +82,11 @@
         }
       }
     </script>
-      
+    
     <div class="pokemon">
+      <div class="capture-box">
+        words
+      </div>
       <form action="../php/upload.php" method="post" enctype="multipart/form-data">
         Upload from device:
         <input type="file" name="uploadedFile" id="fileToUpload">

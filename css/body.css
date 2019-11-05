@@ -26,6 +26,12 @@
     top: 75px;
 }
 
+.capture-box {
+    width: 80%;
+    height: 60%;
+    background-color: black;
+}
+
 .fd{
     position: relative;
     top: 75px;
