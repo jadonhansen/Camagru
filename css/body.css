@@ -29,7 +29,46 @@
 .capture-box {
     width: 80%;
     height: 60%;
-    background-color: black;
+    position: relative;
+    background-color: aliceblue;
+    left: 10%;
+    top: 50px;
+}
+
+.upload-box {
+    position: absolute;
+    left: 10%;
+    top: -25px;
+}
+
+.styles-box{
+    width: 80%;
+    height: 25%;
+    position: relative;
+    background-color: burlywood;
+    left: 10%;
+    top: 25px;
+}
+
+.take-picture {
+    position: absolute;
+    background-color: blueviolet;
+    width: 95px;
+    height: 75px;
+    top: -29px;
+    right: 45px;
+}
+
+.upload-file {
+    position: absolute;
+    top: 25px;
+    left: 0;
+}
+
+.upload-button {
+    position: absolute;
+    left: 0;
+    top: 50px;
 }
 
 .fd{

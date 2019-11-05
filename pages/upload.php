@@ -87,11 +87,17 @@
       <div class="capture-box">
         words
       </div>
-      <form action="../php/upload.php" method="post" enctype="multipart/form-data">
+      <form class="upload-box" action="../php/upload.php" method="post" enctype="multipart/form-data">
         Upload from device:
-        <input type="file" name="uploadedFile" id="fileToUpload">
-        <input type="submit" name="uploadBtn" value="Upload Image">
+        <input class="upload-file" type="file" name="uploadedFile" id="fileToUpload">
+        <input class="upload-button" type="submit" name="uploadBtn" value="Upload Image">
       </form>
+      <div class="styles-box">
+
+      </div>
+
+      <div class="take-picture">
+      </div>
     </div>
 
     <div class="foot"></div>
