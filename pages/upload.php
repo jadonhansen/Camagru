@@ -14,6 +14,7 @@
       <?php
         session_start();
         if(isset($_SESSION['username']))
+        {
           echo("<div class='dropdown'>
                   <button onclick='myFunction()' class='dropbtn'>
                     <div class='other_option'></div>
@@ -28,13 +29,17 @@
                     <a href='upload.php'>Upload</a>
                   </div>
                 </div>");
+
+          echo("<div class='loggedin-user'>@"
+                 .$_SESSION['username']. 
+                "</div>");
+        }
         else
         {
           echo "<script>alert('Please login first!')</script>";
           echo "<script>window.open('./login.php','_self')</script>";
         }
       ?>
-    
       <!-- Icon -->
       <div class="icon">
         ICON
@@ -85,7 +90,9 @@
     
     <div class="pokemon">
       <div class="capture-box">
-        words
+        IGNORE THE COLOURED BOXES, THEYRE JUST THERE TO SHOW WHERE THE THINGS WILL BE
+
+                   dont worry about the little box in the top right
       </div>
       <form class="upload-box" action="../php/upload.php" method="post" enctype="multipart/form-data">
         Upload from device:
@@ -93,10 +100,14 @@
         <input class="upload-button" type="submit" name="uploadBtn" value="Upload Image">
       </form>
       <div class="styles-box">
-
       </div>
-
       <div class="take-picture">
+      </div>
+      <div class="post-img">
+        POST
+      </div>
+      <div class="notified">
+        youve just been notified
       </div>
     </div>
 

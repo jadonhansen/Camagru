@@ -14,6 +14,7 @@
       <?php
         session_start();
         if(isset($_SESSION['username']))
+        {
           echo("<div class='dropdown'>
                   <button onclick='myFunction()' class='dropbtn'>
                     <div class='other_option'></div>
@@ -28,6 +29,11 @@
                     <a href='upload.php'>Upload</a>
                   </div>
                 </div>");
+                
+          echo("<div class='loggedin-user'>@"
+                .$_SESSION['username']. 
+               "</div>");
+        }
         else
         {
           echo "<script>alert('Please login first!')</script>";

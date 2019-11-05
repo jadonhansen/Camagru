@@ -16,6 +16,17 @@
     float: left;
 }
 
+.loggedin-user{
+    font-size: 25px;
+    color: grey;
+    position: absolute;
+    left: 47.5%;
+    top: 8px;
+    /* background-color: purple; */
+    height: 50px;
+    width: 400px;
+}
+
 .create{
     font-size: 1px;
     padding-top: 15px;

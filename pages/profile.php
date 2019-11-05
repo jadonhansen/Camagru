@@ -42,6 +42,7 @@
       <?php
         session_start();
         if(isset($_SESSION['username']))
+        {
           echo("<div class='dropdown'>
                   <button onclick='myFunction()' class='dropbtn'>
                     <div class='other_option'></div>
@@ -56,6 +57,10 @@
                     <a href='upload.php'>Upload</a>
                   </div>
                 </div>");
+          echo("<div class='loggedin-user'>@"
+                  .$_SESSION['username']. 
+               "</div>");
+        }
         else
         {
           echo "<script>alert('Please login first!')</script>";
@@ -137,7 +142,14 @@
       function drop1()
       {
         document.getElementById("dropper1").classList.toggle("show1");
-      }
+      }  
+    </script>
+
+    <script>
+      function drop5()
+      {
+        document.getElementById("dropper5").classList.toggle("show1");
+      }  
     </script>
 
     <!-- user details -->
@@ -166,14 +178,15 @@
 
 
 
-      <!-- this needs styling (updating user image icon) -->
-      <form action="../php/profile_modify.php" method="post" enctype="multipart/form-data">
-      Change user image:
-        <input type="file" name="uploadedFile" id="fileToUpload">
-        <input type="submit" name="pic_mod" value="Apply">
-      </form>
-
-
+      <div class="option_block_5">
+        <button onclick='drop5()' class='dropsies' id="butsize">Update Profile Picture</button>
+        <div id='dropper5' class='box_5'>
+          <form class="change-usr-img" action="../php/profile_modify.php" method="post" enctype="multipart/form-data">
+            <input type="file" name="uploadedFile" id="fileToUpload">
+            <input type="submit" name="pic_mod" value="Apply">
+          </form>
+        </div>
+      </div>
 
 
 

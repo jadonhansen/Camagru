@@ -41,22 +41,32 @@
     top: -25px;
 }
 
+.post-img {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: -10px;
+    right: 45%;
+    background-color: hotpink;
+}
+
 .styles-box{
     width: 80%;
-    height: 25%;
+    height: 24.5%;
     position: relative;
     background-color: burlywood;
     left: 10%;
-    top: 25px;
+    top: 65px;
 }
 
 .take-picture {
     position: absolute;
-    background-color: blueviolet;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBRYuJtADOGDS2FxDfrIEreDEiabbJQxIEr9qfI6CVzBL_GDE3&s);
+    background-size: 100%;
     width: 95px;
     height: 75px;
     top: -29px;
-    right: 45px;
+    right: 10%;
 }
 
 .upload-file {
@@ -113,7 +123,6 @@
 .biography {
     font-size: 40;
     position: relative;
-    left: 20px;
     padding-left: 45%;
     top: -110px;
     width: 51.5%;
@@ -126,6 +135,16 @@
     padding-left: 45%;
     top: -210px;
     width: 43%;
+}
+
+.notified{
+    width: 300px;
+    height: 50px;
+    opacity: 80%;
+    position: absolute;
+    top: -83;
+    right: 10%;
+    background-color: green;
 }
 
 .option_block_1 {
@@ -162,6 +181,24 @@
     top: 50%;
 }
 
+.option_block_5 {
+    background-color: cadetblue;
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    right: 45%;
+    top: 50%;
+}
+
+.change-usr-img{
+    width: 100px;
+    height: 25px;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    background-color: hotpink;
+}
+
 .box_1 {
     display: none;
     position: inherit;
@@ -182,6 +219,11 @@
     position: inherit;
 }
 
+.box_5 {
+    display: none;
+    position: inherit;
+}
+
 .show1 {display: block;}
 
 .show2 {display: block;}
@@ -189,6 +231,8 @@
 .show3 {display: block;}
 
 .show4 {display: block;}
+
+.show5 {display: block;}
 
 #butsize {
     width: 100%;
@@ -219,3 +263,22 @@
     background-color: white;
 }
 
+.feed-usr {
+    position:relative;
+    padding-left:15%;
+    top:38px;
+}
+
+.feed-date{
+    position:relative;
+    float:right;
+    right:70%;
+    top:69%;
+}
+
+.feed-like{
+    position:relative;
+    top:-40px;
+    float:right;
+    right:80.5%;
+}

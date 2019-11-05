@@ -14,6 +14,7 @@
       <?php
         session_start();
         if(isset($_SESSION['username']))
+        {
           echo("<div class='dropdown'>
                   <button onclick='myFunction()' class='dropbtn'>
                     <div class='other_option'></div>
@@ -27,7 +28,12 @@
                     <a href='feed.php'>Feed</a>
                     <a href='upload.php'>Upload</a>
                   </div>
-                </div>"); 
+                </div>");
+                
+          echo("<div class='loggedin-user'>@"
+                .$_SESSION['username']. 
+               "</div>");
+        }
       ?>
 
       <!-- Icon -->    
@@ -102,15 +108,15 @@
         session_start();
         if (isset($_SESSION['username']))
         {
-          echo "<h4 style='position:relative; padding-left:15%; top:38px;'>@" . $row['username'] . "</h4>";
-          echo "<i style='position:relative; float:right; right:70%; top:69%;'>Posted " . $row['upload_date'] . "</i>";
+          echo "<h4 class='feed-usr' >@" . $row['username'] . "</h4>";
+          echo "<i class='feed-date' >Posted " . $row['upload_date'] . "</i>";
           echo "<div class='feed-img'>" . $display . "</div>";
           // echo "<h4 style='padding-left:20.5%'>Likes " . $row['likes'] . "</h4>";
 
           // like button
           echo "<form action='../php/post_activity.php' method='post'>
                   <input type='hidden' name='id' value='{$row['image_id']}'>
-                  <input style='position:relative; top:-40px; float:right; right:80.5%;' type='submit' name='like' value='Like'>
+                  <input class='feed-like' type='submit' name='like' value='Like'>
                 </form>";
         
           // comments
@@ -148,3 +154,80 @@
     <div class="foot"></div>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+<!-- ?php
+      require '../php/db.php';
+
+      try
+      {
+        $stmt = $conn->query("SELECT * FROM feed ORDER BY upload_date DESC");
+        $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      } catch (PDOException $exception)
+      {
+        echo $sql . "<br>" . $exception->getMessage();      //dont need for final?
+        echo "<script>alert('SQL ERROR: 1')</script>";
+        exit();
+      }
+      if (!$posts)
+      {
+        echo "<h2>No posts to view here yet!</h2>";
+        exit();
+      }
+      echo "<div class=white-border>";
+      foreach ($posts as $row) {
+        $encoded_image = $row['img'];
+        $display = "<img src='data:image;base64,{$encoded_image}' width='85%' height='60%' >";
+        session_start();
+        if (isset($_SESSION['username']))
+        {
+          echo "<h4 style='position:relative; padding-left:15%; top:38px;'>@" . $row['username'] . "</h4>";
+          echo "<i style='position:relative; float:right; right:70%; top:69%;'>Posted " . $row['upload_date'] . "</i>";
+          echo "<div class='feed-img'>" . $display . "</div>";
+          // echo "<h4 style='padding-left:20.5%'>Likes " . $row['likes'] . "</h4>";
+
+          // like button
+          echo "<form action='../php/post_activity.php' method='post'>
+                  <input type='hidden' name='id' value='{$row['image_id']}'>
+                  <input style='position:relative; top:-40px; float:right; right:80.5%;' type='submit' name='like' value='Like'>
+                </form>";
+        
+          // comments
+          echo "<form action='../php/post_activity.php' method='post'>
+                  <input type='hidden' name='id' value='{$row['image_id']}'>
+                  <input style='position:relative; left:15%; width:40%; type='text' name='comment_box'>
+                  <input style='position:relative; left:15%;' type='submit' name='comment' value='Post Comment'>
+                </form>";
+
+          
+          if ($_SESSION['username'] === $row['username']) {
+            echo "<form action='../php/post_activity.php' method='post'>
+            <input type='hidden' name='id' value='{$row['image_id']}'>
+            <input style='position:relative; left:15%;' type='submit' name='delete' value='Delete post'>
+              </form>";
+          }
+
+          echo "<div style='width:100%; height:3%;'>  </div>";
+          echo "<hr />";
+        }
+        else
+        {
+          echo "<h4>@" . $row['username'] . "</h4>";
+          echo $display;
+          echo "<h4>Likes " . $row['likes'] . "</h4>";
+          echo "<i>Posted " . $row['upload_date'] . "</i>";
+          echo '<hr />';
+        }
+      }
+      echo "</div>";
+      $conn = NULL;
+    ?> -->

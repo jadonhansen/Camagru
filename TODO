@@ -8,7 +8,6 @@ Gabriel:
                        ! verify_account.php
 - do those cool notification bar things (for profile updates and post notifications and uploading - I can research this)
 - footer text (I can do that, just needs your styling)
-- username to display on header when a user is logged in (I can do that, just needs your styling)
 
 Jadon:
 - Test infinite scroll thing in gallery with js
@@ -17,5 +16,6 @@ Jadon:
 - Add filter images to upload page as selectable
 - Find a way to return to previous page *position* for likes, comments, deletions -> AJAX
 
-- Images in Feed are loading as source code
-- Index page isnt redirecting (going to localhost:8080/camagru loads a blank page)
+
+- Images in Feed are loading as machine code
+- index page doesnt always work
