@@ -37,7 +37,7 @@
                     context.drawImage(image, 0, 0, 400, 300);
                 }
                 else if (image.src === "http://localhost:8080/Camagru/filters/wave.png"){
-                    context.drawImage(image, 30, 60, 400, 300);
+                    context.drawImage(image, 0, 0, 400, 300);
                 }
                 var dataURL = canvas.toDataURL();
                 document.getElementById("image_data").value = dataURL;

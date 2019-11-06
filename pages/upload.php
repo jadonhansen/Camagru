@@ -97,37 +97,35 @@
         <img class="filter" src="http://localhost:8080/Camagru/filters/wave.png" height="125" width="152">        
       </div>
 
-      <div class="take-picture">
-        <button id="snap">Take Photo</button>
-      </div>
-
-      <div>
-        <button id="clear">Clear</button>
-      </div>
+   
+      <!-- <div class="capture-box"> -->
+        <video class="capture-box" id="video" autoplay></video>
+      <!-- </div> -->
 
       <div class="capture-box">
-        <video id="video" width="400" height="300" autoplay></video>
+      <canvas id="canvas" class="canvas-inner" width="400" height="300" autoplay></canvas>
       </div>
 
-      <canvas id="canvas" width="400" height="300"></canvas>
 
-      <!-- //check function in php referenced file -->
-      <div class="post-img">
-        <form method="post" action="../php/upload.php">
-            <input type="hidden" name="image_data" id="image_data">
-            <button type="submit" name="submit" id="uploadphoto">Submit Photo</button>
-          </form>
-      </div>
-
-      <form action="../php/upload.php" method="post" enctype="multipart/form-data">
-        Upload from device:
-        <input type="file" name="uploadedFile" id="fileToUpload" accept="image/*">
-        <input type="submit" name="uploadBtn" value="Upload Image">
-      </form>
 
       <div class="notified">
         you've just been notified
       </div>
+    </div>
+    
+    <!-- side options panel-->
+    <div class="upload-panel">
+      <div class="take-picture"><button id="snap">Take Photo</button></div>
+      <div>   <button id="clear">Clear</button></div>
+      <div class="post-img">        <form method="post" action="../php/upload.php">
+            <input type="hidden" name="image_data" id="image_data">
+            <button type="submit" name="submit" id="uploadphoto">Submit Photo</button>
+          </form></div>
+      <div><form action="../php/upload.php" method="post" enctype="multipart/form-data">
+        Upload from device:
+        <input type="file" name="uploadedFile" id="fileToUpload" accept="image/*">
+        <input type="submit" name="uploadBtn" value="Upload Image">
+      </form></div>
     </div>
 
     <script src="./edit.js"></script>
