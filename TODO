@@ -14,8 +14,8 @@ Jadon:
 - Add auto refresh to feed (might not be needed)
 - Add superimpose function to upload page
 - Add filter images to upload page as selectable
-- Find a way to return to previous page *position* for likes, comments, deletions -> AJAX
+- Find a way to return to previous pages' *position* for likes, comments, deletions -> AJAX
 
 
-- Images in Feed are loading as machine code
-- index page doesnt always work
+- Images in Feed are loading as machine code ------------->>> NOT FOR ME PENIS
+- index page doesnt always work  ----------->>> WORKING ON THAT (only happens when the session is already set)
