@@ -104,7 +104,11 @@
       foreach ($posts as $row) {
         echo "<div class='the-box'>";
         $encoded_image = $row['img'];
+<<<<<<< HEAD
+        $display = "<img src='data:image/*;base64,{$encoded_image}' width='85%' height='60%' >";
+=======
         $display = "<img src='data:image;base64,{$encoded_image}' width='500px' height='500px' >";
+>>>>>>> d28a71455a16a09e5ae1dd8c0b1d942153ef1c56
         session_start();
         if (isset($_SESSION['username']))
         {

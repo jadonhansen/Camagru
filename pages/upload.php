@@ -94,11 +94,30 @@
         <img class="filter" src="http://localhost:8080/Camagru/filters/island.png" height="125" width="125">
         <img class="filter" src="http://localhost:8080/Camagru/filters/sunbed.png" height="125" width="125">
         <img class="filter" src="http://localhost:8080/Camagru/filters/surf.png" height="125" width="125">
-        <img class="filter" src="http://localhost:8080/Camagru/filters/wave.png" height="150" width="150">        
+        <img class="filter" src="http://localhost:8080/Camagru/filters/wave.png" height="125" width="152">        
       </div>
 
+      <div class="take-picture">
+        <button id="snap">Take Photo</button>
+      </div>
 
+      <div>
+        <button id="clear">Clear</button>
+      </div>
 
+      <div class="capture-box">
+        <video id="video" width="400" height="300" autoplay></video>
+      </div>
+
+      <canvas id="canvas" width="400" height="300"></canvas>
+
+      <!-- //check function in php referenced file -->
+      <div class="post-img">
+        <form method="post" action="../php/upload.php">
+            <input type="hidden" name="image_data" id="image_data">
+            <button type="submit" name="submit" id="uploadphoto">Submit Photo</button>
+          </form>
+      </div>
 
       <form action="../php/upload.php" method="post" enctype="multipart/form-data">
         Upload from device:
@@ -106,36 +125,13 @@
         <input type="submit" name="uploadBtn" value="Upload Image">
       </form>
 
-
-      <div class="capture-box">
-        <video id="video" width="400" height="300" autoplay></video>
-          <br/>
-      </div>
-
-
-      <div class="take-picture">
-        <button id="snap">Take Photo</button><br>
-      </div>
-
-      <canvas id="canvas" width="400" height="300"></canvas>
-
-      <!-- //check function in php referenced file -->
-      <div class="post-img">
-      <form method="post" action="">
-          <input name="image_data" id="image_data" type="hidden" value="uplode_photo_filter.php">
-          <button type="submit" name="submit" id="submitphoto">Submit Photo</button>
-        </form>
-      </div>
-
-
       <div class="notified">
-        youve just been notified
+        you've just been notified
       </div>
     </div>
 
-
     <script src="./edit.js"></script>
-    <script src="./video.js"></script>
+    <script src="./webcam.js"></script>
 
     <div class="foot"></div>
   </body>

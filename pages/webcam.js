@@ -53,12 +53,20 @@
         videoflag = 1;
     });
 
-    // if a picture has been taken and submit button has been pressed it saves the post
-    document.getElementById("submitphoto").addEventListener("click", function() {
+    // if a picture has been taken and submit button has been pressed it saves the cnavas image to the hidden input value
+    document.getElementById("uploadphoto").addEventListener("click", function() {
         if (videoflag === 1) {
             var dataURL = canvas.toDataURL();
             document.getElementById("image_data").value = dataURL;
         }
     });
+
+    // clears canvas
+    document.getElementById('clear').addEventListener('click', function() {
+        if (videoflag === 1) {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+            videoflag = 0;
+        }
+      });
 
 })();
