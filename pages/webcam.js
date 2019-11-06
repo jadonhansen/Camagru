@@ -63,10 +63,9 @@
 
     // clears canvas
     document.getElementById('clear').addEventListener('click', function() {
-        if (videoflag === 1) {
             context.clearRect(0, 0, canvas.width, canvas.height);
+            document.getElementById("image_data").value = NULL;
             videoflag = 0;
-        }
       });
 
 })();

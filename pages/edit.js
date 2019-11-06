@@ -14,7 +14,7 @@ document.getElementById('fileToUpload').onchange = function(e) {
     videoflag = 1;
 }
   function failed() {
-    console.error("The provided file couldn't be loaded as an Image media");
+    console.error("The provided file couldn't be loaded.");
   };
 
   function chooseimg(){
@@ -45,11 +45,17 @@ document.getElementById('fileToUpload').onchange = function(e) {
     });
 });}
 
+chooseimg();
+
+document.getElementById('clear').addEventListener('click', function() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        document.getElementById("image_data").value = NULL;
+        videoflag = 0;
+  });
+
 document.getElementById("submitphoto").addEventListener("click", function() {
     if (videoflag === 1) {
         var dataURL = canvas.toDataURL();
         document.getElementById("image_data").value = dataURL;
     }
 });
-
-chooseimg();
