@@ -113,15 +113,16 @@
       </div>
     </div>
     
+
     <!-- side options panel-->
     <div class="upload-panel">
       <div class="take-picture"><button id="snap">Take Photo</button></div>
-      <div>   <button id="clear">Clear</button></div>
+      <div class="panel-clear"><button id="clear">Clear</button></div>
       <div class="post-img">        <form method="post" action="../php/upload.php">
             <input type="hidden" name="image_data" id="image_data">
             <button type="submit" name="submit" id="uploadphoto">Submit Photo</button>
           </form></div>
-      <div><form action="../php/upload.php" method="post" enctype="multipart/form-data">
+      <div class="upload-form"><form action="../php/upload.php" method="post" enctype="multipart/form-data">
         Upload from device:
         <input type="file" name="uploadedFile" id="fileToUpload" accept="image/*">
         <input type="submit" name="uploadBtn" value="Upload Image">

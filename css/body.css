@@ -41,12 +41,16 @@
     top: -25px;
 }
 
+.upload-form{
+    position: relative;
+    top: 85%;
+}
+
 .post-img {
     width: 100px;
     height: 50px;
     position: absolute;
-    top: -10px;
-    right: 45%;
+    top: 10px;
     background-color: hotpink;
 }
 
@@ -75,14 +79,18 @@
     top: 65px;
 }
 
+.panel-clear{
+    position: relative;
+    top: 45%;
+}
+
 .take-picture {
     position: absolute;
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBRYuJtADOGDS2FxDfrIEreDEiabbJQxIEr9qfI6CVzBL_GDE3&s);
     background-size: 100%;
     width: 95px;
-    height: 75px;
-    top: -29px;
-    right: 10%;
+    height: 75px;    
+    top: 35%;
 }
 
 .upload-file {
@@ -119,8 +127,8 @@
 
 .feed-img {
     position: relative;
-    top: 50px;
-    left: 8%;
+    left: 10%;
+    top: 0px;
 }
 
 .details {
@@ -338,25 +346,28 @@
 .feed-usr {
     position:relative;
     padding-left:8%;
-    top:65px;
+    top:0px;
 }
 
 .feed-date{
     position: relative;
-    top: 50;
-    left: 85%;
+    top: 0;
+    left: 60%;
+    width: 200px;
 }
 
 .feed-like{
+    width: 50px;
     position:relative;
-    top:25px;
+    top:-35px;
     float:right;
     right:86.5%;
 }
 
 .feed-likes {
+    width: 150px;
     position: relative;
-    top: 61;
+    top: 0;
     left: 15%;
 }
 
@@ -367,15 +378,17 @@
 }
 
 .the-box{
-    pointer-events: none;
+    /* pointer-events: none; */
     position: relative;
+    top: 50px;
     height: 45%;
     width: 100%;
 }
 
 .feed-line {
     position: relative;
-    top: 25px;
+    top: 50px;
+    height: 50px;
 }
 
 .feed-bottom {
