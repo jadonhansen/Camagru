@@ -86,18 +86,15 @@
     <?php
       require '../php/db.php';
 
-      try
-      {
+      try {
         $stmt = $conn->query("SELECT * FROM feed ORDER BY upload_date DESC");
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      } catch (PDOException $exception)
-      {
+      } catch (PDOException $exception) {
         echo $sql . "<br>" . $exception->getMessage();      //dont need for final?
         echo "<script>alert('SQL ERROR: 1')</script>";
         exit();
       }
-      if (!$posts)
-      {
+      if (!$posts) {
         echo "<h2>No posts to view here yet!</h2>";
         exit();
       }
@@ -118,7 +115,7 @@
                   <input type='hidden' name='id' value='{$row['image_id']}'>
                   <input class='feed-like' type='submit' name='like' value='Like'>
                 </form>";
-        
+
           // comments
           // echo "<form action='../php/post_activity.php' method='post'>
           //         <input type='hidden' name='id' value='{$row['image_id']}'>
