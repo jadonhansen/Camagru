@@ -124,13 +124,14 @@ if (isset($_SESSION['username']) && isset($_POST['like'])) {
         exit();
       }
       foreach ($posts as $row) {
-        // echo "<div class='the-box'>";
+        // echo "<div class='feed-work-space'"
+        echo "<div class='the-box'>";
         $encoded_image = $row['img'];
         $display = "<img src='data:image/*;base64,{$encoded_image}' width='500px' height='500px' >";
         session_start();
         if (isset($_SESSION['username']))
         {
-          echo "<h4 class='feed-usr' >@" . $row['username'] . "</h4>";
+          echo "<div class='feed-usr' >@" . $row['username'] . "</div>";
           echo "<div class='feed-img'>" . $display . "</div>";
           echo "<div class='feed-likes'>Likes: " . $row['likes'] . "</div>";
           echo "<div class='feed-date' >Posted " . $row['upload_date'] . "</div>";
@@ -157,7 +158,6 @@ if (isset($_SESSION['username']) && isset($_POST['like'])) {
           }
 
           echo "<div style='width:100%; height:3%;'>  </div>";
-          echo "<hr class='feed-line' / >";
         }
         else
         {
@@ -167,7 +167,9 @@ if (isset($_SESSION['username']) && isset($_POST['like'])) {
           echo "<i>Posted " . $row['upload_date'] . "</i>";
           echo '<hr />';
         }
-        // echo "</div>";
+        echo "</div>";
+        echo "<div class='feed-line' ><hr/ ></div>";
+
       }
       echo "<div class='feed-bottom'></div>";
       $conn = NULL;
