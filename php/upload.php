@@ -8,6 +8,11 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
+if (isset($_POST['image_data'])) {
+    echo "<script>alert('uploading from webcam!')</script>";
+    exit();
+}
+
 if (isset($_POST['uploadBtn'])) {
     require 'db.php';
     $username = $_SESSION['username'];

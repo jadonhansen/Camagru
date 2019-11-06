@@ -30,7 +30,7 @@
     width: 80%;
     height: 60%;
     position: relative;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     left: 10%;
     top: 50px;
 }
@@ -47,14 +47,14 @@
     position: absolute;
     top: -10px;
     right: 45%;
-    background-color: hotpink;
+    /* background-color: hotpink; */
 }
 
 .styles-box{
     width: 80%;
     height: 24.5%;
     position: relative;
-    background-color: burlywood;
+    /* background-color: burlywood; */
     left: 10%;
     top: 65px;
 }
