@@ -114,6 +114,13 @@
     height: 90%;
 }
 
+.top-stuff{
+    position: absolute;
+    width: 75%;
+    left: 0;
+    top: 0%;
+}
+
 .profile_pic {
     top: 100px;
     left: 10%;
@@ -126,15 +133,16 @@
 .biography {
     font-size: 40;
     position: relative;
-    padding-left: 45%;
+    padding-left: 40%;
     top: -110px;
     width: 51.5%;
+
 }
 
 .biography1 {
     position: relative;
     font-size: 30;
-    left: 76px;
+    left: 0px;
     padding-left: 45%;
     top: -210px;
     width: 43%;
@@ -150,61 +158,62 @@
     background-color: green;
 }
 
+.options-blocks{
+    position: absolute;
+    bottom: 100px;
+    width: 80%;
+    height: 50%;
+    left: 8%;
+}
+
 .option_block_1 {
     background-color: cadetblue;
     position: absolute;
-    height: 100px;
-    width: 100px;
-    left: 10%;
-    top: 50%;
+    height: 50px;
+    width: 200px;
 }
+
 .option_block_2 {
     background-color: cadetblue;
     position: absolute;
-    height: 100px;
-    width: 100px;
-    left: 30%;
-    top: 50%;
+    height: 50px;
+    width: 200px;
+    top: 20%;
 }
+
 .option_block_3 {
     background-color: cadetblue;
     position: absolute;
-    height: 100px;
-    width: 100px;
-    right: 30%;
-    top: 50%;
+    height: 50px;
+    width: 200px;
+    top: 40%;
 }
 
 .option_block_4 {
     background-color: cadetblue;
     position: absolute;
-    height: 100px;
-    width: 100px;
-    right: 10%;
-    top: 50%;
-}
-
-.option_block_5 {
-    background-color: cadetblue;
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    right: 45%;
-    top: 50%;
+    height: 50px;
+    width: 200px;
+    top: 60%;
 }
 
 .change-usr-img{
+    position: absolute;
     width: 100px;
     height: 25px;
+    top: 320px;
+    left: 10%;
+}
+
+.position-box{
     position: absolute;
-    top: 50%;
-    left: 45%;
-    background-color: hotpink;
+    top: 0; right: 0; bottom: 0; left: 0;
+    border: 15px solid orange;
 }
 
 .box_1 {
     display: none;
-    position: inherit;
+    position: relative;
 }
 
 .box_2 {

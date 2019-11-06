@@ -145,98 +145,87 @@
       }  
     </script>
 
-    <script>
-      function drop5()
-      {
-        document.getElementById("dropper5").classList.toggle("show1");
-      }  
-    </script>
-
     <!-- user details -->
-    <div class="details">      
-      <?php
-        if (!$info['user_img'])
-          echo "<img src='../images/user_img.png' class='profile_pic'>";
-        else {
-          $encoded_image = $info['user_img'];
-          $display = "<img src='data:image;base64,{$encoded_image}' class='profile_pic'>";
-          echo "<div class='feed-img'>" . $display . "</div>";
-        }
-      ?>
-      <div class="biography">
-        <?php echo "<h2>@" . $info['username'] . "</h2>"; ?>
-      </div>
-      <br/>
-      <div class="biography1">
-        <?php echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>"; ?>
-      </div>
-
-
-
-
-
-
-
-
-      <div class="option_block_5">
-        <button onclick='drop5()' class='dropsies' id="butsize">Update Profile Picture</button>
-        <div id='dropper5' class='box_5'>
-          <form class="change-usr-img" action="../php/profile_modify.php" method="post" enctype="multipart/form-data">
-            <input type="file" name="uploadedFile" id="fileToUpload">
-            <input type="submit" name="pic_mod" value="Apply">
-          </form>
+    <div class="details">
+      <div class="top-stuff">      
+        <?php
+          if (!$info['user_img'])
+            echo "<img src='../images/user_img.png' class='profile_pic'>";
+          else {
+            $encoded_image = $info['user_img'];
+            $display = "<img src='data:image;base64,{$encoded_image}' class='profile_pic'>";
+            echo "<div class='feed-img'>" . $display . "</div>";
+          }
+        ?>
+        <div class="biography">
+          <?php echo "<h2>@" . $info['username'] . "</h2>"; ?>
         </div>
+        <br/>
+        <div class="biography1">
+          <?php echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>"; ?>
       </div>
-
-
-
-
-
-      <div class="option_block_1">
-        <button onclick='drop1()' class='dropsies' id="butsize"> modify username</button>
-        <div id='dropper1' class='box_1'>
-          <form action="../php/profile_modify.php" method="post">
-            <input type="text" name="new_usr" placeholder="New username" class="field">
-            <input type="text" name="rep_usr" placeholder="Repeat username" class="field">
-            <input type="submit" name="usrnam_mod" value="Modify username">
-          </form>
-        </div>
-      </div>
-
-      <div class="option_block_2">
-        <button onclick='drop2()' class='dropsies' id="butsize"> modify password</button>
-        <div id='dropper2' class='box_2'>
-          <form action="../php/profile_modify.php" method="post">
-            <input type="password" name="new_pass" placeholder="New password" class="field">
-            <input type="password" name="rep_pass" placeholder="Repeat password" class="field">
-            <input type="submit" name="pass_mod" value="Modify password">
-          </form>
-        </div>
-      </div>
-
-      <div class="option_block_3">
-        <button onclick='drop3()' class='dropsies' id="butsize"> modify personal details</button>
-        <div id='dropper3' class='box_3'>
-          <form action="../php/profile_modify.php" method="post">
-            <input type="text" name="new_nam" placeholder="Name" class = "field">
-            <input type="text" name="new_surnam" placeholder="Surname" class ="field">
-            <input type="submit" name="nam_mod" value="Modify name and surname">
-          </form>
-        </div>
-      </div>
-
-      <div class='option_block_4'>
-        <button onclick='drop4()' class='dropsies' id="butsize"> change email</button>
-        <div id='dropper4' class='box_4'>
-          <form action="../php/profile_modify.php" method="post">
-            <input type="email" name="new_eml" placeholder="New email" class ="field">
-            <input type="email" name="rep_eml" placeholder="Repeat email" class ="field">
-            <input type="submit" name="eml_mod" value="Modify email">
-          </form>
-        </div>
-      </div>        
+      <form class="change-usr-img" action="../php/profile_modify.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="uploadedFile" id="fileToUpload">
+        <input type="submit" name="pic_mod" value="Apply">
+      </form>
     </div>
+
+
+
+
+
+
+
+
    
+
+
+      <div class="options-blocks">    
+        <div class="option_block_1">
+          <button onclick='drop1()' class='dropsies' id="butsize"> modify username</button>    
+          <div id='dropper1' class='box_1'>
+            <form action="../php/profile_modify.php" method="post" class="position-box">
+              <input type="text" name="new_usr" placeholder="New username" class="field">
+              <input type="text" name="rep_usr" placeholder="Repeat username" class="field">
+              <input type="submit" name="usrnam_mod" value="Modify username">
+            </form>
+          </div>
+        </div>
+
+        <div class="option_block_2">
+          <button onclick='drop2()' class='dropsies' id="butsize"> modify password</button>
+          <div id='dropper2' class='box_2'>
+            <form action="../php/profile_modify.php" method="post">
+              <input type="password" name="new_pass" placeholder="New password" class="field">
+              <input type="password" name="rep_pass" placeholder="Repeat password" class="field">
+              <input type="submit" name="pass_mod" value="Modify password">
+            </form>
+          </div>
+        </div>
+
+        <div class="option_block_3">
+          <button onclick='drop3()' class='dropsies' id="butsize"> modify personal details</button>
+          <div id='dropper3' class='box_3'>
+            <form action="../php/profile_modify.php" method="post">
+              <input type="text" name="new_nam" placeholder="Name" class = "field">
+              <input type="text" name="new_surnam" placeholder="Surname" class ="field">
+              <input type="submit" name="nam_mod" value="Modify name and surname">
+            </form>
+          </div>
+        </div>
+
+        <div class='option_block_4'>
+          <button onclick='drop4()' class='dropsies' id="butsize"> change email</button>
+          <div id='dropper4' class='box_4'>
+            <form action="../php/profile_modify.php" method="post">
+              <input type="email" name="new_eml" placeholder="New email" class ="field">
+              <input type="email" name="rep_eml" placeholder="Repeat email" class ="field">
+              <input type="submit" name="eml_mod" value="Modify email">
+            </form>
+          </div>
+        </div>        
+      </div>
+    </div>
     <!-- the foot -->
     <div class="foot"></div>
   </body>
