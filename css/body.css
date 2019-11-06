@@ -206,9 +206,53 @@
 }
 
 .position-box{
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    border: 15px solid orange;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom:0;
+    right:0;
+    pointer-events: none;
+}
+
+.box-location1{
+    pointer-events: all;
+    position: relative;
+    top: 47%;
+    left: 50%;
+
+    width: fit-content;
+    text-align: center;
+    position: relative;
+    background-color: transparent;
+    margin-top: 40px;
+    font-size: 25px;
+    border: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+.box-location2{
+    pointer-events: all;
+    position: relative;
+    top: 50%;
+    left: 39.5%;
+
+    width: fit-content;
+    text-align: center;
+    position: relative;
+    background-color: transparent;
+    margin-top: 40px;
+    font-size: 25px;
+    border: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+.box-location3{
+    pointer-events: all;
+    position: relative;
+    top: 54%;
+    left: 29.8%;
 }
 
 .box_1 {

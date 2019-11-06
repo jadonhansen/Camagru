@@ -169,25 +169,14 @@
         <input type="submit" name="pic_mod" value="Apply">
       </form>
     </div>
-
-
-
-
-
-
-
-
-   
-
-
       <div class="options-blocks">    
         <div class="option_block_1">
           <button onclick='drop1()' class='dropsies' id="butsize"> modify username</button>    
           <div id='dropper1' class='box_1'>
             <form action="../php/profile_modify.php" method="post" class="position-box">
-              <input type="text" name="new_usr" placeholder="New username" class="field">
-              <input type="text" name="rep_usr" placeholder="Repeat username" class="field">
-              <input type="submit" name="usrnam_mod" value="Modify username">
+              <input class="box-location1" type="text" name="new_usr" placeholder="New username">
+              <input class="box-location2" type="text" name="rep_usr" placeholder="Repeat username">
+              <input class="box-location3" type="submit" name="usrnam_mod" value="Modify username">
             </form>
           </div>
         </div>
@@ -195,10 +184,10 @@
         <div class="option_block_2">
           <button onclick='drop2()' class='dropsies' id="butsize"> modify password</button>
           <div id='dropper2' class='box_2'>
-            <form action="../php/profile_modify.php" method="post">
-              <input type="password" name="new_pass" placeholder="New password" class="field">
-              <input type="password" name="rep_pass" placeholder="Repeat password" class="field">
-              <input type="submit" name="pass_mod" value="Modify password">
+            <form action="../php/profile_modify.php" method="post" class="position-box">
+              <input class="box-location1" type="password" name="new_pass" placeholder="New password">
+              <input class="box-location2" type="password" name="rep_pass" placeholder="Repeat password">
+              <input class="box-location3" type="submit" name="pass_mod" value="Modify password">
             </form>
           </div>
         </div>
@@ -206,10 +195,10 @@
         <div class="option_block_3">
           <button onclick='drop3()' class='dropsies' id="butsize"> modify personal details</button>
           <div id='dropper3' class='box_3'>
-            <form action="../php/profile_modify.php" method="post">
-              <input type="text" name="new_nam" placeholder="Name" class = "field">
-              <input type="text" name="new_surnam" placeholder="Surname" class ="field">
-              <input type="submit" name="nam_mod" value="Modify name and surname">
+            <form action="../php/profile_modify.php" method="post" class="position-box">
+              <input class="box-location1" type="text" name="new_nam" placeholder="Name">
+              <input class="box-location2" type="text" name="new_surnam" placeholder="Surname">
+              <input class="box-location3" type="submit" name="nam_mod" value="Modify name and surname">
             </form>
           </div>
         </div>
@@ -217,10 +206,10 @@
         <div class='option_block_4'>
           <button onclick='drop4()' class='dropsies' id="butsize"> change email</button>
           <div id='dropper4' class='box_4'>
-            <form action="../php/profile_modify.php" method="post">
-              <input type="email" name="new_eml" placeholder="New email" class ="field">
-              <input type="email" name="rep_eml" placeholder="Repeat email" class ="field">
-              <input type="submit" name="eml_mod" value="Modify email">
+            <form action="../php/profile_modify.php" method="post" class="position-box">
+              <input class="box-location1" type="email" name="new_eml" placeholder="New email">
+              <input class="box-location2" type="email" name="rep_eml" placeholder="Repeat email">
+              <input class="box-location3" type="submit" name="eml_mod" value="Modify email">
             </form>
           </div>
         </div>        
