@@ -37,7 +37,7 @@ function fileUpload() {
     $fileName = $_FILES['uploadedFile']['name'];
     $fileNameCmps = explode(".", $fileName);
     $fileExtension = strtolower(end($fileNameCmps));
-    
+
     if (isset($_FILES['uploadedFile']) && $_FILES['uploadedFile']['error'] === UPLOAD_ERR_OK) {
         if ($fileExtension !== "jpg" && $fileExtension !== "jpeg" && $fileExtension !== "png" && $fileExtension !== "gif") {
             echo "<script>alert('Please select an image with a valid file type!')</script>"; //special notification thing

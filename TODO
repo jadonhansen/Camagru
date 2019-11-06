@@ -3,19 +3,13 @@
 Gabriel:
 - Styling for pages:   ! feed.php
                        ! profile.php
-                       ! gallery.php (Test infinite scroll thing in gallery with js)
+                       ! gallery.php
                        ! upload.php (need a box for webcam, filters sidebar and bottom section for post button & browse file button...anything else?)
                        ! verify_account.php
 - do those cool notification bar things (for profile updates and post notifications and uploading - I can research this)
 - footer text (I can do that, just needs your styling)
 
 Jadon:
-- Test infinite scroll thing in gallery with js
-- Add auto refresh to feed (might not be needed)
-- Add superimpose function to upload page
-- Add filter images to upload page as selectable
+- save and display properly
 - Find a way to return to previous pages' *position* for likes, comments, deletions -> AJAX
-
-
-- Images in Feed are loading as machine code ------------->>> NOT FOR ME PENIS
 - index page doesnt always work  ----------->>> WORKING ON THAT (only happens when the session is already set)
