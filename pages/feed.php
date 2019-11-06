@@ -102,7 +102,7 @@ function like($img_id) {
 
 session_start();
 if (isset($_SESSION['username']) && isset($_POST['like'])) {
-  like();
+  like($_POST['id']);
 }
 ?>
 

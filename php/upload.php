@@ -5,11 +5,7 @@ function photoUpload() {
         require 'db.php';
         date_default_timezone_set('Africa/Johannesburg');
         $username = $_SESSION['username'];
-        $image = $_POST['image_data'];
-
-        echo "<script>alert('$image')</script>"; //debug
-
-        $final = base64_encode($image);
+        $final = $_POST['image_data'];
         $dt = date("Y-m-d", time());
         try {
             $sql = "INSERT INTO feed (img, username, upload_date, likes) values ('$final', '$username', '$dt', '0')";

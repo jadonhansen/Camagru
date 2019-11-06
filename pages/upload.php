@@ -122,9 +122,8 @@
             <button type="submit" name="submit" id="uploadphoto">Submit Photo</button>
           </form></div>
       <div><form action="../php/upload.php" method="post" enctype="multipart/form-data">
-        Upload from device:
         <input type="file" name="uploadedFile" id="fileToUpload" accept="image/*">
-        <input type="submit" name="uploadBtn" value="Upload Image">
+        <input type="submit" name="uploadBtn" value="Upload from device">
       </form></div>
     </div>
 
