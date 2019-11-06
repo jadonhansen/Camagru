@@ -47,4 +47,3 @@ function paginate() {
         }
     })
 </script>
-<!-- do thiiiiiiiiiiiiis aboooooooove -->

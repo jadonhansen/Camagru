@@ -101,17 +101,17 @@
         echo "<h2>No posts to view here yet!</h2>";
         exit();
       }
-      echo "<div class=white-border>";
       foreach ($posts as $row) {
+        echo "<div class='the-box'>";
         $encoded_image = $row['img'];
-        $display = "<img src='data:image;base64,{$encoded_image}' width='85%' height='60%' >";
+        $display = "<img src='data:image;base64,{$encoded_image}' width='500px' height='500px' >";
         session_start();
         if (isset($_SESSION['username']))
         {
           echo "<h4 class='feed-usr' >@" . $row['username'] . "</h4>";
-          echo "<i class='feed-date' >Posted " . $row['upload_date'] . "</i>";
           echo "<div class='feed-img'>" . $display . "</div>";
-          // echo "<h4 style='padding-left:20.5%'>Likes " . $row['likes'] . "</h4>";
+          echo "<div class='feed-likes'>Likes: " . $row['likes'] . "</div>";
+          echo "<div class='feed-date' >Posted " . $row['upload_date'] . "</div>";
 
           // like button
           echo "<form action='../php/post_activity.php' method='post'>
@@ -120,22 +120,22 @@
                 </form>";
         
           // comments
-          echo "<form action='../php/post_activity.php' method='post'>
-                  <input type='hidden' name='id' value='{$row['image_id']}'>
-                  <input style='position:relative; left:15%; width:40%; type='text' name='comment_box'>
-                  <input style='position:relative; left:15%;' type='submit' name='comment' value='Post Comment'>
-                </form>";
+          // echo "<form action='../php/post_activity.php' method='post'>
+          //         <input type='hidden' name='id' value='{$row['image_id']}'>
+          //         <input style='position:relative; left:15%; width:40%; type='text' name='comment_box'>
+          //         <input style='position:relative; left:15%;' type='submit' name='comment' value='Post Comment'>
+          //       </form>";
 
           // delete button
           if ($_SESSION['username'] === $row['username']) {
             echo "<form action='../php/post_activity.php' method='post'>
             <input type='hidden' name='id' value='{$row['image_id']}'>
-            <input style='position:relative; left:15%;' type='submit' name='delete' value='Delete post'>
+            <input class='feed-delete' type='submit' name='delete' value='Delete post'>
               </form>";
           }
 
           echo "<div style='width:100%; height:3%;'>  </div>";
-          echo "<hr />";
+          echo "<hr class='feed-line' / >";
         }
         else
         {
@@ -145,8 +145,9 @@
           echo "<i>Posted " . $row['upload_date'] . "</i>";
           echo '<hr />';
         }
+        echo "</div>";
       }
-      echo "</div>";
+      echo "<div class='feed-bottom'></div>";
       $conn = NULL;
     ?>
 

@@ -1,6 +1,6 @@
 .bg{
     margin: 0;
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT617LgQrCvVHypgqrLNSt2yYCTXaTHyL0DGNpUvPu6_hQi5o0m&s);
+    background-color: rgba(var(--b3f,250,250,250),1);
 }
 
 .bglogin{
@@ -92,10 +92,13 @@
 }
 
 .white-border {
+    position: relative; 
+    /* background-color: white; */
     height: 100%;
     width: 80%;
-    padding-left: 10%;
-    padding-right: 10%;
+    left: 10%;
+    right: 10%;
+
 }
 
 .feed-img {
@@ -265,20 +268,51 @@
 
 .feed-usr {
     position:relative;
-    padding-left:15%;
-    top:38px;
+    padding-left:8%;
+    top:65px;
 }
 
 .feed-date{
-    position:relative;
-    float:right;
-    right:70%;
-    top:69%;
+    position: relative;
+    top: 50;
+    left: 85%;
 }
 
 .feed-like{
     position:relative;
-    top:-40px;
+    top:25px;
     float:right;
-    right:80.5%;
+    right:86.5%;
+}
+
+.feed-likes {
+    position: relative;
+    top: 61;
+    left: 15%;
+}
+
+.feed-delete{
+    position: absolute;
+    top: 67px;
+    /* left: 504px; */
+}
+
+.the-box{
+    position: relative;
+    height: 45%;
+    width: 100%;
+    pointer-events: none;
+}
+
+.feed-line {
+    position: relative;
+    top: 25px;
+}
+
+.feed-bottom {
+    /* background-color: violet;*/
+    position: relative;
+    bottom: -50;
+    width: 100%;
+    height: 100px;
 }
