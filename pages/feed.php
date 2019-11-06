@@ -82,22 +82,44 @@
       }
     </script>
 
+<!-- functions for post activity -->
+<?php
+
+function like($img_id) {
+  require '../php/db.php';
+  session_start();
+  $username = $_SESSION['username'];
+  $sql = "UPDATE feed SET likes=likes+1 WHERE image_id='$img_id'";
+  $stmt = $conn->query($sql);
+  if (!$stmt) {
+      echo "<script>alert('Sorry, this action could not be completed!')</script>";
+      // echo "<script>window.open('../pages/feed.php','_self')</script>";
+      exit();
+  }
+  $conn = NULL;
+  // echo "<script>window.open('../pages/feed.php','_self')</script>";
+}
+
+session_start();
+if (isset($_SESSION['username']) && isset($_POST['like'])) {
+  like();
+}
+?>
+
+
     <!-- the feed stream coming from the DataBase -->
     <?php
       require '../php/db.php';
 
-      try
-      {
+      try {
         $stmt = $conn->query("SELECT * FROM feed ORDER BY upload_date DESC");
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      } catch (PDOException $exception)
-      {
+      } catch (PDOException $exception) {
         echo $sql . "<br>" . $exception->getMessage();      //dont need for final?
         echo "<script>alert('SQL ERROR: 1')</script>";
         exit();
       }
-      if (!$posts)
-      {
+      if (!$posts) {
         echo "<h2>No posts to view here yet!</h2>";
         exit();
       }
@@ -114,11 +136,11 @@
           echo "<div class='feed-date' >Posted " . $row['upload_date'] . "</div>";
 
           // like button
-          echo "<form action='../php/post_activity.php' method='post'>
+          echo "<form action='./feed.php' method='post'>
                   <input type='hidden' name='id' value='{$row['image_id']}'>
                   <input class='feed-like' type='submit' name='like' value='Like'>
                 </form>";
-        
+
           // comments
           // echo "<form action='../php/post_activity.php' method='post'>
           //         <input type='hidden' name='id' value='{$row['image_id']}'>
