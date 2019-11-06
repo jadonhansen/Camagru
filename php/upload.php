@@ -21,7 +21,7 @@ function photoUpload() {
         } catch (PDOException $exception) {
             echo $sql . "<br>" . $exception->getMessage(); //dont need for final?
             echo "<script>alert('SQL ERROR: 1')</script>";
-            // echo "<script>window.open('../pages/upload.php','_self')</script>";
+            echo "<script>window.open('../pages/upload.php','_self')</script>";
         }
     }
     else {
