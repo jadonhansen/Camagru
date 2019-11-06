@@ -79,12 +79,11 @@
 
 
 <?php
-function paginate() {
     session_start();
     require '../php/db.php';
     $logged_on = $_SESSION['username'];
     try {
-        $stmt = $conn->query("SELECT * FROM feed WHERE username= '$logged_on' ORDER BY upload_date DESC LIMIT 2");
+        $stmt = $conn->query("SELECT * FROM feed WHERE username= '$logged_on' ORDER BY upload_date DESC");
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $exception) {
         echo $sql . "<br>" . $exception->getMessage();      //dont need for final?
@@ -103,19 +102,8 @@ function paginate() {
         echo "<i>Posted " . $row['upload_date'] . "</i>";
         echo '<hr />';
     }
-    $conn = NULL;    
-}
-
-paginate();
+    $conn = NULL;
 ?>
-
-<script type="text/javascript">
-    window.addEventListener('scroll', function() {
-        if (window.scrollY + window.innerHeight + 100 >= document.documentElement.scrollHeight) {
-            <?php paginate(); ?>
-        }
-    })
-</script>
 
 
     <div class="foot"></div>
