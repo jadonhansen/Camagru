@@ -1,0 +1,64 @@
+(function() {
+    // initialises all variables according to html elements
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+    var video = document.getElementById('video');
+    var image;
+    var videoflag = 0;
+
+    // activates webcam is a device is found
+    if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({
+            video: true 
+        }).then(function(stream) {
+            video.srcObject = stream;
+            video.play();
+        });
+    }
+
+    // the next function that is called detects which filter was chosen
+    function chooseimg(){
+        var choose = document.querySelectorAll(".filter");
+    
+        choose.forEach(function(element){
+            element.addEventListener("click",function(){
+            image = element;
+            if (image && videoflag === 1){
+                if (image.src === "http://localhost:8080/Camagru/filters/coconut.png"){
+                    context.drawImage(image, 0, 0, 400, 300);
+                }
+                else if (image.src === "http://localhost:8080/Camagru/filters/island.png"){
+                    context.drawImage(image, 0, 0, 400, 300);
+                }
+                else if (image.src === "http://localhost:8080/Camagru/filters/sunbed.png"){
+                    context.drawImage(image, 0, 0, 400, 300);
+                }
+                else if (image.src === "http://localhost:8080/Camagru/filters/surf.png"){
+                    context.drawImage(image, 0, 0, 400, 300);
+                }
+                else if (image.src === "http://localhost:8080/Camagru/filters/wave.png"){
+                    context.drawImage(image, 30, 60, 400, 300);
+                }
+                var dataURL = canvas.toDataURL();
+                document.getElementById("image_data").value = dataURL;
+            }
+        });
+    });}
+
+    chooseimg();
+
+    // once a picture is taken it is drawn onto the canvas and videoflag=TRUE
+    document.getElementById("snap").addEventListener("click", function() {
+        context.drawImage(video, 0, 0, 400, 300);
+        videoflag = 1;
+    });
+
+    // if a picture has been taken and submit button has been pressed it saves the post
+    document.getElementById("submitphoto").addEventListener("click", function() {
+        if (videoflag === 1) {
+            var dataURL = canvas.toDataURL();
+            document.getElementById("image_data").value = dataURL;
+        }
+    });
+
+})();
