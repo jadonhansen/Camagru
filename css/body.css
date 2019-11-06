@@ -1,6 +1,7 @@
 .bg{
     margin: 0;
-    background-color: rgba(var(--b3f,250,250,250),1);
+    /* background-color: rgba(var(--b3f,250,250,250),1);*/
+    background-color: teal;
 }
 
 .bglogin{
@@ -118,11 +119,29 @@
 .white-border {
     position: relative; 
     /* background-color: white; */
-    height: 100%;
+    height: 50%;
     width: 80%;
     left: 10%;
     right: 10%;
 
+}
+
+.feed-white-space{
+    background-color: white;
+    position: relative;
+    height: 50%;
+    width: 80%;
+    left: 10%;
+    top: 50px;
+}
+
+.feed-work-space{
+    background-color: crimson;
+    position: relative;
+    height: 100%;
+    width: 60%;
+    left: 20%;
+    top: 0px;
 }
 
 .feed-img {
