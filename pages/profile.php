@@ -4,7 +4,7 @@
 
   if (!isset($_SESSION['username'])) {
 		echo "<script>alert('Please login first before accessing this page!')</script>";
-    echo "<script>window.open('./lopgin.php','_self')</script>";
+    echo "<script>window.open('./login.php','_self')</script>";
     exit();
   }
 
