@@ -1,8 +1,6 @@
 <?php
 
-
 //OPTIONAL
-
 
 require 'db.php';
 
