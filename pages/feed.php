@@ -6,10 +6,10 @@
     <link rel="stylesheet" href="../css/body.css">
     <link rel="stylesheet" href="../css/head.css">
   </head>
-    
+
   <body class="bg">
     <div class="head">
-    
+
     <!-- the drop down button -->
       <?php
         session_start();
@@ -82,30 +82,6 @@
       }
     </script>
 
-<!-- functions for post activity -->
-<?php
-
-function like($img_id) {
-  require '../php/db.php';
-  session_start();
-  $username = $_SESSION['username'];
-  $sql = "UPDATE feed SET likes=likes+1 WHERE image_id='$img_id'";
-  $stmt = $conn->query($sql);
-  if (!$stmt) {
-      echo "<script>alert('Sorry, this action could not be completed!')</script>";
-      // echo "<script>window.open('../pages/feed.php','_self')</script>";
-      exit();
-  }
-  $conn = NULL;
-  // echo "<script>window.open('../pages/feed.php','_self')</script>";
-}
-
-session_start();
-if (isset($_SESSION['username']) && isset($_POST['like'])) {
-  like($_POST['id']);
-}
-?>
-
 
     <!-- the feed stream coming from the DataBase -->
     <?php
@@ -125,7 +101,6 @@ if (isset($_SESSION['username']) && isset($_POST['like'])) {
       }
 
 
-
       foreach ($posts as $row) {
         echo "<div class='feed-white-space'>";
         echo "<div class='feed-work-space'>";
@@ -141,7 +116,7 @@ if (isset($_SESSION['username']) && isset($_POST['like'])) {
           echo "<div class='feed-date' >Posted " . $row['upload_date'] . "</div>";
 
           // like button
-          echo "<form action='./feed.php' method='post'>
+          echo "<form action='../php/post_activity.php' method='post'>
                   <input type='hidden' name='id' value='{$row['image_id']}'>
                   <input class='feed-like' type='submit' name='like' value='Like'>
                 </form>";

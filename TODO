@@ -1,15 +1,19 @@
 ! = Important
 
 Gabriel:
-- Styling for pages:   ! feed.php
-                       ! profile.php
-                       ! gallery.php
-                       ! upload.php (need a box for webcam, filters sidebar and bottom section for post button & browse file button...anything else?)
-                       ! verify_account.php
-- do those cool notification bar things (for profile updates and post notifications and uploading - I can research this)
-- footer text (I can do that, just needs your styling)
+- Styling for pages:   ! feed.php (positioning and layout)
+                       ! profile.phpv (positioning of boxes)
+                       ! gallery.php (layout --> 2 side by side and another 2 side by side just off the bottom of the page)
+                       ! upload.php (layout)
+                       ! verify_account.php (styling & get button working)
+- Posts: on hover --> adds a transparent black overlay and displays amount of likes in the middle of the image 
+- footer text (below)
+
+            TEXT: " @jhansen jadongavhansen@gmail.com
+                    @gstrauss gstrauss@student.wethinkcode.co.za                         Copyright© 2019"
 
 Jadon:
-- save and display properly
 - Find a way to return to previous pages' *position* for likes, comments, deletions -> AJAX
-- index page doesnt always work  ----------->>> WORKING ON THAT (only happens when the session is already set)
+- ! Do those cool notification bar things (for profile updates and post notifications and uploading)
+- ! Find a way to only allow a user to select only one filter at a time
+- Search bar for users

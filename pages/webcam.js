@@ -6,7 +6,7 @@
     var image;
     var videoflag = 0;
 
-    // activates webcam is a device is found
+    // activates webcam if a device is found
     if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         navigator.mediaDevices.getUserMedia({
             video: true 
@@ -16,10 +16,10 @@
         });
     }
 
-    // the next function that is called detects which filter was chosen
+    // detects which filter was chosen
     function chooseimg(){
         var choose = document.querySelectorAll(".filter");
-    
+
         choose.forEach(function(element){
             element.addEventListener("click",function(){
             image = element;
@@ -50,7 +50,16 @@
     // once a picture is taken it is drawn onto the canvas and videoflag=TRUE
     document.getElementById("snap").addEventListener("click", function() {
         context.drawImage(video, 0, 0, 400, 300);
+        var original = context.getImageData(0,0,400,300);       //FOR TESTING
         videoflag = 1;
+    });
+
+    // clears canvas
+    document.getElementById('clear').addEventListener('click', function() {
+        videoflag = 0;
+        context.putImageData(original, 400, 300);       //FOR TESTING
+        // context.clearRect(0, 0, canvas.width, canvas.height);
+        document.getElementById("image_data").value = NULL;
     });
 
     // if a picture has been taken and submit button has been pressed it saves the cnavas image to the hidden input value
@@ -60,12 +69,5 @@
             document.getElementById("image_data").value = dataURL;
         }
     });
-
-    // clears canvas
-    document.getElementById('clear').addEventListener('click', function() {
-            context.clearRect(0, 0, canvas.width, canvas.height);
-            document.getElementById("image_data").value = NULL;
-            videoflag = 0;
-      });
-
+    
 })();

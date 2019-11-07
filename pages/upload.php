@@ -97,7 +97,6 @@
         <img class="filter" src="http://localhost:8080/Camagru/filters/wave.png" height="125" width="152">        
       </div>
 
-   
       <!-- <div class="capture-box"> -->
         <video class="capture-box" id="video" autoplay></video>
       <!-- </div> -->
@@ -106,27 +105,33 @@
       <canvas id="canvas" class="canvas-inner" width="400" height="300" autoplay></canvas>
       </div>
 
-
-
       <div class="notified">
         you've just been notified
       </div>
     </div>
-    
 
     <!-- side options panel-->
     <div class="upload-panel">
-      <div class="take-picture"><button id="snap">Take Photo</button></div>
+      <div class="take-picture"><button id="snap">CAPTURE</button></div>
       <div class="panel-clear"><button id="clear">Clear</button></div>
-      <div class="post-img">        <form method="post" action="../php/upload.php">
-            <input type="hidden" name="image_data" id="image_data">
-            <button type="submit" name="submit" id="uploadphoto">Submit Photo</button>
-          </form></div>
-      <div class="upload-form"><form action="../php/upload.php" method="post" enctype="multipart/form-data">
-        Upload from device:
-        <input type="file" name="uploadedFile" id="fileToUpload" accept="image/*">
-        <input type="submit" name="uploadBtn" value="Upload from device">
-      </form></div>
+
+      <!-- BELOW: FOR TESTING -->
+      <div class="panel-clear"><button id="clearfilters">Clear filters</button></div>
+
+        <div class="post-img">        
+          <form method="post" action="../php/upload.php">
+            <!-- below hidden input saves everything that's on the canvas -->
+            <input type="hidden" name="image_data" id="image_data" value="">
+            <button type="submit" name="submit" id="uploadphoto">POST</button>
+          </form>
+        </div>
+      <div class="upload-form">
+        <form action="../php/upload.php" method="post" enctype="multipart/form-data">
+          Upload from device:  
+          <hr />
+          <input type="file" name="uploadedFile" id="fileToUpload" accept="image/*">
+        </form>
+      </div>
     </div>
 
     <script src="./edit.js"></script>

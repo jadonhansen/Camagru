@@ -17,7 +17,7 @@ CREATE TABLE users(
 
 CREATE TABLE feed (
     image_id int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    img LONGBLOB NOT NULL,
+    img LONGTEXT NOT NULL,
     username varchar(15) NOT NULL,
     upload_date date NOT NULL,
     likes BIGINT
