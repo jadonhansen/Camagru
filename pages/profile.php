@@ -41,8 +41,7 @@
       <!-- the drop down button -->    
       <?php
         session_start();
-        if(isset($_SESSION['username']))
-        {
+        if(isset($_SESSION['username'])){
           echo("<div class='dropdown'>
                   <button onclick='myFunction()' class='dropbtn'>
                     <div class='other_option'></div>
@@ -61,8 +60,7 @@
                   .$_SESSION['username']. 
                "</div>");
         }
-        else
-        {
+        else{
           echo "<script>alert('Please login first!')</script>";
           echo "<script>window.open('./login.php','_self')</script>";
         }
@@ -76,12 +74,10 @@
       <!-- the differing logins and outs -->
       <?php
         session_start();
-        if(isset($_SESSION['username']))
-        {
+        if(isset($_SESSION['username'])){
           echo("<a id='logout' href='../php/logout.php'>Logout</a>"); 
         }
-        else
-        { 
+        else{ 
           echo("<div class='create'>
                   <a id='link' href='create.php'>create account</a>
                 </div>
@@ -94,22 +90,17 @@
 
     <!-- drop scriptsssss -->
     <script>
-      function myFunction()
-      {
+      function myFunction(){
         document.getElementById("myDropdown").classList.toggle("show");
       }
   
-      window.onclick = function(event)
-      {
-        if (!event.target.matches('.dropbtn'))
-        {
+      window.onclick = function(event){
+        if (!event.target.matches('.dropbtn')){
           var dropdowns = document.getElementsByClassName("dropdown-content");
           var i;
-          for (i = 0; i < dropdowns.length; i++)
-          {
+          for (i = 0; i < dropdowns.length; i++){
             var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show'))
-            {
+            if (openDropdown.classList.contains('show')){
               openDropdown.classList.remove('show');
             }
           }
@@ -118,29 +109,25 @@
     </script>
 
     <script>
-      function drop4()
-      {
+      function drop4() {
         document.getElementById("dropper4").classList.toggle("show4");
       }
     </script>
 
     <script>
-      function drop3()
-      {
+      function drop3() {
         document.getElementById("dropper3").classList.toggle("show3");
       }
     </script>
 
     <script>
-      function drop2()
-      {
+      function drop2() {
         document.getElementById("dropper2").classList.toggle("show2");
       }
     </script>
 
     <script>
-      function drop1()
-      {
+      function drop1() {
         document.getElementById("dropper1").classList.toggle("show1");
       }  
     </script>
@@ -215,6 +202,17 @@
         </div>        
       </div>
     </div>
+
+    <!-- STYLE THE XTRA-OPT CLASS -->
+  <div class="xtra-opt"><form action="./gallery.php">
+      <input type="submit" value="Go to Gallery" />
+    </form></div>
+
+
+  <div class="xtra-opt"><form action="./upload.php">
+      <input type="submit" value="Upload Now" />
+    </form></div>
+
     <!-- the foot -->
     <div class="foot"></div>
   </body>

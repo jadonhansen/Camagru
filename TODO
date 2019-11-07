@@ -3,10 +3,11 @@
 Gabriel:
 - Styling for pages:   ! feed.php (positioning and layout)
                        ! profile.phpv (positioning of boxes)
-                       ! gallery.php (layout --> 2 side by side and another 2 side by side just off the bottom of the page)
+                       ! gallery.php (layout --> same as the feed, one under the other)
                        ! upload.php (layout)
                        ! verify_account.php (styling & get button working)
-- Posts: on hover --> adds a transparent black overlay and displays amount of likes in the middle of the image 
+- Posts: on hover --> adds a transparent black overlay and displays amount of likes in the middle of the image
+- STYLE the text "No posts to view here yet!" which displays on the feed & gallery page (Just centre the text in the middle of the screen)
 - footer text (below)
 
             TEXT: " @jhansen jadongavhansen@gmail.com
@@ -16,4 +17,9 @@ Jadon:
 - Find a way to return to previous pages' *position* for likes, comments, deletions -> AJAX
 - ! Do those cool notification bar things (for profile updates and post notifications and uploading)
 - ! Find a way to only allow a user to select only one filter at a time
-- Search bar for users
+- Search bar for users (maybe??)
+- config/database.php
+
+
+NOTE: YOU WILL NEED TO EXPORT THE NEW VERSION OF ICON DB IN CONFIG FOLDER
+&& I added two extra buttons on the profile page ;)
