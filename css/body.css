@@ -364,35 +364,42 @@
 
 .feed-usr {
     position:relative;
-    padding-left:8%;
+    left:10%;
     top:0px;
+    display: inline;
 }
 
 .feed-date{
+    display: inline;
     position: relative;
-    top: 0;
-    left: 60%;
-    width: 200px;
+    bottom: 0;
+    left: 40%;
 }
 
 .feed-like{
-    width: 50px;
+    display: inline;
     position:relative;
-    top:-35px;
-    float:right;
-    right:86.5%;
+    /* top:-35px; */
+    /* float:right; */
+    /* right:86.5%; */
+    /* top: 5%; */
+    /* bottom: 10%; */
+    left: 10%;
+
 }
 
 .feed-likes {
-    width: 150px;
+    display: inline;
+    /* width: 150px; */
     position: relative;
     top: 0;
     left: 15%;
 }
 
 .feed-delete{
+    left: 80%;
     position: absolute;
-    top: 67px;
+    display: inline;
     /* left: 504px; */
 }
 
@@ -426,4 +433,59 @@
     width: 10%;
     background-color: chocolate;
     top: 12%;
+}
+
+.form-button{
+    background-color: indianred;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.option_block_5{
+    position: absolute;
+    bottom: 70px;
+}
+
+.option_block_6{
+    position: absolute;
+    bottom: -25;
+}
+
+.no-uploads{
+    position: relative;
+    top: 35%;
+    /* left: 30%; */
+    font-size: 40px;
+    text-align: center;
+}
+
+.profile-forms{
+    position: relative;
+    top: 50%;
+    left: 40%;
+    width: 200px;
+    height: 400px;
+    /* background-color: indianred; */
+}
+
+.profile-inputs{
+    width: fit-content;
+    text-align: center;
+    position: relative;
+    background-color: transparent;
+    margin-top: 40px;
+    font-size: 25px;
+    border: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+.profile-submit{
+    position: relative;
+    top: 50px;
+    left: 72.5px;
 }

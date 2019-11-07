@@ -141,7 +141,7 @@
           else {
             $encoded_image = $info['user_img'];
             $display = "<img src='data:image;base64,{$encoded_image}' class='profile_pic'>";
-            echo "<div class='feed-img'>" . $display . "</div>";
+            echo "<div class='profile-pic'>" . $display . "</div>";
           }
         ?>
         <div class="biography">
@@ -161,9 +161,11 @@
           <button onclick='drop1()' class='dropsies' id="butsize"> modify username</button>    
           <div id='dropper1' class='box_1'>
             <form action="../php/profile_modify.php" method="post" class="position-box">
-              <input class="box-location1" type="text" name="new_usr" placeholder="New username">
-              <input class="box-location2" type="text" name="rep_usr" placeholder="Repeat username">
-              <input class="box-location3" type="submit" name="usrnam_mod" value="Modify username">
+              <div class="profile-forms">
+                <input class="profile-inputs" type="text" name="new_usr" placeholder="New username">
+                <input class="profile-inputs" type="text" name="rep_usr" placeholder="Repeat username">
+                <input class="profile-submit" type="submit" name="usrnam_mod" value="Modify username">
+              </div>
             </form>
           </div>
         </div>
@@ -172,9 +174,11 @@
           <button onclick='drop2()' class='dropsies' id="butsize"> modify password</button>
           <div id='dropper2' class='box_2'>
             <form action="../php/profile_modify.php" method="post" class="position-box">
-              <input class="box-location1" type="password" name="new_pass" placeholder="New password">
-              <input class="box-location2" type="password" name="rep_pass" placeholder="Repeat password">
-              <input class="box-location3" type="submit" name="pass_mod" value="Modify password">
+              <div class="profile-forms">
+                <input class="profile-inputs" type="password" name="new_pass" placeholder="New password">
+                <input class="profile-inputs" type="password" name="rep_pass" placeholder="Repeat password">
+                <input class="profile-submit" type="submit" name="pass_mod" value="Modify password">
+              </div>
             </form>
           </div>
         </div>
@@ -183,9 +187,11 @@
           <button onclick='drop3()' class='dropsies' id="butsize"> modify personal details</button>
           <div id='dropper3' class='box_3'>
             <form action="../php/profile_modify.php" method="post" class="position-box">
-              <input class="box-location1" type="text" name="new_nam" placeholder="Name">
-              <input class="box-location2" type="text" name="new_surnam" placeholder="Surname">
-              <input class="box-location3" type="submit" name="nam_mod" value="Modify name and surname">
+              <div class="profile-forms">
+                <input class="profile-inputs" type="text" name="new_nam" placeholder="Name">
+                <input class="profile-inputs" type="text" name="new_surnam" placeholder="Surname">
+                <input class="profile-submit" type="submit" name="nam_mod" value="Modify name and surname">
+              </div>
             </form>
           </div>
         </div>
@@ -194,26 +200,34 @@
           <button onclick='drop4()' class='dropsies' id="butsize"> change email</button>
           <div id='dropper4' class='box_4'>
             <form action="../php/profile_modify.php" method="post" class="position-box">
-              <input class="box-location1" type="email" name="new_eml" placeholder="New email">
-              <input class="box-location2" type="email" name="rep_eml" placeholder="Repeat email">
-              <input class="box-location3" type="submit" name="eml_mod" value="Modify email">
+              <div class="profile-forms">
+                <input class="profile-inputs" type="email" name="new_eml" placeholder="New email">
+                <input class="profile-inputs" type="email" name="rep_eml" placeholder="Repeat email">
+                <input class="profile-submit" type="submit" name="eml_mod" value="Modify email">
+              </div>
             </form>
           </div>
-        </div>        
+        </div>
+        <div class="option_block_5">
+          <form action="./gallery.php">
+            <input type="submit" class="form-button" value="Go to Gallery" />
+        </form>
+      </div>
+
+
+      <div class="option_block_6">
+        <form action="./upload.php">
+          <input type="submit" class="form-button" value="Upload Now" />
+        </form>
+      </div>        
       </div>
     </div>
 
-    <!-- STYLE THE XTRA-OPT CLASS -->
-  <div class="xtra-opt"><form action="./gallery.php">
-      <input type="submit" value="Go to Gallery" />
-    </form></div>
-
-
-  <div class="xtra-opt"><form action="./upload.php">
-      <input type="submit" value="Upload Now" />
-    </form></div>
-
     <!-- the foot -->
-    <div class="foot"></div>
+    <div class="foot">
+      <div class="jadon">@jhansen jadongavhansen@gmail.com</div> 
+      <div class="me">@gstrauss gstrauss18@gmail.com</div>
+      <div class="copyright">Copyright© 2019</div>
+    </div>
   </body>
 </html>

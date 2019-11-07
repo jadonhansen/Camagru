@@ -1,11 +1,12 @@
 .head {
-    position: absolute;
+    position: fixed;
     background-color: rgb(39, 37, 37);
     height: 50px;
     width: 100%;
     left: 0;
     top: 0;
     border-radius: 7px;
+    z-index: 1;
 }
 
 .icon{

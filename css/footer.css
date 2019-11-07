@@ -1,8 +1,26 @@
 .foot {
+    color: grey;
+    left: 0px;
     width: 100%;
     height: 50px;
     position: fixed;
-    left: 0;
     bottom: 0;
     background-color: rgb(39, 37, 37);
+}
+
+.jadon{
+    position: absolute;
+    bottom: 30px;
+    left: 0px;
+}
+.me{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.copyright{
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }

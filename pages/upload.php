@@ -137,6 +137,10 @@
     <script src="./edit.js"></script>
     <script src="./webcam.js"></script>
 
-    <div class="foot"></div>
+    <div class="foot">
+      <div class="jadon">@jhansen jadongavhansen@gmail.com</div> 
+      <div class="me">@gstrauss gstrauss18@gmail.com</div>
+      <div class="copyright">Copyright© 2019</div>
+    </div>
   </body>
 </html>

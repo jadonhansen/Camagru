@@ -2,26 +2,24 @@
 
 Gabriel:
         - Styling for pages:    ! feed.php (positioning and layout)
-                                ! profile.phpv (positioning of boxes)
-                                ! gallery.php (layout --> same as the feed; one under the other)
+                                ! profile.php (positioning of boxes)
+                                ! gallery.php (styling)
                                 ! upload.php (layout)
                                 ! verify_account.php (styling & get button working)
-
-        - ! COMMENTS BOX..??
         - Posts: on hover --> adds a transparent black overlay and displays amount of likes in the middle of the image
-        - STYLE the text "No posts to view here yet!" which displays on the feed & gallery page (Just centre the text in the middle of the screen)
-        - ! for some reason if theres no posts the footer disapears on the feed and gallery page
-        - footer text (below)
-
-                TEXT: " @jhansen jadongavhansen@gmail.com
-                        @gstrauss gstrauss@student.wethinkcode.co.za                         Copyright© 2019"
+        
+        -general style improvements
 
 Jadon:
         - Find a way to return to previous pages' *position* for likes, comments, deletions -> AJAX
         - ! Do those cool notification bar things (for profile updates and post notifications and uploading)
         - ! Find a way to only allow a user to select only one filter at a time (now the upload file doesn't work if i've cleared before)
         - Search bar for users (maybe??)
-
+        - php at the bottom of the gallery and feed pages removes the footer from the html if there are no posts
+        - fix clear filter button in upload page
 
 NOTE: YOU WILL NEED TO EXPORT THE NEW VERSION OF ICON DB IN CONFIG FOLDER
 && I added two extra buttons on the profile page ;)
+
+notes:
+the webcam isnt stable on launch of other apps it can stop working, dunno if theres a possible fix

@@ -96,7 +96,7 @@
         exit();
       }
       if (!$posts) {
-        echo "<h2>No posts to view here yet!</h2>";
+        echo "<div class='no-uploads'>No posts to view here yet!</div>";
         exit();
       }
 
@@ -111,30 +111,40 @@
         if (isset($_SESSION['username']))
         {
           echo "<div class='feed-usr' >@" . $row['username'] . "</div>";
-          echo "<div class='feed-img'>" . $display . "</div>";
-          echo "<div class='feed-likes'>Likes: " . $row['likes'] . "</div>";
-          echo "<div class='feed-date' >Posted " . $row['upload_date'] . "</div>";
 
-          // like button
-          echo "<form action='../php/post_activity.php' method='post'>
-                  <input type='hidden' name='id' value='{$row['image_id']}'>
-                  <input class='feed-like' type='submit' name='like' value='Like'>
-                </form>";
-
-          // comments
-          // echo "<form action='../php/post_activity.php' method='post'>
-          //         <input type='hidden' name='id' value='{$row['image_id']}'>
-          //         <input style='position:relative; left:15%; width:40%; type='text' name='comment_box'>
-          //         <input style='position:relative; left:15%;' type='submit' name='comment' value='Post Comment'>
-          //       </form>";
-
-          // delete button
+                    // delete button
           if ($_SESSION['username'] === $row['username']) {
-            echo "<form action='../php/post_activity.php' method='post'>
+            echo "<form class='feed-delete' action='../php/post_activity.php' method='post'>
             <input type='hidden' name='id' value='{$row['image_id']}'>
-            <input class='feed-delete' type='submit' name='delete' value='Delete post'>
+            <input  type='submit' name='delete' value='Delete post'>
               </form>";
           }
+          
+          echo "<div class='feed-img'>" . $display . "</div>";
+
+          // like button
+          echo "<form class='feed-like' action='../php/post_activity.php' method='post'>
+                  <input type='hidden' name='id' value='{$row['image_id']}'>
+                  <input type='submit' name='like' value='Like'>
+                </form>";
+
+
+          echo "<div class='feed-likes'>Likes: " . $row['likes'] . "</div>";
+          
+
+        
+          echo "<div class='feed-date' >Posted " . $row['upload_date'] . "</div>";
+
+
+
+          // comments
+          echo "<form action='../php/post_activity.php' method='post'>
+                  <input type='hidden' name='id' value='{$row['image_id']}'>
+                  <input style='position:relative; left:15%; width:40%; type='text' name='comment_box'>
+                  <input style='position:relative; left:15%;' type='submit' name='comment' value='Post Comment'>
+                </form>";
+
+
 
           echo "<div style='width:100%; height:3%;'>  </div>";
         }
@@ -152,12 +162,15 @@
         echo "</div>";
       }
 
-      echo "<div class='feed-bottom'></div>";
       $conn = NULL;
     ?>
 
     <!-- the foot -->
-    <div class="foot"></div>
+    <div class="foot">
+      <div class="jadon">@jhansen jadongavhansen@gmail.com</div> 
+      <div class="me">@gstrauss gstrauss18@gmail.com</div>
+      <div class="copyright">Copyright© 2019</div>
+    </div>
   </body>
 </html>
 
