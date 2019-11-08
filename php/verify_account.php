@@ -21,18 +21,18 @@ if (isset($_GET['key'])) {
         }
         echo "<h2>Account has been verified!</h2>";
         echo "<h4>Please login with your details to begin:</h4>";
-        echo "<button onclick='window.location.href = '../pages/login.php';'>Login</button>";
+        echo "<form action='../pages/login.php' method='post'><input type='submit' value='Login page'></input></form>";
         exit();
     }
     else {
         echo "<h2>Your details were not found! Please try again.<h2>";
+        echo "<form action='../pages/create.php' method='post'><input type='submit' value='Create account'></input></form>";
     }
     $conn = NULL;
 }
 else {
-    echo "<h1>No verification key detected!</h1>";
-    echo "<h2>Please try again:</h2>";
-    echo "<button onclick='window.location.href = '../pages/create.php';'>Create account</button>";
+    echo "<h2>No verification key found! Please try again.<h2>";
+    echo "<form action='../pages/create.php' method='post'><input type='submit' value='Create account'></input></form>";
     exit();
 }
 

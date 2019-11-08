@@ -77,14 +77,6 @@
         if(isset($_SESSION['username'])){
           echo("<a id='logout' href='../php/logout.php'>Logout</a>"); 
         }
-        else{ 
-          echo("<div class='create'>
-                  <a id='link' href='create.php'>create account</a>
-                </div>
-                <div class='create'>
-                  <a id='link' href='login.php'>Login</a>
-                </div>");
-        }
       ?>
     </div>
 
@@ -150,6 +142,10 @@
         <br/>
         <div class="biography1">
           <?php echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>"; ?>
+      </div>
+      <br/>
+        <div class="biography1">
+          <?php echo "<h6>" . $info['email'] . "</h6>"; ?>
       </div>
       <form class="change-usr-img" action="../php/profile_modify.php" method="post" enctype="multipart/form-data">
         <input type="file" name="uploadedFile" id="fileToUpload">
