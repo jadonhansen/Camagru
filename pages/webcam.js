@@ -1,10 +1,11 @@
 (function() {
     // initialises all variables according to html elements
-    var canvas = document.getElementById('canvas');
-    var context = canvas.getContext('2d');
+    const canvas = document.getElementById('canvas');
+    const context = canvas.getContext('2d');
     var video = document.getElementById('video');
     var image;
     var videoflag = 0;
+    var original;
 
     // activates webcam if a device is found
     if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -47,19 +48,24 @@
 
     chooseimg();
 
-    // once a picture is taken it is drawn onto the canvas and videoflag=TRUE
-    document.getElementById("snap").addEventListener("click", function() {
-        context.drawImage(video, 0, 0, 400, 300);
-        var original = context.getImageData(0,0,400,300);       //FOR TESTING
-        videoflag = 1;
+    //clears filters
+    document.getElementById("clearfilters").addEventListener("click", function() {
+        context.putImageData(original, 0, 0, 400, 300);
+        alert('cleared filters');
     });
 
     // clears canvas
-    document.getElementById('clear').addEventListener('click', function() {
+    document.getElementById("clear").addEventListener("click", function() {
         videoflag = 0;
-        context.putImageData(original, 400, 300);       //FOR TESTING
-        // context.clearRect(0, 0, canvas.width, canvas.height);
-        document.getElementById("image_data").value = NULL;
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        document.getElementById("image_data").value = "";
+    });
+
+    // once a picture is taken it is drawn onto the canvas and videoflag=TRUE
+    document.getElementById("snap").addEventListener("click", function() {
+        context.drawImage(video, 0, 0, 400, 300);
+        original = context.getImageData(0, 0, 400 , 300);
+        videoflag = 1;
     });
 
     // if a picture has been taken and submit button has been pressed it saves the cnavas image to the hidden input value

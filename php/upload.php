@@ -11,8 +11,8 @@ function uploading() {
         if (substr($image, 0, strlen($prefix)) == $prefix) {
             $image = substr($image, strlen($prefix));
         }
-        if ($image === "") {
-            echo "<script>alret('An error occurred while uploading your image!')</script>";
+        if ($image == "") {
+            echo "<script>alret('Please upload an image or take a photo first!')</script>";
             echo "<script>window.open('../pages/upload.php','_self')</script>";
         }
         else {

@@ -51,11 +51,11 @@ var context = canvas.getContext('2d');
 chooseimg();
 
 // clears canvas
-document.getElementById('clear').addEventListener('click', function() {
-        videoflag = 0;
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        document.getElementById("image_data").value = NULL;
-  });
+document.getElementById("clear").addEventListener("click", function() {
+    videoflag = 0;
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    document.getElementById("image_data").value = "";
+});
 
 // if a picture has been uploaded from files and submit button has been pressed it saves the canvas image to the hidden input value
 document.getElementById("uploadphoto").addEventListener("click", function() {
