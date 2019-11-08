@@ -75,19 +75,13 @@
         }
     });
 
-    // download  -- STILL TESTING
+    // download image
     document.getElementById("dnjs").addEventListener("click", function() {
         if (videoflag === 1) {
-            var download = function() {
                 var link = document.createElement('a');
                 link.download = 'post.png';
-                link.href = document.getElementById('canvas').toDataURL()
+                link.href = canvas.toDataURL()
                 link.click();
-            }
-
-
-
-
         }
     });
 

@@ -120,13 +120,15 @@
       </div>
 
   
-      <!-- DOWNLOAD BTN - STILL TESTING -->
+
+      <!-- DOWNLOAD BTN -->
       <div class="upload-form">
           <hr />
           <input type="button" id="dnjs" value="Download">
       </form>
       </div>
 
+      
 
     </div>
 
