@@ -47,18 +47,8 @@
 
       <!-- the differing logins and outs -->
       <?php
-        if(isset($_SESSION['username']))
-        {
+        if(isset($_SESSION['username'])) {
           echo("<a id='logout' href='../php/logout.php'>Logout</a>"); 
-        }
-        else
-        { 
-          echo("<div class='create'>
-                  <a id='link' href='create.php'>create account</a>
-                </div>
-                <div class='create'>
-                  <a id='link' href='login.php'>Login</a>
-                </div>");
         }
       ?>
     </div>
@@ -94,7 +84,7 @@
         <img class="filter" src="http://localhost:8080/Camagru/filters/island.png" height="125" width="125">
         <img class="filter" src="http://localhost:8080/Camagru/filters/sunbed.png" height="125" width="125">
         <img class="filter" src="http://localhost:8080/Camagru/filters/surf.png" height="125" width="125">
-        <img class="filter" src="http://localhost:8080/Camagru/filters/wave.png" height="125" width="152">        
+        <img class="filter" src="http://localhost:8080/Camagru/filters/wave.png" height="125" width="152">
       </div>
 
       <!-- <div class="capture-box"> -->
@@ -114,13 +104,9 @@
     <div class="upload-panel">
       <div class="take-picture"><button id="snap">CAPTURE</button></div>
       <div class="panel-clear"><button id="clear">Clear</button></div>
-
-      <!-- BELOW: FOR TESTING -->
       <div class="panel-clear"><button id="clearfilters">Clear filters</button></div>
-
-        <div class="post-img">        
+        <div class="post-img">
           <form method="post" action="../php/upload.php">
-            <!-- below hidden input saves everything that's on the canvas -->
             <input type="hidden" name="image_data" id="image_data" value="">
             <button type="submit" name="submit" id="uploadphoto">POST</button>
           </form>
@@ -132,6 +118,16 @@
           <input type="file" name="uploadedFile" id="fileToUpload" accept="image/*">
         </form>
       </div>
+
+  
+      <!-- DOWNLOAD BTN - STILL TESTING -->
+      <div class="upload-form">
+          <hr />
+          <input type="button" id="dnjs" value="Download">
+      </form>
+      </div>
+
+
     </div>
 
     <script src="./edit.js"></script>
