@@ -3,6 +3,7 @@ var image;
 var videoflag = 0;
 var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
+var original;
 
 // if a picture is selected from files it is drawn on the canvas and videoflag=TRUE
     document.getElementById('fileToUpload').onchange = function(e) {
@@ -13,6 +14,7 @@ var context = canvas.getContext('2d');
     };
     function draw() {
         context.drawImage(this, 0,0, 400, 300);
+        original = context.getImageData(0, 0, 400 , 300);
         videoflag = 1;
     };
     function failed() {
@@ -49,6 +51,11 @@ var context = canvas.getContext('2d');
 });}
 
 chooseimg();
+
+//clears filters
+document.getElementById("clearfilters").addEventListener("click", function() {
+    context.putImageData(original, 0, 0);
+});
 
 // clears canvas
 document.getElementById("clear").addEventListener("click", function() {

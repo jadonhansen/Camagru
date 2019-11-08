@@ -21,7 +21,6 @@ Jadon:
         - Find a way to return to previous pages' *position* for likes, comments, deletions -> AJAX
         - Do those cool notification bar things (for profile updates and post notifications and uploading)
         - ! Find a way to only allow a user to select only one filter at a time
-        - ! do clear filter button in upload page
 
 notes:
 the webcam isnt stable on launch of other apps it can stop working, dunno if theres a possible fix --> maybe just your mac??

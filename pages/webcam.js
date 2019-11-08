@@ -1,7 +1,7 @@
 (function() {
     // initialises all variables according to html elements
-    const canvas = document.getElementById('canvas');
-    const context = canvas.getContext('2d');
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
     var video = document.getElementById('video');
     var image;
     var videoflag = 0;
@@ -50,8 +50,7 @@
 
     //clears filters
     document.getElementById("clearfilters").addEventListener("click", function() {
-        context.putImageData(original, 0, 0, 400, 300);
-        alert('cleared filters');
+        context.putImageData(original, 0, 0);
     });
 
     // clears canvas
@@ -68,7 +67,7 @@
         videoflag = 1;
     });
 
-    // if a picture has been taken and submit button has been pressed it saves the cnavas image to the hidden input value
+    // if a picture has been taken and submit button has been pressed it saves the canvas image to the hidden input value
     document.getElementById("uploadphoto").addEventListener("click", function() {
         if (videoflag === 1) {
             var dataURL = canvas.toDataURL();
