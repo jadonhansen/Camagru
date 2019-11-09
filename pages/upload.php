@@ -77,29 +77,7 @@
         }
       }
     </script>
-
-    <div class="pokemon">
-      <div class="styles-box">
-        <img class="filter" src="http://localhost:8080/Camagru/filters/coconut.png" height="125" width="125">
-        <img class="filter" src="http://localhost:8080/Camagru/filters/island.png" height="125" width="125">
-        <img class="filter" src="http://localhost:8080/Camagru/filters/sunbed.png" height="125" width="125">
-        <img class="filter" src="http://localhost:8080/Camagru/filters/surf.png" height="125" width="125">
-        <img class="filter" src="http://localhost:8080/Camagru/filters/wave.png" height="125" width="152">
-      </div>
-
-      <!-- <div class="capture-box"> -->
-        <video class="capture-box" id="video" autoplay></video>
-      <!-- </div> -->
-
-      <div class="capture-box">
-      <canvas id="canvas" class="canvas-inner" width="400" height="300" autoplay></canvas>
-      </div>
-
-      <div class="notified">
-        you've just been notified
-      </div>
-    </div>
-
+<div class="upload-content">
     <!-- side options panel-->
     <div class="upload-panel">
       <button class="take-picture" id="snap"></button>
@@ -121,8 +99,6 @@
         </form>
       </div>
 
-  
-
       <!-- DOWNLOAD BTN -->
       <div class="upload-form">
           <hr />
@@ -130,12 +106,40 @@
       </form>
       </div>
 
-      
-
     </div>
 
+<!-- web cam feed -->
+
+    <div class="upload-capture">
+
+
+      <!-- <div class="capture-box"> -->
+        <video class="capture-box" id="video" autoplay></video>
+      <!-- </div> -->
+
+      <div class="capture-box">
+      <canvas id="canvas" class="canvas-inner" width="400" height="300" autoplay></canvas>
+      </div>
+
+      <!-- <div class="notified">
+        you've just been notified
+      </div> -->
+    </div>
+
+
+
+      <!-- styles box -->
+    <div class="styles-box">
+        <img class="filter" src="http://localhost:8080/Camagru/filters/coconut.png" height="125" width="125">
+        <img class="filter" src="http://localhost:8080/Camagru/filters/island.png" height="125" width="125">
+        <img class="filter" src="http://localhost:8080/Camagru/filters/sunbed.png" height="125" width="125">
+        <img class="filter" src="http://localhost:8080/Camagru/filters/surf.png" height="125" width="125">
+        <img class="filter" src="http://localhost:8080/Camagru/filters/wave.png" height="125" width="152">
+      </div>
     <script src="./edit.js"></script>
     <script src="./webcam.js"></script>
+    <span class="stretch"></span>
+</div>
 
     <div class="foot">
       <div class="jadon">@jhansen jadongavhansen@gmail.com</div> 

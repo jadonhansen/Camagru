@@ -22,16 +22,13 @@
     background-image: url(../images/forgetterybg.jpg);
 }
 
-.pokemon {
-    position: relative;
-    top: 75px;
-}
+
 
 .capture-box {
     width: 60%;
     height: 40%;
     position: relative;
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     left: 20%;
     top: 50px;
     margin-top: 20px;
@@ -76,14 +73,14 @@
     object-fit: cover;
 }
 
-.styles-box{
-    width: 150px;
-    height: 80%;
-    position: absolute;
-    background-color: burlywood;
-    right: 5%;
-    top: 65px;
+.stretch{
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0;
 }
+
+
 
 .panel-clear{
     position: relative;
@@ -431,15 +428,6 @@
     pointer-events: none;
 }
 
-.upload-panel{
-    position: absolute;
-    left: 5%;
-    height: 70%;
-    width: 10%;
-    background-color: chocolate;
-    top: 12%;
-}
-
 .form-button{
     background-color: indianred;
     border: none;
@@ -450,6 +438,17 @@
     cursor: pointer;
 }
 
+.verify-form{
+    background-color: grey;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    top: 35%;
+    font-size: 20px;
+}
+
 .option_block_5{
     position: absolute;
     bottom: 70px;
@@ -458,6 +457,30 @@
 .option_block_6{
     position: absolute;
     bottom: -25;
+}
+
+.verified-acc{
+    /* width: 100%; */
+    /* height: 50px; */
+    text-align: center;
+    position: relative;
+    top: 25%;
+    font-size: 40px;
+    /* top: 50px; */
+    /* width: 100%; */
+    /* background-color: aquamarine; */
+}
+
+.verified-acc1{
+    /* width: 100%; */
+    /* height: 50px; */
+    text-align: center;
+    position: relative;
+    top: 25%;
+    font-size: 30px;
+    /* top: 50px; */
+    /* width: 100%; */
+    /* background-color: aquamarine; */
 }
 
 .no-uploads{
@@ -494,4 +517,48 @@
     position: relative;
     top: 50px;
     left: 72.5px;
+}
+
+.upload-content{
+    position: relative;
+    top: 50px;
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+
+}
+
+.upload-panel{
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    left: 5px;
+    height: 50%;
+    width: 10%;
+    background-color: grey;
+    /* top: 100px; */
+}
+
+.upload-capture {
+    vertical-align: top;
+    display: inline-block;
+    background-color: hotpink;
+    width: 60%;
+    height: 80%;
+    position: relative;
+    /* top: 75px; */
+}
+
+.styles-box{
+    vertical-align: top;
+    display: inline-block;
+    height: 80%;
+    margin: 0;
+    width: 150px;
+    position: relative;
+    /* top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%); */
+    background-color: grey;
+    right: 0px;
 }
