@@ -17,13 +17,7 @@
       </div>    
     </div>
 
-    <?php
-        session_start();
-          echo("<div class='create'>
-                  <a id='link' href='login.php'>Login</a>
-                </div>");
-      ?>
-      
+    
     <!-- this is the form box -->
     <div class="box">
       <!-- the form -->
