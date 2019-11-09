@@ -6,6 +6,8 @@
     position: fixed;
     bottom: 0;
     background-color: rgb(39, 37, 37);
+    
+    flex: none;
 }
 
 .jadon{
