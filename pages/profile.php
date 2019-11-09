@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="../css/head.css">
   </head>
 
-  <body id=bground>    
+  <body class="temp" id=bground>    
     <div class="head">
 
       <!-- the drop down button -->    
@@ -133,91 +133,96 @@
           else {
             $encoded_image = $info['user_img'];
             $display = "<img src='data:image;base64,{$encoded_image}' class='profile_pic'>";
-            echo "<div class='profile-pic'>" . $display . "</div>";
+            echo "<span class='profile-pic'>" . $display . "</span>";
           }
         ?>
-        <div class="biography">
-          <?php echo "<h2>@" . $info['username'] . "</h2>"; ?>
-        </div>
-        <br/>
-        <div class="biography1">
-          <?php echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>"; ?>
-      </div>
-      <br/>
-        <div class="biography1">
-          <?php echo "<h6>" . $info['email'] . "</h6>"; ?>
-      </div>
-      <form class="change-usr-img" action="../php/profile_modify.php" method="post" enctype="multipart/form-data">
-        <input type="file" name="uploadedFile" id="fileToUpload">
-        <input type="submit" name="pic_mod" value="Apply">
-      </form>
-    </div>
-      <div class="options-blocks">    
-        <div class="option_block_1">
-          <button onclick='drop1()' class='dropsies' id="butsize"> modify username</button>    
-          <div id='dropper1' class='box_1'>
-            <form action="../php/profile_modify.php" method="post" class="position-box">
-              <div class="profile-forms">
-                <input class="profile-inputs" type="text" name="new_usr" placeholder="New username">
-                <input class="profile-inputs" type="text" name="rep_usr" placeholder="Repeat username">
-                <input class="profile-submit" type="submit" name="usrnam_mod" value="Modify username">
-              </div>
-            </form>
+        <span class="profile-info">
+          <div class="biography">
+            <?php echo "<span>@" . $info['username'] . "</span>"; ?>
           </div>
-        </div>
-
-        <div class="option_block_2">
-          <button onclick='drop2()' class='dropsies' id="butsize"> modify password</button>
-          <div id='dropper2' class='box_2'>
-            <form action="../php/profile_modify.php" method="post" class="position-box">
-              <div class="profile-forms">
-                <input class="profile-inputs" type="password" name="new_pass" placeholder="New password">
-                <input class="profile-inputs" type="password" name="rep_pass" placeholder="Repeat password">
-                <input class="profile-submit" type="submit" name="pass_mod" value="Modify password">
-              </div>
-            </form>
+          <div class="biography1">
+            <?php echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>"; ?>
           </div>
-        </div>
-
-        <div class="option_block_3">
-          <button onclick='drop3()' class='dropsies' id="butsize"> modify personal details</button>
-          <div id='dropper3' class='box_3'>
-            <form action="../php/profile_modify.php" method="post" class="position-box">
-              <div class="profile-forms">
-                <input class="profile-inputs" type="text" name="new_nam" placeholder="Name">
-                <input class="profile-inputs" type="text" name="new_surnam" placeholder="Surname">
-                <input class="profile-submit" type="submit" name="nam_mod" value="Modify name and surname">
-              </div>
-            </form>
+          <div class="biography1">
+            <?php echo "<h6>" . $info['email'] . "</h6>"; ?>
           </div>
-        </div>
-
-        <div class='option_block_4'>
-          <button onclick='drop4()' class='dropsies' id="butsize"> change email</button>
-          <div id='dropper4' class='box_4'>
-            <form action="../php/profile_modify.php" method="post" class="position-box">
-              <div class="profile-forms">
-                <input class="profile-inputs" type="email" name="new_eml" placeholder="New email">
-                <input class="profile-inputs" type="email" name="rep_eml" placeholder="Repeat email">
-                <input class="profile-submit" type="submit" name="eml_mod" value="Modify email">
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="option_block_5">
-          <form action="./gallery.php">
-            <input type="submit" class="form-button" value="Go to Gallery" />
+        </span>
+        <form class="change-usr-img" action="../php/profile_modify.php" method="post" enctype="multipart/form-data">
+          <input type="file" name="uploadedFile" id="fileToUpload">
+          <input type="submit" name="pic_mod" value="Apply">
         </form>
       </div>
+        <div class="options-blocks">
+
+          <div class="option_block_1">
+            <button onclick='drop1()' class='dropsies' id="butsize"> modify username</button>    
+            <div id='dropper1' class='box_1'>
+              <form action="../php/profile_modify.php" method="post" class="position-box">
+                <div class="profile-forms">
+                  <input class="profile-inputs" type="text" name="new_usr" placeholder="New username">
+                  <input class="profile-inputs" type="text" name="rep_usr" placeholder="Repeat username">
+                  <input class="profile-submit" type="submit" name="usrnam_mod" value="Modify username">
+                </div>
+              </form>
+        </div>
+          </div>
+
+          <div class="option_block_2">
+            <button onclick='drop2()' class='dropsies' id="butsize"> modify password</button>
+            <div id='dropper2' class='box_2'>
+              <form action="../php/profile_modify.php" method="post" class="position-box">
+                <div class="profile-forms">
+                  <input class="profile-inputs" type="password" name="new_pass" placeholder="New password">
+                  <input class="profile-inputs" type="password" name="rep_pass" placeholder="Repeat password">
+                  <input class="profile-submit" type="submit" name="pass_mod" value="Modify password">
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="option_block_3">
+            <button onclick='drop3()' class='dropsies' id="butsize"> modify personal details</button>
+            <div id='dropper3' class='box_3'>
+              <form action="../php/profile_modify.php" method="post" class="position-box">
+                <div class="profile-forms">
+                  <input class="profile-inputs" type="text" name="new_nam" placeholder="Name">
+                  <input class="profile-inputs" type="text" name="new_surnam" placeholder="Surname">
+                  <input class="profile-submit" type="submit" name="nam_mod" value="Modify name and surname">
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class='option_block_4'>
+            <button onclick='drop4()' class='dropsies' id="butsize"> change email</button>
+            <div id='dropper4' class='box_4'>
+              <form action="../php/profile_modify.php" method="post" class="position-box">
+                <div class="profile-forms">
+                  <input class="profile-inputs" type="email" name="new_eml" placeholder="New email">
+                  <input class="profile-inputs" type="email" name="rep_eml" placeholder="Repeat email">
+                  <input class="profile-submit" type="submit" name="eml_mod" value="Modify email">
+                </div>
+              </form>
+            </div>
+          </div>
+          </div>
+          <div class="profile-links">
+          <div class="option_block_5">
+            <form action="./gallery.php">
+              <input type="submit" class="form-button" value="Go to Gallery" />
+          </form>
+        </div>
 
 
-      <div class="option_block_6">
-        <form action="./upload.php">
-          <input type="submit" class="form-button" value="Upload Now" />
-        </form>
-      </div>        
+        <div class="option_block_6">
+          <form action="./upload.php">
+            <input type="submit" class="form-button" value="Upload Now" />
+          </form>
+        </div>        
       </div>
     </div>
+</div>
+
 
     <!-- the foot -->
     <div class="foot">
