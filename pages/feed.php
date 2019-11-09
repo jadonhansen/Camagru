@@ -10,7 +10,7 @@
   <body class="bg">
     <div class="head">
 
-    <!-- the drop down button -->
+    <!-- the drop down button and username-->
       <?php
         session_start();
         if(isset($_SESSION['username']))
@@ -33,6 +33,11 @@
           echo("<div class='loggedin-user'>@"
                 .$_SESSION['username']. 
                "</div>");
+
+          echo("<form class='search-bar' action='./user_search.php' method='post'>
+                  <input type='text' name='search_param' placeholder='username search'>
+                  <input type='submit' name='search' value='GO!'>
+                </form>");
         }
       ?>
 
@@ -40,7 +45,7 @@
       <div class="icon">
         ICON
       </div>
-
+  
       <!-- the differing logins and outs -->
       <?php
         session_start();

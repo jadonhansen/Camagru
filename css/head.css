@@ -28,6 +28,13 @@
     width: 400px;
 }
 
+.search-bar{
+    /* font-size: 1px; */
+    padding-top: 15px;
+    padding-right: 100px;
+    float: right;
+}
+
 .create{
     font-size: 1px;
     padding-top: 15px;

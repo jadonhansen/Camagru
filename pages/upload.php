@@ -102,15 +102,17 @@
 
     <!-- side options panel-->
     <div class="upload-panel">
-      <div class="take-picture"><button id="snap">CAPTURE</button></div>
-      <div class="panel-clear"><button id="clear">Clear</button></div>
-      <div class="panel-clear"><button id="clearfilters">Clear filters</button></div>
-        <div class="post-img">
-          <form method="post" action="../php/upload.php">
-            <input type="hidden" name="image_data" id="image_data" value="">
-            <button type="submit" name="submit" id="uploadphoto">POST</button>
-          </form>
-        </div>
+      <button class="take-picture" id="snap"></button>
+      <div class="panel-clear">
+        <button id="clear">Clear</button>
+      </div>
+      <div class="panel-clear">
+        <button id="clearfilters">Clear filters</button>
+      </div>
+      <form method="post" action="../php/upload.php">
+        <input type="hidden" name="image_data" id="image_data" value="">
+        <button class="post-img" type="submit" name="submit" id="uploadphoto">POST</button>
+      </form>
       <div class="upload-form">
         <form action="../php/upload.php" method="post" enctype="multipart/form-data">
           Upload from device:  

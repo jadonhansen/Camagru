@@ -10,19 +10,15 @@ Gabriel:
         - general style improvements
         - stlye the email displayed in profile.php and user_search.php
 
-        - ADD THIS INTO THE HEADER BAR ONLY FOR FEED.PHP WHEN A USER IS LOGGED IN:
-                <form action="./user_search.php" method="post">
-                        <input type="text" name="search_param" placeholder="username search">
-                        <input type="submit" name="search" value="GO!">
-                </form>
-
-
 Jadon:
         - Reloading of elements not pages (likes, comments, delete)-> AJAX
         - Do those cool notification bar things (for profile updates and post notifications and uploading)
         - try cool css effect on ICON
         - ! COMMENTS SECTION
 
+        pagination of 5 images per page
+        no php injections
+        intialise db if its not already initiliased
 
 NOTES:
 the webcam isn't stable on launch of other apps it can stop working, dunno if theres a possible fix --> maybe just your mac??
