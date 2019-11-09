@@ -64,9 +64,30 @@ function delete($img_id) {
     echo "<script>window.open('../pages/feed.php','_self')</script>";
 }
 
+function playFetch($id) {
+	require 'db.php';
+	$stmt = $conn->prepare("SELECT comment FROM comments WHERE image_id='$id'");
+	$stmt->execute();
+	$rows = $stmt->fetchAll();
+    if (!$rows) {
+        echo "There are no comments for this post!";
+    }
+    else {
+		foreach ($rows as $row) {
+			echo $row['comment'];	//styling done here or in feed.php
+			echo "<br />";
+		}
+    }
+    $conn = NULL;
+	exit();
+}
+
 session_start();
 if (isset($_SESSION['username'])) {
-    if (isset($_POST['like'])){
+	if (isset($_POST['details'])) {
+		playFetch($_POST['details']);
+	}
+    else if (isset($_POST['like'])){
         like($_POST['id']);
     }
     else if (isset($_POST['comment'])) {

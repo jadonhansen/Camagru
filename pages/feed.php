@@ -5,6 +5,7 @@
 		<link rel="stylesheet" href="../css/footer.css">
 		<link rel="stylesheet" href="../css/body.css">
 		<link rel="stylesheet" href="../css/head.css">
+		<script src="./performance.js"></script>
 	</head>
 
   <body class="bg">
@@ -103,7 +104,7 @@
 			echo "<div class='feed-work-space'>";
 			echo "<div class='the-box'>";
 			$encoded_image = $row['img'];
-			$display = "<img src='data:image/*;base64,{$encoded_image}' onClick='displayComments({$row['image_id']})' width='80%' height='100%' >";
+			$display = "<img onclick='displayComments({$row['image_id']})' src='data:image/*;base64,{$encoded_image}' width='80%' height='100%' >";
 			session_start();
 			if (isset($_SESSION['username'])) {
 
@@ -140,16 +141,16 @@
 						<input style='position:relative; left:15%;' type='submit' name='comment' value='Post Comment'>
 					</form>";
 
+				//VIEW COMMENTS -- maybe add a hint appearing by the cursor when you hover the post as well
+				echo "<div id='comments_section'><b>Tap post to view comments...</b></div>";
 				echo "<div style='width:100%; height:3%;'>  </div>";
+
 			}
 			else {
 				echo "<h4>@" . $row['username'] . "</h4>";
 				echo $display;
 				echo "<h4>Likes " . $row['likes'] . "</h4>";
 				echo "<i>Posted " . $row['upload_date'] . "</i>";
-
-				//fetch comments here too
-
 				echo '<hr />';
 			}
 			echo "<div class='feed-line' ><hr/ ></div>";
@@ -160,8 +161,6 @@
 	}
 	$conn = NULL;
 ?>
-
-	<script src="./fetch_comments.js"></script>
 
 	<!-- the foot -->
 	<div class="foot">
