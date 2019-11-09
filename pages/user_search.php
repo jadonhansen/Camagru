@@ -48,78 +48,78 @@ else {
 
 ?>
 
-<html>
-  <head>
-    <title>ICON | Profile</title>
-    <link rel="stylesheet" href="../css/block.css">
-    <link rel="stylesheet" href="../css/dropdown.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/body.css">
-    <link rel="stylesheet" href="../css/head.css">
-  </head>
+	<html>
+		<head>
+		<title>ICON | Profile</title>
+		<link rel="stylesheet" href="../css/block.css">
+		<link rel="stylesheet" href="../css/dropdown.css">
+		<link rel="stylesheet" href="../css/footer.css">
+		<link rel="stylesheet" href="../css/body.css">
+		<link rel="stylesheet" href="../css/head.css">
+		</head>
 
-  <body id=bground>    
-    <div class="head">
+		<body id=bground>    
+		<div class="head">
 
-    <!-- the drop down button -->    
-    <?php
-    session_start();
-    if(isset($_SESSION['username'])){
-        echo("<div class='dropdown'>
-                <button onclick='myFunction()' class='dropbtn'>
-                <div class='other_option'></div>
-                <div class='options'></div>
-                <div class='options'></div>
-                <div class='options'></div>
-                </button>
-                <div id='myDropdown' class='dropdown-content'>
-                <a href='profile.php'>Profile</a>
-                <a href='gallery.php'>Gallery</a>
-                <a href='feed.php'>Feed</a>
-                <a href='upload.php'>Upload</a>
-                </div>
-            </div>");
-        echo("<div class='loggedin-user'>@"
-                .$_SESSION['username']. 
-            "</div>");
-    }
-    else{
-        echo "<script>alert('Please login first!')</script>";
-        echo "<script>window.open('./login.php','_self')</script>";
-    }
-    ?>
+	<!-- the drop down button -->    
+	<?php
+		session_start();
+		if(isset($_SESSION['username'])){
+			echo("<div class='dropdown'>
+					<button onclick='myFunction()' class='dropbtn'>
+					<div class='other_option'></div>
+					<div class='options'></div>
+					<div class='options'></div>
+					<div class='options'></div>
+					</button>
+					<div id='myDropdown' class='dropdown-content'>
+					<a href='profile.php'>Profile</a>
+					<a href='gallery.php'>Gallery</a>
+					<a href='feed.php'>Feed</a>
+					<a href='upload.php'>Upload</a>
+					</div>
+				</div>");
+			echo("<div class='loggedin-user'>@"
+					.$_SESSION['username']. 
+				"</div>");
+		}
+		else{
+			echo "<script>alert('Please login first!')</script>";
+			echo "<script>window.open('./login.php','_self')</script>";
+		}
+	?>
     
     <!-- Icon -->    
     <div class="icon">
     ICON
     </div>
 
-    <!-- the differing logins and outs -->
-    <?php
-    session_start();
-    if(isset($_SESSION['username'])){
-        echo("<a id='logout' href='../php/logout.php'>Logout</a>"); 
-    }
-    ?>
+	<!-- the differing logins and outs -->
+	<?php
+		session_start();
+		if(isset($_SESSION['username'])){
+			echo("<a id='logout' href='../php/logout.php'>Logout</a>"); 
+		}
+	?>
+
 </div>
 
     <!-- drop scriptsssss -->
     <script>
         function myFunction(){
-        document.getElementById("myDropdown").classList.toggle("show");
-        }
-
+        	document.getElementById("myDropdown").classList.toggle("show");
+    	}
         window.onclick = function(event){
-        if (!event.target.matches('.dropbtn')){
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            var i;
-            for (i = 0; i < dropdowns.length; i++){
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')){
-                openDropdown.classList.remove('show');
-            }
-            }
-        }
+			if (!event.target.matches('.dropbtn')){
+				var dropdowns = document.getElementsByClassName("dropdown-content");
+				var i;
+				for (i = 0; i < dropdowns.length; i++){
+					var openDropdown = dropdowns[i];
+					if (openDropdown.classList.contains('show')){
+						openDropdown.classList.remove('show');
+					}
+				}
+			}
         }
     </script>
 
@@ -147,36 +147,36 @@ else {
         }  
     </script>
 
-    <!-- searched user details -->
-    <div class="details">
-      <div class="top-stuff">      
-        <?php
-          if (!$info['user_img'])
-            echo "<img src='../images/user_img.png' class='profile_pic'>";
-          else {
-            $encoded_image = $info['user_img'];
-            $display = "<img src='data:image;base64,{$encoded_image}' class='profile_pic'>";
-            echo "<div class='profile-pic'>" . $display . "</div>";
-          }
-        ?>
-        <div class="biography">
-          <?php echo "<h2>@" . $info['username'] . "</h2>"; ?>
-        </div>
-        <br/>
-        <div class="biography1">
-          <?php echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>"; ?>
-      </div>
-      <br/>
-        <div class="biography1">
-          <?php echo "<h4>" . $info['email'] . "</h4>"; ?>
-      </div>
+	<!-- searched user details -->
+	<div class="details">
+		<div class="top-stuff">      
+			<?php
+				if (!$info['user_img'])
+					echo "<img src='../images/user_img.png' class='profile_pic'>";
+				else {
+					$encoded_image = $info['user_img'];
+					$display = "<img src='data:image;base64,{$encoded_image}' class='profile_pic'>";
+					echo "<div class='profile-pic'>" . $display . "</div>";
+				}
+			?>
+		<div class="biography">
+			<?php echo "<h2>@" . $info['username'] . "</h2>"; ?>
+		</div>
+		<br/>
+		<div class="biography1">
+			<?php echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>"; ?>
+		</div>
+		<br/>
+		<div class="biography1">
+			<?php echo "<h4>" . $info['email'] . "</h4>"; ?>
+		</div>
 
+	<!-- the foot -->
+	<div class="foot">
+		<div class="jadon">@jhansen jadongavhansen@gmail.com</div> 
+		<div class="me">@gstrauss gstrauss18@gmail.com</div>
+		<div class="copyright">Copyright© 2019</div>
+	</div>
 
-    <!-- the foot -->
-    <div class="foot">
-      <div class="jadon">@jhansen jadongavhansen@gmail.com</div> 
-      <div class="me">@gstrauss gstrauss18@gmail.com</div>
-      <div class="copyright">Copyright© 2019</div>
-    </div>
   </body>
 </html>
