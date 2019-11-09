@@ -8,7 +8,7 @@ Gabriel:
                                 ! verify_account.php (styling & get button working)
         - Posts: on hover --> adds a transparent black overlay and displays amount of likes in the middle of the image
         - general style improvements
-        - stlye the email displayed in profile.php and user_search.php
+        - style the email displayed in profile.php and user_search.php
 
 Jadon:
         - Reloading of elements not pages (likes, comments, delete)-> AJAX
@@ -16,11 +16,8 @@ Jadon:
         - try cool css effect on ICON
         - ! COMMENTS SECTION
 
-        pagination of 5 images per page
-        no php injections
-        intialise db if its not already initiliased
+        *pagination of 5 images per page --> infinite scroll should cross this off
+        *intialise db if its not already initiliased -->check this out
 
 NOTES:
-the webcam isn't stable on launch of other apps it can stop working, dunno if theres a possible fix --> maybe just your mac??
-
-- php at the bottom of the gallery and feed pages removes the footer from the html if there are no posts --> why is this needed? The footer should *always* be there
+the webcam isn't stable on launch of other apps it can stop working, dunno if theres a possible fix

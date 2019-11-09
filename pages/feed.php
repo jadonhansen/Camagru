@@ -103,9 +103,11 @@
 			echo "<div class='feed-work-space'>";
 			echo "<div class='the-box'>";
 			$encoded_image = $row['img'];
-			$display = "<img src='data:image/*;base64,{$encoded_image}' width='80%' height='100%' >";
+			$display = "<img src='data:image/*;base64,{$encoded_image}' onClick='displayComments({$row['image_id']})' width='80%' height='100%' >";
 			session_start();
 			if (isset($_SESSION['username'])) {
+
+				// post owner
 				echo "<div class='feed-usr' >@" . $row['username'] . "</div>";
 
 				// delete button
@@ -115,7 +117,8 @@
 				<input  type='submit' name='delete' value='Delete post'>
 					</form>";
 				}
-				
+
+				// post image
 				echo "<div class='feed-img'>" . $display . "</div>";
 
 				// like button
@@ -124,8 +127,10 @@
 						<input type='submit' name='like' value='Like'>
 					</form>";
 
+				// post likes
 				echo "<div class='feed-likes'>Likes: " . $row['likes'] . "</div>";
 			
+				// posted date
 				echo "<div class='feed-date' >Posted " . $row['upload_date'] . "</div>";
 
 				// comments
@@ -142,6 +147,9 @@
 				echo $display;
 				echo "<h4>Likes " . $row['likes'] . "</h4>";
 				echo "<i>Posted " . $row['upload_date'] . "</i>";
+
+				//fetch comments here too
+
 				echo '<hr />';
 			}
 			echo "<div class='feed-line' ><hr/ ></div>";
@@ -153,6 +161,8 @@
 	$conn = NULL;
 ?>
 
+	<script src="./fetch_comments.js"></script>
+
 	<!-- the foot -->
 	<div class="foot">
 		<div class="jadon">@jhansen jadongavhansen@gmail.com</div> 
@@ -162,16 +172,6 @@
 
   </body>
 </html>
-
-
-
-
-
-
-
-
-
-
 
 <!-- ?php
       require '../php/db.php';
