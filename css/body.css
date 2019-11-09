@@ -23,15 +23,11 @@
 }
 
 
-
 .capture-box {
-    width: 60%;
-    height: 40%;
+    /* width: 60%; */
+    /* height: 40%; */
     position: relative;
-    /* background-color: aliceblue; */
-    left: 20%;
-    top: 50px;
-    margin-top: 20px;
+    padding-top: 2%;
 }
 
 .upload-box {
@@ -58,9 +54,9 @@
 }
 
 .canvas-inner{
-    height: 100%;
-    width: 60%;
-    padding-left: 20%;
+    height: 50%;
+    width: 50%;
+    /* padding-left: 20%; */
 }
 
 .upload-canvas{
@@ -521,44 +517,47 @@
 
 .upload-content{
     position: relative;
-    top: 50px;
+    top: 75px;
     text-align: justify;
     -ms-text-justify: distribute-all-lines;
     text-justify: distribute-all-lines;
-
 }
 
 .upload-panel{
+    border-radius: 10px;
     vertical-align: top;
     display: inline-block;
     position: relative;
-    left: 5px;
+    /* left: 5px; */
     height: 50%;
-    width: 10%;
-    background-color: grey;
+    width: auto;
+    background-color: rgba(191, 191, 191, 0.2);
     /* top: 100px; */
 }
 
 .upload-capture {
+    text-align: center;
+    border-radius: 10px;
     vertical-align: top;
     display: inline-block;
-    background-color: hotpink;
+    background-color: rgba(46, 49, 49, 0.2);
     width: 60%;
-    height: 80%;
+    height: 88%;
     position: relative;
     /* top: 75px; */
 }
 
 .styles-box{
+    border-radius: 10px;
     vertical-align: top;
     display: inline-block;
-    height: 80%;
+    height: 88%;
     margin: 0;
-    width: 150px;
+    width: 200px;
     position: relative;
     /* top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%); */
-    background-color: grey;
-    right: 0px;
+    background-color: rgba(191, 191, 191, 0.2);
+    right: 0;
 }
