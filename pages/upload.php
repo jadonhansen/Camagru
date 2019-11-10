@@ -95,7 +95,7 @@
         <form action="../php/upload.php" method="post" enctype="multipart/form-data">
           Upload from device:  
           <hr />
-          <input type="file" name="uploadedFile" id="fileToUpload" accept="image/*">
+          <input class="upload-upload" type="file" name="uploadedFile" id="fileToUpload" accept="image/*">
         </form>
       </div>
 
