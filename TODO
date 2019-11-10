@@ -11,11 +11,12 @@ Gabriel:
         - style the email displayed in profile.php and user_search.php
 
 Jadon:
-        - Reloading of elements not pages (likes, comments, delete)-> AJAX
-        - Do those cool notification bar things (for profile updates and post notifications and uploading)
+        - Reloading of elements not pages (comments)-> AJAX & XML
+        - Do those cool notification bar things (for profile updates and post notifications and uploading)->js..?
         - try cool css effect on ICON
-        - ! COMMENTS SECTION
-
+		- get bg
+		- get png filters
+		
         *pagination of 5 images per page --> infinite scroll should cross this off
         *intialise db if its not already initiliased -->check this out
 
