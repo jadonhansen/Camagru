@@ -29,19 +29,22 @@ var original;
         element.addEventListener("click",function(){
         image = element;
         if (image && videoflag === 1){
-            if (image.src === "http://localhost:8080/Camagru/filters/coconut.png"){
+			if (image.src === "http://localhost:8080/Camagru/filters/21.png"){
+				context.drawImage(image, 0, 0, 400, 300);
+            }
+			else if (image.src === "http://localhost:8080/Camagru/filters/22.png"){
+				context.drawImage(image, 0, 0, 400, 300);
+			}
+            else if (image.src === "http://localhost:8080/Camagru/filters/23.png"){
                 context.drawImage(image, 0, 0, 400, 300);
             }
-            else if (image.src === "http://localhost:8080/Camagru/filters/island.png"){
+            else if (image.src === "http://localhost:8080/Camagru/filters/24.png"){
                 context.drawImage(image, 0, 0, 400, 300);
             }
-            else if (image.src === "http://localhost:8080/Camagru/filters/sunbed.png"){
+            else if (image.src === "http://localhost:8080/Camagru/filters/25.png"){
                 context.drawImage(image, 0, 0, 400, 300);
-            }
-            else if (image.src === "http://localhost:8080/Camagru/filters/surf.png"){
-                context.drawImage(image, 0, 0, 400, 300);
-            }
-            else if (image.src === "http://localhost:8080/Camagru/filters/wave.png"){
+			}
+            else if (image.src === "http://localhost:8080/Camagru/filters/26.png"){
                 context.drawImage(image, 0, 0, 400, 300);
             }
             var dataURL = canvas.toDataURL();
