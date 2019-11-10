@@ -24,9 +24,15 @@ function comment_img(img_id) {
 	}
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			document.getElementById(`comment_box-${img_id}`).value = ""; //-->check for false return
+			if (this.responseText === "False") {
+				//false return notif
 			}
-		};
+			else {
+				//true return notif
+				document.getElementById(`comment_box-${img_id}`).value = "";
+			}
+		}
+	};
 	xmlhttp.open("POST", "../php/post_activity.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	let comm = document.getElementById(`comment_box-${img_id}`).value;
@@ -41,9 +47,14 @@ function like_img(img_id) {
 	}
 	xmlhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			document.getElementById(`like_section-${img_id}`).innerHTML = this.responseText; //-->check for false return
+			if (this.responseText === "False") {
+				//false return notif
 			}
-		};
+			else {
+				document.getElementById(`like_section-${img_id}`).innerHTML = this.responseText;
+			}
+		}
+	};
 	xmlhttp.open("POST", "../php/post_activity.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 	xmlhttp.send("like=submit&id=" + img_id);
