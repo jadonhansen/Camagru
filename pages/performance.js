@@ -13,8 +13,7 @@ function displayComments(img_id) {
 	};
 	xmlhttp.open("POST", "../php/post_activity.php", true);
 	xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-	xmlhttp.send("details=6");
-	//pass js var ^^^^^^
+	xmlhttp.send("details="+img_id);
 }
 
 // function comment_img(img_id) {
