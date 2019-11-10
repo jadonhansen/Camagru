@@ -87,10 +87,10 @@ if (isset($_SESSION['username'])) {
 	if (isset($_POST['details'])) {
 		playFetch($_POST['details']);
 	}
-    else if (isset($_POST['like'])){
+    else if (isset($_POST['like'])){ //do ajax --> just needs to echo total likes after updated db
         like($_POST['id']);
     }
-    else if (isset($_POST['comment'])) {
+    else if (isset($_POST['comment'])) {  //do ajax --> just needs to clear box after posted comment
         $commt = $_POST['comment_box'];
         comment($commt, $_POST['id']);
     }
