@@ -3,7 +3,7 @@
 function bigbang() {
     $server = "localhost";
     $username = "root";
-    $password = "surfboard";
+    $password = "qwerty";
     try {
         $conn = new PDO("mysql:host=$server", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -20,7 +20,7 @@ function bigbang() {
 function conscious_presence() {
     $server = "localhost";
     $username = "root";
-    $password = "surfboard";
+    $password = "qwerty";
     try {
         $conn = new PDO("mysql:host=$server;dbname=icon", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -45,7 +45,7 @@ function conscious_presence() {
 function state_of_delerium() {
     $server = "localhost";
     $username = "root";
-    $password = "surfboard";
+    $password = "qwerty";
     try {
         $conn = new PDO("mysql:host=$server;dbname=icon", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -67,7 +67,7 @@ function state_of_delerium() {
 function judgement() {
     $server = "localhost";
     $username = "root";
-    $password = "surfboard";
+    $password = "qwerty";
     try {
         $conn = new PDO("mysql:host=$server;dbname=icon", $username, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

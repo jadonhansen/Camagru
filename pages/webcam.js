@@ -28,16 +28,13 @@
 				if (image.src === "http://localhost:8080/Camagru/filters/21.png"){
 					context.drawImage(image, 0, 0, 400, 300);
 				}
-				else if (image.src === "http://localhost:8080/Camagru/filters/22.png"){
+				else if (image.src === "http://localhost:8080/Camagru/filters/27.png"){
 					context.drawImage(image, 0, 0, 400, 300);
 				}
-				else if (image.src === "http://localhost:8080/Camagru/filters/23.png"){
+				else if (image.src === "http://localhost:8080/Camagru/filters/28.png"){
 					context.drawImage(image, 0, 0, 400, 300);
 				}
 				else if (image.src === "http://localhost:8080/Camagru/filters/24.png"){
-					context.drawImage(image, 0, 0, 400, 300);
-				}
-				else if (image.src === "http://localhost:8080/Camagru/filters/25.png"){
 					context.drawImage(image, 0, 0, 400, 300);
 				}
 				else if (image.src === "http://localhost:8080/Camagru/filters/26.png"){
