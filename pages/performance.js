@@ -8,7 +8,7 @@ function displayComments(img_id) {
 	}
 	xmlhttp.onreadystatechange = function() {
 	if (this.readyState == 4 && this.status == 200) {
-		document.getElementById("comments_section").innerHTML = this.responseText;
+		document.getElementById(`comments_section-${img_id}`).innerHTML = this.responseText;
 		}
 	};
 	xmlhttp.open("POST", "../php/post_activity.php", true);

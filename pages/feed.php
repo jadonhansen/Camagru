@@ -141,10 +141,9 @@
 						<input style='position:relative; left:15%;' type='submit' name='comment' value='Post Comment'>
 					</form>";
 
-				//VIEW COMMENTS --(move this to a box on the side) maybe add a hint appearing by the cursor when you hover the post as well
-				echo "<div id='comments_section'><b>Tap post to view comments...</b></div>";
+				//VIEW COMMENTS maybe add a hint appearing by the cursor when you hover the post as well
+				echo "<div id='comments_section-{$row['image_id']}'><b>Tap post to view comments...</b></div>";
 				echo "<div style='width:100%; height:3%;'>  </div>";
-
 			}
 			else {
 				echo "<h4>@" . $row['username'] . "</h4>";

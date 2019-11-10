@@ -10,7 +10,6 @@ Gabriel:
         - style the email displayed in profile.php and user_search.php
 
 Jadon:
-        - Reloading of elements not pages (comments)-> AJAX & XML
         - Do those cool notification bar things (for profile updates and post notifications and uploading)->js..?
         - try cool css effect on ICON
 		- get bg
