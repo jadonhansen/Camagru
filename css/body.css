@@ -42,8 +42,14 @@
 }
 
 .upload-form{
+    align-content: center;
     position: relative;
     top: 10%;
+}
+
+.upload-upload{
+    position: relative;
+    width: 155px;
 }
 
 .post-img {
@@ -54,7 +60,7 @@
     text-decoration: none;
     margin: 4px 2px;
     cursor: pointer;
-    position: absolute;
+    position: relative;
     top: 40%;
 }
 
@@ -89,7 +95,7 @@
 }
 
 .take-picture {
-    position: absolute;
+    position: relative;
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBRYuJtADOGDS2FxDfrIEreDEiabbJQxIEr9qfI6CVzBL_GDE3&s);
     background-size: 100%;
     width: 95px;
@@ -176,6 +182,7 @@
 }
 
 .profile-pic{
+    height: 250px;
     vertical-align: baseline;
     position: relative;
     display: inline-block;
@@ -219,7 +226,7 @@
 .options-blocks{
     flex: auto;
     position: relative;
-
+    left: 70px;
     display: flex;
     flex-direction: column;
 }
@@ -554,6 +561,7 @@
 }
 
 .upload-panel{
+    text-align: center;
     border-radius: 10px;
     vertical-align: top;
     display: inline-block;
@@ -583,7 +591,7 @@
     display: inline-block;
     height: 88%;
     margin: 0;
-    width: 200px;
+    width: 160;
     position: relative;
     /* top: 50%;
     -ms-transform: translateY(-50%);

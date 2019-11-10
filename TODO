@@ -5,7 +5,6 @@ Gabriel:
                                 ! profile.php (positioning of boxes)
                                 ! gallery.php (styling)
                                 ! upload.php (layout)
-                                ! verify_account.php (styling & get button working)
         - Posts: on hover --> adds a transparent black overlay and displays amount of likes in the middle of the image
         - general style improvements
         - style the email displayed in profile.php and user_search.php
