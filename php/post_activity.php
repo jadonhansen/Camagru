@@ -7,19 +7,23 @@ function like($img_id) {
     $sql = "UPDATE feed SET likes=likes+1 WHERE image_id='$img_id'";
     $stmt = $conn->query($sql);
     if (!$stmt) {
-        echo "<script>alert('Sorry, this action could not be completed!')</script>";
-        echo "<script>window.open('../pages/feed.php','_self')</script>";
+        echo "False";
         exit();
-    }
-    $conn = NULL;
-    echo "<script>window.open('../pages/feed.php','_self')</script>";
-     
+	}
+	$stmt = $conn->query("SELECT likes FROM feed WHERE image_id='$img_id'");
+	$post = $stmt->fetch(PDO::FETCH_ASSOC);
+    if (!$post) {
+        echo "False";
+	}
+	else {
+		echo $post['likes'];
+	}
+	$conn = NULL;
 }
 
 function comment($commt, $img_id) {
     if (strlen($commt) >= 200) {
-        echo "<script>alert('Please make sure your comment is 200 characters or less.')</script>";
-        echo "<script>window.open('../pages/feed.php','_self')</script>";
+        echo "False";
         exit();
     }
     require 'db.php';
@@ -31,34 +35,28 @@ function comment($commt, $img_id) {
         $stmt = $conn->prepare("INSERT INTO comments (image_id, comment, username, comm_date) values ('$img_id', :comm, '$username', '$dt')");
         $stmt->bindParam(':comm', $commt);
         if (!$stmt->execute()) {
-            echo "<script>alert('SQL ERROR: 1')</script>";
-            echo "<script>window.open('../pages/feed.php?error=sql','_self')</script>";
+            echo "False";
             exit();
         }
     } catch (PDOException $exception) {
-        echo $sql . "<br>" . $exception->getMessage(); //dont need for final?
-        echo "<script>alert('SQL ERROR: 2')</script>";
+        echo "False";
         exit();
     }
-    $conn = NULL;
-    echo "<script>alert('Comment posted!')</script>"; //do not need when below is done
-    //cool comment posted thingy
-    echo "<script>window.open('../pages/feed.php','_self')</script>";
+	$conn = NULL;
+	echo "True";
 }
 
 function delete($img_id) {
     require 'db.php';
     session_start();
     $username = $_SESSION['username'];
-
     $num = $conn->exec("DELETE FROM feed WHERE image_id='$img_id' AND username='$username'");
     if (!$num) {
-        echo "<script>alert('Could not be deleted!')</script>";
+        echo "<script>alert('Your post could not be deleted!')</script>";
     }
     else {
         $num = $conn->exec("DELETE FROM comments WHERE image_id='$img_id'");
-        echo "<script>alert('Deleted!')</script>"; //do not need when below is done
-        //cool delete post thingy
+        echo "<script>alert('Deleted!')</script>";
     }
     $conn = NULL;
     echo "<script>window.open('../pages/feed.php','_self')</script>";
@@ -66,7 +64,7 @@ function delete($img_id) {
 
 function playFetch($id) {
 	require 'db.php';
-	$stmt = $conn->prepare("SELECT comment FROM comments WHERE image_id='$id'");
+	$stmt = $conn->prepare("SELECT comment, comm_date, username FROM comments WHERE image_id='$id' ORDER BY comm_date DESC");
 	$stmt->execute();
 	$rows = $stmt->fetchAll();
     if (!$rows) {
@@ -74,7 +72,7 @@ function playFetch($id) {
     }
     else {
 		foreach ($rows as $row) {
-			echo $row['comment'];	//styling done here or in feed.php
+			echo $row['comment'] . " --> Posted by " . $row['username'] . " on " . $row['comm_date'];
 			echo "<br />";
 		}
     }
@@ -87,10 +85,10 @@ if (isset($_SESSION['username'])) {
 	if (isset($_POST['details'])) {
 		playFetch($_POST['details']);
 	}
-    else if (isset($_POST['like'])){ //do ajax --> just needs to echo total likes after updated db
+    else if (isset($_POST['like'])){
         like($_POST['id']);
     }
-    else if (isset($_POST['comment'])) {  //do ajax --> just needs to clear box after posted comment
+    else if (isset($_POST['comment'])) {
         $commt = $_POST['comment_box'];
         comment($commt, $_POST['id']);
     }

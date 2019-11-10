@@ -123,25 +123,19 @@
 				echo "<div class='feed-img'>" . $display . "</div>";
 
 				// like button
-				echo "<form class='feed-like' action='../php/post_activity.php' method='post'>
-						<input type='hidden' name='id' value='{$row['image_id']}'>
-						<input type='submit' name='like' value='Like'>
-					</form>";
+				echo "<button class='feed-like' onclick='like_img({$row['image_id']})'>Like</button>";
 
 				// post likes
-				echo "<div class='feed-likes'>Likes: " . $row['likes'] . "</div>";
-			
+				echo "<div class='feed-likes' id='like_section-{$row['image_id']}'><p>{$row['likes']}</p></div>";
+				
 				// posted date
 				echo "<div class='feed-date' >Posted " . $row['upload_date'] . "</div>";
 
 				// comments
-				echo "<form action='../php/post_activity.php' method='post'>
-						<input type='hidden' name='id' value='{$row['image_id']}'>
-						<input style='position:relative; left:15%; width:40%; type='text' name='comment_box'>
-						<input style='position:relative; left:15%;' type='submit' name='comment' value='Post Comment'>
-					</form>";
+				echo "<input style='position:relative; left:15%; width:40%; type='text' id='comment_box-{$row['image_id']}'>";
+				echo "<button style='position:relative; left:15%;' onclick='comment_img({$row['image_id']})'>Post</button>";
 
-				//VIEW COMMENTS maybe add a hint appearing by the cursor when you hover the post as well
+				// view comments section: add a hint appearing by the cursor when you hover the post as well
 				echo "<div id='comments_section-{$row['image_id']}'><b>Tap post to view comments...</b></div>";
 				echo "<div style='width:100%; height:3%;'>  </div>";
 			}
