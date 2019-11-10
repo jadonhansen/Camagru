@@ -130,11 +130,12 @@
 
       <!-- styles box -->
     <div class="styles-box">
-        <img class="filter" src="http://localhost:8080/Camagru/filters/coconut.png" height="125" width="125">
-        <img class="filter" src="http://localhost:8080/Camagru/filters/island.png" height="125" width="125">
-        <img class="filter" src="http://localhost:8080/Camagru/filters/sunbed.png" height="125" width="125">
-        <img class="filter" src="http://localhost:8080/Camagru/filters/surf.png" height="125" width="125">
-        <img class="filter" src="http://localhost:8080/Camagru/filters/wave.png" height="125" width="152">
+        <img class="filter" src="http://localhost:8080/Camagru/filters/21.png" height="125" width="125">
+        <img class="filter" src="http://localhost:8080/Camagru/filters/22.png" height="125" width="125">
+        <img class="filter" src="http://localhost:8080/Camagru/filters/23.png" height="125" width="125">
+        <img class="filter" src="http://localhost:8080/Camagru/filters/24.png" height="125" width="125">
+        <img class="filter" src="http://localhost:8080/Camagru/filters/25.png" height="125" width="152">
+		<img class="filter" src="http://localhost:8080/Camagru/filters/26.png" height="125" width="152">
       </div>
     <script src="./edit.js"></script>
     <script src="./webcam.js"></script>
