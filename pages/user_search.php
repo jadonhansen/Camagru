@@ -149,8 +149,8 @@ else {
 		</div>
 	  </div>
 	  <div class="emailer">
-		  <form method="post" action="">
-			<input type="text" name="message" class="emails" required>
+		  <form method="post" action="../php/email_friend.php">
+			<input type="text" name="message" class="emails" placeholder="Send a message to <?php echo $result['username'];?>..." required>
 			<br>
 			<input type="hidden" name="email" value="<?php echo $result['email'];?>">
 			<input type="submit" name="email_friend" class="send_mail">

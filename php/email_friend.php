@@ -15,7 +15,7 @@ if (isset($_POST['email_friend'])) {
 	}
 	$result = $stmt->fetch();
 	if (!$result) {
-		echo "<script>alert('You email address could not be found!')</script>";
+		echo "<script>alert('Your email address could not be found!')</script>";
 		echo "<script>window.open('../pages/user_search.php?email=notfound','_self')</script>";
 		exit();
     }
@@ -23,7 +23,7 @@ if (isset($_POST['email_friend'])) {
         $to = $_POST['email'];
         $from_email = $result['email'];
         $message = $_POST['message'];
-        $subject = "ICON - $from started a conversation with you!";
+        $subject = "ICON - @$from started a conversation with you!";
         $headers = "From: $from_email \r\n";
         $headers .= "MINE-Version: 1.0"."\r\n";
         $headers .= "Content-type:text/html;charset=UTF-8"."\r\n";
@@ -31,10 +31,12 @@ if (isset($_POST['email_friend'])) {
         if ($res == TRUE) {
             echo "<script>alert('Email sent!')</script>";
             echo "<script>window.open('../pages/user_search.php','_self')</script>";
+            exit();
         }
         else {
             echo "<script>alert('Failed to send email!')</script>";
             echo "<script>window.open('../pages/user_search.php','_self')</script>";
+            exit();
         }
     }
 }

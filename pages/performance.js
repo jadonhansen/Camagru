@@ -26,10 +26,28 @@ function comment_img(img_id) {
 		if (this.readyState == 4 && this.status == 200) {
 			if (this.responseText === "False") {
 				//false return notif
+				document.getElementById("notification").value = "Could not post comment!"
+				document.getElementById("notification").classList.toggle("show");	
+				setTimeout(function(){
+					document.getElementById("notification").classList.toggle("show");
+				 }, 3000);
+			}
+			else if (this.responseText === "False1") {
+				//false return notif
+				document.getElementById("notification").value = "Please type in a valid comment less than 200 characters."
+				document.getElementById("notification").classList.toggle("show");
+				setTimeout(function(){
+					document.getElementById("notification").classList.toggle("show");
+				}, 3000);
 			}
 			else {
 				//true return notif
 				document.getElementById(`comment_box-${img_id}`).value = "";
+				document.getElementById("notification").value = "Comment Posted!"
+				document.getElementById("notification").classList.toggle("show");
+				setTimeout(function(){
+					document.getElementById("notification").classList.toggle("show");
+				}, 3000);
 			}
 		}
 	};
