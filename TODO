@@ -2,13 +2,12 @@
 
 Gabriel:
         - Styling for pages:    ! feed.php (positioning and layout)
-                                ! profile.php (positioning of boxes)
-                                ! gallery.php (styling)
-                                ! upload.php (layout)
-        - Posts: on hover --> adds a transparent black overlay and displays amount of likes in the middle of the image
-        - general style improvements
-        - style the email displayed in profile.php and user_search.php
+                                ! profile.php
+                                ! gallery.php
+                                ! upload.php
+        - Posts: on hover --> tooltip : Tap to view comments
 
 Jadon:
-        - Do those cool notification bar things (for profile updates and post notifications and uploading)->js..?
+        - Do those cool notification bar things (for profile updates and post notifications and uploading)
         - get bg
+        - get new camera icon for upload page
