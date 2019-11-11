@@ -106,6 +106,7 @@
 				echo "<div class='feed-img'>" . $display . "</div>";
 
 				// like button
+				echo"<div class='some-space'></div>";
 				echo "<button class='feed-like' onclick='like_img({$row['image_id']})'>Like</button>";
 
 				// post likes
@@ -121,7 +122,7 @@
 
 				// view comments section: add a hint appearing by the cursor when you hover the post as well
 				echo "<div id='comments_section-{$row['image_id']}'>
-						<b class='feed-comment'>...</b>
+						<b class='feed-comment'></b>
 					</div>";
 				// echo "<div style='width:100%; height:3%;'>  </div>";
 
@@ -129,14 +130,15 @@
 				echo "<div class='feed-date' >Posted " . $row['upload_date'] . "</div>";
 
 				// delete button
-				if ($_SESSION['username'] === $row['username']) {
+				if ($_SESSION['username'] === $row['username']) 
+				{
 					echo "<div class='feed-delete'>
 							<form class='feed-delete' action='../php/post_activity.php' method='post'>
 								<input type='hidden' name='id' value='{$row['image_id']}'>
 								<input  type='submit' name='delete' value='Delete post'>
 							</form>
 							</div>";
-					}			
+				}
 				echo "<div class='feed-line' ><hr/ ></div>";
 
 			}
@@ -154,7 +156,6 @@
 	}
 	$conn = NULL;
 ?>
-
 	<div class="foot">
 		<div class="jadon">@jhansen jadongavhansen@gmail.com</div> 
 		<div class="me">@gstrauss gstrauss18@gmail.com</div>

@@ -29,8 +29,8 @@
 
 
 .capture-box {
-    /* width: 60%; */
-    /* height: 40%; */
+    width: 60%;
+    height: 40%;
     position: relative;
     padding-top: 2%;
 }
@@ -90,11 +90,13 @@
 
 
 .panel-clear{
+    padding-bottom: 25px;
     position: relative;
     top: 75%;
 }
 
 .take-picture {
+    border-radius: 100px;
     position: relative;
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBRYuJtADOGDS2FxDfrIEreDEiabbJQxIEr9qfI6CVzBL_GDE3&s);
     background-size: 100%;
@@ -142,7 +144,7 @@
     justify-content: center;
     background-color: white;
     position: relative;
-    height: 850px;
+    height: 680px;
     width: 80%;
     left: 10%;
     top: 50px;
@@ -150,7 +152,7 @@
 
 .feed-work-space{
     flex: auto;
-    background-color: crimson;
+    /* background-color: crimson; */
     position: relative;
     height: 100%;
     width: 60%;
@@ -159,7 +161,7 @@
 
 .feed-img {
     width: 100%;
-    height: 70%;
+    height: 500px;
     position: relative;
     /* left: 10%; */
     top: 0px;
@@ -176,6 +178,11 @@
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
     flex: auto;
+}
+
+.some-space{
+    width: 100%;
+    height: 10px;
 }
 
 .top-stuff{
@@ -243,12 +250,14 @@
 }
 
 .notified{
-    width: 300px;
+    font-size: 30;
+    text-align: center;
+    width: 180px;
     height: 50px;
     opacity: 80%;
     position: absolute;
-    top: -83;
-    right: 10%;
+    top: 60;
+    right: 10;
     background-color: green;
 }
 
@@ -448,9 +457,9 @@
 .feed-comment{
     margin:4px, 4px; 
     padding:4px; 
-    background-color: green; 
+    /* background-color: green;  */
     width: 500px; 
-    height: 5px; 
+    height: 50px; 
     overflow-x: hidden; 
     overflow-x: auto; 
     text-align:justify; 
@@ -459,25 +468,25 @@
 .comment-post{
     width: auto;
     height: auto;
+    padding-top: 10px;
 }
 
 .feed-date{
-    display: inline;
-    display: inline-block;
-    bottom: 0;
+    position: absolute;
+    bottom: 25;
     /* left: 40%; */
 }
+.feed-like:focus {
+    outline: none;
+  }
 
 .feed-like{
+    pointer-events: all;
+    border: none;
+    background-color:palevioletred;
+    border-radius: 100px;
     display: inline;
     position:relative;
-    /* top:-35px; */
-    /* float:right; */
-    /* right:86.5%; */
-    /* top: 5%; */
-    /* bottom: 10%; */
-    /* left: 10%; */
-
 }
 
 .feed-likes {
@@ -485,16 +494,14 @@
     /* width: 150px; */
     position: relative;
     /* top: 0; */
-    /* left: 15%; */
+    left: 5;
 }
 
 .feed-delete{
-    /* left: 80%; */
-    /* float: right; */
-    position: relative;
-    /* display: inline; */
-    float: right;
-    /* left: 504px; */
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 12.5;
+    right: 0;
 }
 
 .the-box{
@@ -506,7 +513,9 @@
 }
 
 .feed-line {
-    position: relative;
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
     width: 100%;
     /* top: 50px; */
     /* height: 50px; */
@@ -621,7 +630,7 @@
     /* left: 5px; */
     height: 50%;
     width: auto;
-    background-color: rgba(189, 195, 199, 1);
+    background-color: rgba(189, 195, 199, 0.3);
     /* top: 100px; */
 }
 
@@ -630,7 +639,7 @@
     border-radius: 10px;
     vertical-align: top;
     display: inline-block;
-    background-color: rgba(189, 195, 199, 1);
+    background-color: rgba(189, 195, 199, 0.3);
     width: 60%;
     height: 88%;
     position: relative;
@@ -648,6 +657,6 @@
     /* top: 50%;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%); */
-    background-color: rgba(189, 195, 199, 1);
+    background-color: rgba(189, 195, 199, 0.3);
     right: 0;
 }

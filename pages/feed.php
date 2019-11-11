@@ -114,7 +114,8 @@
 
 				// post image
 				echo "<div class='feed-img'>" . $display . "</div>";
-
+			
+				echo"<div class='some-space'></div>";
 				// like button
 				echo "<button class='feed-like' onclick='like_img({$row['image_id']})'>Like</button>";
 
@@ -131,7 +132,7 @@
 
 				// view comments section: add a hint appearing by the cursor when you hover the post as well
 				echo "<div id='comments_section-{$row['image_id']}'>
-						<b class='feed-comment'>...</b>
+						<b class='feed-comment'></b>
 					</div>";
 				// echo "<div style='width:100%; height:3%;'>  </div>";
 
@@ -140,14 +141,14 @@
 
 				// delete button
 				if ($_SESSION['username'] === $row['username']) {
-					echo "<div class='feed-delete'>
+					echo "
 							<form class='feed-delete' action='../php/post_activity.php' method='post'>
 								<input type='hidden' name='id' value='{$row['image_id']}'>
 								<input  type='submit' name='delete' value='Delete post'>
 							</form>
-							</div>";
-					}			
-				echo "<div class='feed-line' ><hr/ ></div>";
+							";
+					}		
+			echo "<div class='feed-line' ><hr/ ></div>";
 
 			}
 			else {
@@ -164,6 +165,10 @@
 	}
 	$conn = NULL;
 ?>
+
+	<div class="notified" id="notification">
+		Uploaded
+	</div>
 
 	<!-- the foot -->
 	<div class="foot">
