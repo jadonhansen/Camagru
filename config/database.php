@@ -90,7 +90,7 @@ bigbang();
 conscious_presence();
 state_of_delerium();
 judgement();
-include '../php/db.php';
+include ("./setup.php");
 echo "<script>alert('Database created!')</script>";
 echo "<script>window.open('../index.php','_self')</script>";
 
