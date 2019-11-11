@@ -18,7 +18,7 @@
 .bgcreate{
     background-size: cover;
     margin: 0;
-    background-image: url(../images/createbg.jpg);
+    background-image: url(../images/1234567.jpg);
 }
 
 .bgforgot{
@@ -35,6 +35,14 @@
 }
 
 .old-images{
+    margin: 4px, 4px;
+    padding: 4px;
+    /* background-color: green; */
+    width: 500px;
+    height: 50px;
+    overflow-x: hidden;
+    overflow-x: auto;
+    text-align: justify;
     position: relative;
     top: 10;
     left: 0;
@@ -174,6 +182,10 @@
     position: relative;
     /* left: 10%; */
     top: 0px;
+}
+
+feed-img:hover{
+    display: ;
 }
 
 .details {
