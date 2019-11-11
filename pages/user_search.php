@@ -50,12 +50,13 @@ else {
 
 	<html>
 		<head>
-		<title>ICON | Profile</title>
-		<link rel="stylesheet" href="../css/block.css">
-		<link rel="stylesheet" href="../css/dropdown.css">
-		<link rel="stylesheet" href="../css/footer.css">
-		<link rel="stylesheet" href="../css/body.css">
-		<link rel="stylesheet" href="../css/head.css">
+			<link rel="shortcut icon" type="image/png" href="../icon/4.ico"/>
+			<title>ICON | Profile</title>
+			<link rel="stylesheet" href="../css/block.css">
+			<link rel="stylesheet" href="../css/dropdown.css">
+			<link rel="stylesheet" href="../css/footer.css">
+			<link rel="stylesheet" href="../css/body.css">
+			<link rel="stylesheet" href="../css/head.css">
 		</head>
 
 		<body id=bground>    
