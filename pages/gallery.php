@@ -87,7 +87,7 @@
 		echo "<script>alert('SQL ERROR: 1')</script>";
 	}
 	if (!$posts) {
-	echo "<div class='no-uploads'>No posts to view here yet!</div>";
+		echo "<div class='no-uploads'>No posts to view here yet!</div>";
 	}
 	else {
 		foreach ($posts as $row) {
@@ -156,6 +156,10 @@
 	}
 	$conn = NULL;
 ?>
+
+	<div class="notified" id="notification">
+	</div>
+
 	<div class="foot">
 		<div class="jadon">@jhansen jadongavhansen@gmail.com</div> 
 		<div class="me">@gstrauss gstrauss18@gmail.com</div>

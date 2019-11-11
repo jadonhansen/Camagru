@@ -186,6 +186,8 @@ function pic_modi() {
     $conn = NULL;
 }
 
+
+
 session_start();
 
 if (isset($_SESSION['username'])) {
@@ -203,6 +205,9 @@ if (isset($_SESSION['username'])) {
     }
     else if (isset($_POST['pic_mod'])) {
         pic_modi();
+    }
+    else if (isset($_POST['pref_mod'])) {
+        noti_modi();
     }
     else {
         echo "<script>window.open('../pages/profile.php','_self')</script>";
