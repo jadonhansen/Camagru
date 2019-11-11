@@ -127,6 +127,12 @@
       }
     </script>
 
+<script>
+      function drop7() {
+        document.getElementById("dropper7").classList.toggle("show7");
+      }
+    </script>
+
     <!-- user details -->
     <div class="details">
       <div class="top-stuff">      
@@ -212,6 +218,23 @@
             </div>
           </div>
 </div>
+<div class="text-block">
+  <div class="option_block_7">
+    <button onclick='drop7()' class='dropsies' id="butsize">Receive Notifications</button>
+    <div id='dropper7' class='box_7'>
+      <div class="position-box">
+        <div class="profile-forms">
+            <form>
+              <input type="submit" class="profile-submit" value="yes">
+            </form>
+            <form>
+              <input type="submit" class="profile-submit" value="no">
+            </form>
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
           </div>
           <div class="profile-links">
           <div class="option_block_5">
@@ -223,7 +246,7 @@
 
         <div class="option_block_6">
           <form action="./upload.php">
-            <input type="submit" class="form-button" value="Upload Now" />
+            <input type="submit" class="form-button" value="Upload Now"/>
           </form>
         </div>        
       </div>
