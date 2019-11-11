@@ -129,8 +129,8 @@
 				echo"</div>";
 
 				// view comments section: add a hint appearing by the cursor when you hover the post as well
-				echo "<div class='feed-comments' id='comments_section-{$row['image_id']}'>
-						<b>...</b>
+				echo "<div id='comments_section-{$row['image_id']}'>
+						<b class='feed-comment'>...</b>
 					</div>";
 				// echo "<div style='width:100%; height:3%;'>  </div>";
 

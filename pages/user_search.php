@@ -123,53 +123,40 @@ else {
         }
     </script>
 
-    <script>
-        function drop4() {
-        document.getElementById("dropper4").classList.toggle("show4");
-        }
-    </script>
 
-    <script>
-        function drop3() {
-        document.getElementById("dropper3").classList.toggle("show3");
-        }
-    </script>
-
-    <script>
-        function drop2() {
-        document.getElementById("dropper2").classList.toggle("show2");
-        }
-    </script>
-
-    <script>
-        function drop1() {
-        document.getElementById("dropper1").classList.toggle("show1");
-        }  
-    </script>
-
+<div class="send_mail_page">
 	<!-- searched user details -->
-	<div class="details">
-		<div class="top-stuff">      
-			<?php
-				if (!$info['user_img'])
-					echo "<img src='../images/user_img.png' class='profile_pic'>";
-				else {
-					$encoded_image = $info['user_img'];
-					$display = "<img src='data:image;base64,{$encoded_image}' class='profile_pic'>";
-					echo "<div class='profile-pic'>" . $display . "</div>";
-				}
-			?>
-		<div class="biography">
-			<?php echo "<h2>@" . $info['username'] . "</h2>"; ?>
+	<div class="top-stuff">      
+        <?php
+          if (!$info['user_img'])
+            echo "<img src='../images/user_img.png' class='profile_pic'>";
+          else {
+            $encoded_image = $info['user_img'];
+            $display = "<img src='data:image;base64,{$encoded_image}' class='profile_pic'>";
+            echo "<div class='profile-pic'>" . $display . "</div>";
+          }
+        ?>
+        <div class="profile-info">
+          <div class="biography">
+            <?php echo "<span>@" . $info['username'] . "</span>"; ?>
+          </div>
+          <div class="biography1">
+            <?php echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>"; ?>
+          </div>
+          <div class="biography1">
+            <?php echo "<h6>" . $info['email'] . "</h6>"; ?>
+		  </div>
 		</div>
-		<br/>
-		<div class="biography1">
-			<?php echo "<h4>" . $info['name_user'] . " " . $info['surname'] . "</h4>"; ?>
-		</div>
-		<br/>
-		<div class="biography1">
-			<?php echo "<h4>" . $info['email'] . "</h4>"; ?>
-		</div>
+	  </div>
+	  <div class="emailer">
+		  <form method="post" action="">
+			<input type="text" name="message" class="emails" required>
+			<br>
+			<input type="hidden" name="email" value="<?php echo $result['email'];?>">
+			<input type="submit" name="email_friend" class="send_mail">
+		  </form>
+	  </div>
+</div>
 
 	<!-- the foot -->
 	<div class="foot">

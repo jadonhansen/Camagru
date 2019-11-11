@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/head.css">
   </head>
 
-  <body id=bground>    
+  <body class=bg>    
     <div class="head">
 
       <!-- the drop down button -->
@@ -93,39 +93,50 @@
 			echo "<div class='feed-work-space'>";
 			// echo "<div class='the-box'>";
 			$encoded_image = $row['img'];
-			$display = "<img src='data:image/*;base64,{$encoded_image}' width='80%' height='100%' >";
+			$display = "<img onclick='displayComments({$row['image_id']})' src='data:image/*;base64,{$encoded_image}' width='100%' height='100%' >";
 			session_start();
 			if (isset($_SESSION['username'])) {
+
+				// post owner
 				echo "<div class='feed-usr' >@" . $row['username'] . "</div>";
 
-				// delete button
-				if ($_SESSION['username'] === $row['username']) {
-					echo "<form class='feed-delete' action='../php/post_activity.php' method='post'>
-					<input type='hidden' name='id' value='{$row['image_id']}'>
-					<input  type='submit' name='delete' value='Delete post'>
-					</form>";
-				}
-				
+				// post image
 				echo "<div class='feed-img'>" . $display . "</div>";
 
 				// like button
-				echo "<form class='feed-like' action='../php/post_activity.php' method='post'>
-						<input type='hidden' name='id' value='{$row['image_id']}'>
-						<input type='submit' name='like' value='Like'>
-						</form>";
+				echo "<button class='feed-like' onclick='like_img({$row['image_id']})'>Like</button>";
 
-				echo "<div class='feed-likes'>Likes: " . $row['likes'] . "</div>";
+				// post likes
+				echo "<div class='feed-likes' id='like_section-{$row['image_id']}'>
+						<p class='feed-likes'>{$row['likes']}</p>
+					</div>";
 			
+				// comments
+				echo"<div class='comment-post'>";
+				echo "<input type='text' id='comment_box-{$row['image_id']}'>";
+				echo "<button onclick='comment_img({$row['image_id']})'>Post</button>";
+				echo"</div>";
+
+				// view comments section: add a hint appearing by the cursor when you hover the post as well
+				echo "<div id='comments_section-{$row['image_id']}'>
+						<b class='feed-comment'>...</b>
+					</div>";
+				// echo "<div style='width:100%; height:3%;'>  </div>";
+
+				// posted date
 				echo "<div class='feed-date' >Posted " . $row['upload_date'] . "</div>";
 
-				// comments
-				echo "<form action='../php/post_activity.php' method='post'>
-						<input type='hidden' name='id' value='{$row['image_id']}'>
-						<input style='position:relative; left:15%; width:40%; type='text' name='comment_box'>
-						<input style='position:relative; left:15%;' type='submit' name='comment' value='Post Comment'>
-						</form>";
+				// delete button
+				if ($_SESSION['username'] === $row['username']) {
+					echo "<div class='feed-delete'>
+							<form class='feed-delete' action='../php/post_activity.php' method='post'>
+								<input type='hidden' name='id' value='{$row['image_id']}'>
+								<input  type='submit' name='delete' value='Delete post'>
+							</form>
+							</div>";
+					}			
+				echo "<div class='feed-line' ><hr/ ></div>";
 
-				echo "<div style='width:100%; height:3%;'>  </div>";
 			}
 			else {
 				echo "<h4>@" . $row['username'] . "</h4>";
@@ -134,7 +145,6 @@
 				echo "<i>Posted " . $row['upload_date'] . "</i>";
 				echo '<hr />';
 			}
-			echo "<div class='feed-line' ><hr/ ></div>";
 			// echo "</div>";
 			echo "</div>";
 			echo "</div>";

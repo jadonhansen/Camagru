@@ -75,7 +75,7 @@
       <?php
         session_start();
         if(isset($_SESSION['username'])){
-          echo("<a id='logout' href='../php/logout.php'>Logout</a>"); 
+          echo("<a id='logout' href='../php/logout.php'>Logout</a>");
         }
       ?>
     </div>
@@ -101,8 +101,16 @@
     </script>
 
     <script>
-      function drop4() {
-        document.getElementById("dropper4").classList.toggle("show4");
+      function drop1() {
+        document.getElementById("dropper1").classList.toggle("show1");
+      }
+
+      
+    </script>
+
+    <script>
+      function drop2() {
+        document.getElementById("dropper2").classList.toggle("show2");
       }
     </script>
 
@@ -113,15 +121,9 @@
     </script>
 
     <script>
-      function drop2() {
-        document.getElementById("dropper2").classList.toggle("show2");
+      function drop4() {
+        document.getElementById("dropper4").classList.toggle("show4");
       }
-    </script>
-
-    <script>
-      function drop1() {
-        document.getElementById("dropper1").classList.toggle("show1");
-      }  
     </script>
 
     <!-- user details -->
@@ -172,7 +174,7 @@
             <button onclick='drop2()' class='dropsies' id="butsize"> modify password</button>
             <div id='dropper2' class='box_2'>
               <form action="../php/profile_modify.php" method="post" class="position-box">
-                <div class="profile-forms">
+                <div class="profile-forms" id="temp">
                   <input class="profile-inputs" type="password" name="new_pass" placeholder="New password">
                   <input class="profile-inputs" type="password" name="rep_pass" placeholder="Repeat password">
                   <input class="profile-submit" type="submit" name="pass_mod" value="Modify password">

@@ -5,8 +5,8 @@
 
 .bg{
     margin: 0;
-    /* background-color: rgba(var(--b3f,250,250,250),1);*/
-    background-color: teal;
+    background-color: rgba(var(--b3f,250,250,250),1);
+    /* background-color: teal; */
 }
 
 .bglogin{
@@ -201,10 +201,35 @@
     border-radius: 100px;
 }
 
+.send_mail_page{
+    text-align: center;
+}
+
 .profile-info{
-    padding-left: 20%;
+    top: 30px;
+    position: relative;
+    padding-left: 100px;
     display: inline-block;
     vertical-align: baseline;
+}
+
+.send_mail{
+    position: relative;
+    /* left: 160px; */
+    top: 25px;
+}
+
+.emailer{
+    display: inline-block;
+    width: auto;
+    height: auto;
+    position: relative;
+    top: 50px;
+}
+
+.emails{
+    width: 400px;
+    height: 400px;
 }
 
 .biography {
@@ -425,7 +450,7 @@
     padding:4px; 
     background-color: green; 
     width: 500px; 
-    height: 110px; 
+    height: 5px; 
     overflow-x: hidden; 
     overflow-x: auto; 
     text-align:justify; 
