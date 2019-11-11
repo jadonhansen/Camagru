@@ -7,21 +7,22 @@
     background-color: rgb(39, 37, 37);
     bottom: 0;
     flex: none;
+    text-align: center;
 }
 
 .jadon{
-    position: absolute;
+    /* position: absolute;
     bottom: 30px;
     left: 0px;
-}
+} */
 .me{
-    position: absolute;
+    /* position: absolute;
     bottom: 0px;
-    left: 0px;
+    left: 0px; */
 }
 
 .copyright{
-    position: absolute;
+    /* position: absolute;
     bottom: 0;
-    right: 0;
+    right: 0; */
 }
