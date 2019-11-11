@@ -71,10 +71,12 @@ function playFetch($id) {
         echo "There are no comments for this post!";
     }
     else {
+        echo"<div class='feed-comment'>";
 		foreach ($rows as $row) {
 			echo $row['comment'] . " --> Posted by " . $row['username'] . " on " . $row['comm_date'];
 			echo "<br />";
-		}
+        }
+        echo"</div>";
     }
     $conn = NULL;
 	exit();
