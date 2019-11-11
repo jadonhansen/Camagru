@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/body.css">
     <link rel="stylesheet" href="../css/head.css">
+	<script src="./performance.js"></script>
   </head>
 
   <body class=bg>    
@@ -77,12 +78,12 @@
 	require '../php/db.php';
 	$logged_on = $_SESSION['username'];
 	try {
-	$stmt = $conn->query("SELECT * FROM feed WHERE username= '$logged_on' ORDER BY upload_date DESC");
-	$posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$stmt = $conn->query("SELECT * FROM feed WHERE username= '$logged_on' ORDER BY upload_date DESC");
+		$posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 	}
 	catch (PDOException $exception) {
-	echo $sql . "<br>" . $exception->getMessage();      
-	echo "<script>alert('SQL ERROR: 1')</script>";
+		echo $sql . "<br>" . $exception->getMessage();      
+		echo "<script>alert('SQL ERROR: 1')</script>";
 	}
 	if (!$posts) {
 	echo "<div class='no-uploads'>No posts to view here yet!</div>";
@@ -111,9 +112,9 @@
 						<p class='feed-likes'>{$row['likes']}</p>
 					</div>";
 			
-				// comments
+				// post comment
 				echo"<div class='comment-post'>";
-				echo "<input type='text' id='comment_box-{$row['image_id']}'>";
+				echo "<input type='text' id='comment_box-{$row['image_id']}' required>";
 				echo "<button onclick='comment_img({$row['image_id']})'>Post</button>";
 				echo"</div>";
 
