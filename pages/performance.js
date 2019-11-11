@@ -34,7 +34,7 @@ function comment_img(img_id) {
 			}
 			else if (this.responseText === "False1") {
 				//false return notif
-				document.getElementById("notification").value = "Please type in a valid comment less than 200 characters."
+				document.getElementById("notification").innerHTML = "Please type in a valid comment less than 200 characters."
 				document.getElementById("notification").classList.toggle("show");
 				setTimeout(function(){
 					document.getElementById("notification").classList.toggle("show");
@@ -43,7 +43,7 @@ function comment_img(img_id) {
 			else {
 				//true return notif
 				document.getElementById(`comment_box-${img_id}`).value = "";
-				document.getElementById("notification").value = "Comment Posted!"
+				document.getElementById("notification").innerHTML = "Comment Posted!"
 				document.getElementById("notification").classList.toggle("show");
 				setTimeout(function(){
 					document.getElementById("notification").classList.toggle("show");
