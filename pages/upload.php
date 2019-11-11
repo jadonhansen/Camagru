@@ -79,7 +79,9 @@
       }
     </script>
 <div class="upload-content">
+
     <!-- side options panel-->
+    <div class="big-one">
     <div class="upload-panel">
       <button class="take-picture" id="snap"></button>
       <div class="panel-clear">
@@ -109,6 +111,8 @@
 
     </div>
 
+    <div class="old-images"></div>
+    </div>
 <!-- web cam feed -->
 
     <div class="upload-capture">

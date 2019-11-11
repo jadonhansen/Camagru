@@ -29,10 +29,20 @@
 
 
 .capture-box {
-    width: 60%;
+    width: 100%;
     height: 40%;
     position: relative;
     padding-top: 2%;
+}
+
+.old-images{
+    position: relative;
+    top: 10;
+    left: 0;
+    background-color: rgba(189, 195, 199, 0.3);
+    height: 408;
+    width: 150;
+    border-radius: 10px;
 }
 
 .upload-box {
@@ -619,10 +629,22 @@
 
 .upload-content{
     position: relative;
-    top: 75px;
+    top: 50px;
     text-align: justify;
     -ms-text-justify: distribute-all-lines;
     text-justify: distribute-all-lines;
+}
+
+.big-one{
+    text-align: center;
+    border-radius: 10px;
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    /* left: 5px; */
+    height: 1100;
+    width: auto;
+    /* top: 100px; */
 }
 
 .upload-panel{
@@ -632,7 +654,7 @@
     display: inline-block;
     position: relative;
     /* left: 5px; */
-    height: 50%;
+    height: 650px;
     width: auto;
     background-color: rgba(189, 195, 199, 0.3);
     /* top: 100px; */
