@@ -87,7 +87,7 @@
 		echo "<script>alert('SQL ERROR: 1')</script>";
 	}
 	if (!$posts) {
-	echo "<div class='no-uploads'>No posts to view here yet!</div>";
+		echo "<div class='no-uploads'>No posts to view here yet!</div>";
 	}
 	else {
 		foreach ($posts as $row) {

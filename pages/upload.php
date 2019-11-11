@@ -110,27 +110,23 @@
       </div>
 
     </div>
-
-    <div class="old-images"></div>
+    <div class="old-images">
+      <?php require_once '../php/upload_history.php'; ?>
     </div>
-<!-- web cam feed -->
+    </div>
 
-    <div class="upload-capture">
-
+    <!-- web cam feed -->
+      <div class="upload-capture">
 
       <!-- <div class="capture-box"> -->
         <video class="capture-box" id="video" autoplay></video>
       <!-- </div> -->
 
       <div class="capture-box">
-      <canvas id="canvas" class="canvas-inner" width="400" height="300" autoplay></canvas>
+        <canvas id="canvas" class="canvas-inner" width="400" height="300" autoplay></canvas>
       </div>
 
-      <!-- <div class="notified">
-        you've just been notified
-      </div> -->
     </div>
-
 
       <!-- styles box -->
     <div class="styles-box">
