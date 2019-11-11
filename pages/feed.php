@@ -1,5 +1,6 @@
 <html>
 	<head>
+		<link rel="shortcut icon" type="image/png" href="../icon/4.ico"/>
 		<title>ICON | Feed</title>
 		<link rel="stylesheet" href="../css/dropdown.css">
 		<link rel="stylesheet" href="../css/footer.css">
@@ -123,9 +124,9 @@
 						<p class='feed-likes'>{$row['likes']}</p>
 					</div>";
 			
-				// comments
+				// post comment
 				echo"<div class='comment-post'>";
-				echo "<input type='text' id='comment_box-{$row['image_id']}'>";
+				echo "<input type='text' id='comment_box-{$row['image_id']}' required>";
 				echo "<button onclick='comment_img({$row['image_id']})'>Post</button>";
 				echo"</div>";
 

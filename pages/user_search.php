@@ -50,12 +50,13 @@ else {
 
 	<html>
 		<head>
-		<title>ICON | Profile</title>
-		<link rel="stylesheet" href="../css/block.css">
-		<link rel="stylesheet" href="../css/dropdown.css">
-		<link rel="stylesheet" href="../css/footer.css">
-		<link rel="stylesheet" href="../css/body.css">
-		<link rel="stylesheet" href="../css/head.css">
+			<link rel="shortcut icon" type="image/png" href="../icon/4.ico"/>
+			<title>ICON | Profile</title>
+			<link rel="stylesheet" href="../css/block.css">
+			<link rel="stylesheet" href="../css/dropdown.css">
+			<link rel="stylesheet" href="../css/footer.css">
+			<link rel="stylesheet" href="../css/body.css">
+			<link rel="stylesheet" href="../css/head.css">
 		</head>
 
 		<body id=bground>    
@@ -149,8 +150,8 @@ else {
 		</div>
 	  </div>
 	  <div class="emailer">
-		  <form method="post" action="">
-			<input type="text" name="message" class="emails" required>
+		  <form method="post" action="../php/email_friend.php">
+			<input type="text" name="message" class="emails" placeholder="Send a message to <?php echo $result['username'];?>..." required>
 			<br>
 			<input type="hidden" name="email" value="<?php echo $result['email'];?>">
 			<input type="submit" name="email_friend" class="send_mail">

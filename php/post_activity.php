@@ -22,8 +22,8 @@ function like($img_id) {
 }
 
 function comment($commt, $img_id) {
-    if (strlen($commt) >= 200) {
-        echo "False";
+    if (strlen($commt) >= 200 || strlen($commt) <=0) {
+        echo "False1";
         exit();
     }
     require 'db.php';
