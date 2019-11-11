@@ -180,6 +180,11 @@
     flex: auto;
 }
 
+.more-space{
+    width: 100%;
+    height: 90px;
+}
+
 .some-space{
     width: 100%;
     height: 10px;
@@ -258,7 +263,6 @@
     position: absolute;
     top: 60;
     right: 10;
-    background-color: green;
 }
 
 .options-blocks{

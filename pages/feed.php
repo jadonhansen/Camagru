@@ -162,12 +162,12 @@
 			echo "</div>";
 			echo "</div>";
 		}
+		echo"<div class='more-space'></div>";
 	}
 	$conn = NULL;
 ?>
 
 	<div class="notified" id="notification">
-		Uploaded
 	</div>
 
 	<!-- the foot -->
