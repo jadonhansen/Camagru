@@ -1,6 +1,6 @@
 <html>
   <head>
-    <link rel="shortcut icon" type="image/png" href="../icon/4.ico"/>
+    <link rel="shortcut icon" type="image/png" href="../icons/4.ico"/>
     <title>ICON | Password Reset</title>
     <link rel="stylesheet" href="../css/dropdown.css">
     <link rel="stylesheet" href="../css/footer.css">

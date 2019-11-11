@@ -26,27 +26,24 @@ function comment_img(img_id) {
 		if (this.readyState == 4 && this.status == 200) {
 			if (this.responseText === "False") {
 				//false return notif
-				document.getElementById("notification").value = "Could not post comment!"
-				document.getElementById("notification").classList.toggle("show");	
-				setTimeout(function(){
-					document.getElementById("notification").classList.toggle("show");
+				document.getElementById("notification").value = "<div style='background: rgba(255,0,0, 0.7); border-radius:5px;'>Could not post comment!</div>"
+				setTimeout(() => {
+					document.getElementById("notification").innerHTML = "";
 				 }, 3000);
 			}
 			else if (this.responseText === "False1") {
 				//false return notif
-				document.getElementById("notification").innerHTML = "Please type in a valid comment less than 200 characters."
-				document.getElementById("notification").classList.toggle("show");
-				setTimeout(function(){
-					document.getElementById("notification").classList.toggle("show");
+				document.getElementById("notification").innerHTML = "<div style='background: rgba(255,0,0, 0.7); border-radius:5px;'>Please type in a valid comment less than 200 characters.</div>"
+				setTimeout(() => {
+					document.getElementById("notification").innerHTML = "";
 				}, 3000);
 			}
 			else {
 				//true return notif
 				document.getElementById(`comment_box-${img_id}`).value = "";
-				document.getElementById("notification").innerHTML = "Comment Posted!"
-				document.getElementById("notification").classList.toggle("show");
-				setTimeout(function(){
-					document.getElementById("notification").classList.toggle("show");
+				document.getElementById("notification").innerHTML = "<div style='background: rgba(0, 151, 19, 0.7); border-radius:5px;'>Comment Posted!</div>"
+				setTimeout(() => {
+					document.getElementById("notification").innerHTML = "";
 				}, 3000);
 			}
 		}
@@ -67,6 +64,10 @@ function like_img(img_id) {
 		if (this.readyState == 4 && this.status == 200) {
 			if (this.responseText === "False") {
 				//false return notif
+				document.getElementById("notification").innerHTML = "<div style='background: rgba(255,0,0, 0.7); border-radius:5px;'>Action denied!</div>"
+				setTimeout(() => {
+					document.getElementById("notification").innerHTML = "";
+				}, 3000);
 			}
 			else {
 				document.getElementById(`like_section-${img_id}`).innerHTML = this.responseText;
