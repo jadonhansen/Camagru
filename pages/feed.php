@@ -126,7 +126,7 @@
 			
 				// post comment
 				echo"<div class='comment-post'>";
-				echo "<input type='text' id='comment_box-{$row['image_id']}' required>";
+				echo "<input type='text' id='comment_box-{$row['image_id']}' >";
 				echo "<button onclick='comment_img({$row['image_id']})'>Post</button>";
 				echo"</div>";
 

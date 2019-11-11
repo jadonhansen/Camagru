@@ -223,11 +223,13 @@
     <div id='dropper7' class='box_7'>
       <div class="position-box">
         <div class="profile-forms">
-            <form>
-              <input type="submit" class="profile-submit" value="yes">
+            <form action="../php/profile_modify.php" method="post">
+              <input type="hidden" name="pref" value="1">
+              <input type="submit" name="pref_mod" class="profile-submit" value="YES">
             </form>
-            <form>
-              <input type="submit" class="profile-submit" value="no">
+            <form action="../php/profile_modify.php" method="post">
+              <input type="hidden" name="pref" value="0">
+              <input type="submit" name="pref_mod" class="profile-submit" value="NO">
             </form>
         </div>
         </div>

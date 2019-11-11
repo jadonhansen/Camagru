@@ -1,11 +1,9 @@
-! = Important
-
 Gabriel:
-        - Styling for pages:    ! feed.php (positioning and layout)
-                                ! profile.php
-                                ! gallery.php
-                                ! upload.php
         - Posts: on hover --> tooltip : Tap to view comments
+        - style buttons for pref notif
 
 Jadon:
-        - do email to reciever of comment
+        - get bg's
+        - change save dates to time H:i:s for comments and posting
+        - fix sending of emails for commenting
+        - hcangeing username changes username in feed and commetns table
