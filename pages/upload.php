@@ -78,6 +78,7 @@
         }
       }
     </script>
+
 <div class="upload-content">
 
     <!-- side options panel-->
@@ -110,17 +111,19 @@
       </div>
 
     </div>
+ 
     <div class="old-images">
-      <?php require_once '../php/upload_history.php'; ?>
+      <?php require '../php/upload_history.php'; ?>
     </div>
+
     </div>
 
     <!-- web cam feed -->
       <div class="upload-capture">
 
-      <!-- <div class="capture-box"> -->
+      <div class="capture-box">
         <video class="capture-box" id="video" autoplay></video>
-      <!-- </div> -->
+       </div>
 
       <div class="capture-box">
         <canvas id="canvas" class="canvas-inner" width="400" height="300" autoplay></canvas>
@@ -132,7 +135,8 @@
     <div class="styles-box">
         <img class="filter" src="http://localhost:8080/Camagru/filters/21.png" height="125" width="160">
         <img class="filter" src="http://localhost:8080/Camagru/filters/27.png" height="125" width="160">
-        <img class="filter" src="http://localhost:8080/Camagru/filters/28.png" height="125" width="160">
+        <img
+         class="filter" src="http://localhost:8080/Camagru/filters/28.png" height="125" width="160">
 		<img class="filter" src="http://localhost:8080/Camagru/filters/26.png" height="125" width="160">
 		<img class="filter" src="http://localhost:8080/Camagru/filters/24.png" height="125" width="160">
       </div>

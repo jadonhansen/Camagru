@@ -156,6 +156,10 @@
 	}
 	$conn = NULL;
 ?>
+
+	<div class="notified" id="notification">
+	</div>
+
 	<div class="foot">
 		<div class="jadon">@jhansen jadongavhansen@gmail.com</div> 
 		<div class="me">@gstrauss gstrauss18@gmail.com</div>
