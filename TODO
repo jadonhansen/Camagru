@@ -13,9 +13,3 @@ Jadon:
         - Do those cool notification bar things (for profile updates and post notifications and uploading)->js..?
         - try cool css effect on ICON
 		- get bg
-		
-        *pagination of 5 images per page --> infinite scroll should cross this off
-        *intialise db if its not already initiliased -->check this out
-
-NOTES:
-the webcam isn't stable on launch of other apps it can stop working, dunno if theres a possible fix

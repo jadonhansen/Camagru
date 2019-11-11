@@ -91,7 +91,7 @@
 		foreach ($posts as $row) {
 			echo "<div class='feed-white-space'>";
 			echo "<div class='feed-work-space'>";
-			echo "<div class='the-box'>";
+			// echo "<div class='the-box'>";
 			$encoded_image = $row['img'];
 			$display = "<img src='data:image/*;base64,{$encoded_image}' width='80%' height='100%' >";
 			session_start();
@@ -135,7 +135,7 @@
 				echo '<hr />';
 			}
 			echo "<div class='feed-line' ><hr/ ></div>";
-			echo "</div>";
+			// echo "</div>";
 			echo "</div>";
 			echo "</div>";
 		}		  

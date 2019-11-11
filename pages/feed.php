@@ -102,22 +102,14 @@
 		foreach ($posts as $row) {
 			echo "<div class='feed-white-space'>";
 			echo "<div class='feed-work-space'>";
-			echo "<div class='the-box'>";
+			// echo "<div class='the-box'>";
 			$encoded_image = $row['img'];
-			$display = "<img onclick='displayComments({$row['image_id']})' src='data:image/*;base64,{$encoded_image}' width='80%' height='100%' >";
+			$display = "<img onclick='displayComments({$row['image_id']})' src='data:image/*;base64,{$encoded_image}' width='100%' height='100%' >";
 			session_start();
 			if (isset($_SESSION['username'])) {
 
 				// post owner
 				echo "<div class='feed-usr' >@" . $row['username'] . "</div>";
-
-				// delete button
-				if ($_SESSION['username'] === $row['username']) {
-				echo "<form class='feed-delete' action='../php/post_activity.php' method='post'>
-				<input type='hidden' name='id' value='{$row['image_id']}'>
-				<input  type='submit' name='delete' value='Delete post'>
-					</form>";
-				}
 
 				// post image
 				echo "<div class='feed-img'>" . $display . "</div>";
@@ -126,18 +118,36 @@
 				echo "<button class='feed-like' onclick='like_img({$row['image_id']})'>Like</button>";
 
 				// post likes
-				echo "<div class='feed-likes' id='like_section-{$row['image_id']}'><p>{$row['likes']}</p></div>";
-				
+				echo "<div class='feed-likes' id='like_section-{$row['image_id']}'>
+						<p class='feed-likes'>{$row['likes']}</p>
+					</div>";
+			
+				// comments
+				echo"<div class='comment-post'>";
+				echo "<input type='text' id='comment_box-{$row['image_id']}'>";
+				echo "<button onclick='comment_img({$row['image_id']})'>Post</button>";
+				echo"</div>";
+
+				// view comments section: add a hint appearing by the cursor when you hover the post as well
+				echo "<div class='feed-comments' id='comments_section-{$row['image_id']}'>
+						<b>...</b>
+					</div>";
+				// echo "<div style='width:100%; height:3%;'>  </div>";
+
 				// posted date
 				echo "<div class='feed-date' >Posted " . $row['upload_date'] . "</div>";
 
-				// comments
-				echo "<input style='position:relative; left:15%; width:40%; type='text' id='comment_box-{$row['image_id']}'>";
-				echo "<button style='position:relative; left:15%;' onclick='comment_img({$row['image_id']})'>Post</button>";
+				// delete button
+				if ($_SESSION['username'] === $row['username']) {
+					echo "<div class='feed-delete'>
+							<form class='feed-delete' action='../php/post_activity.php' method='post'>
+								<input type='hidden' name='id' value='{$row['image_id']}'>
+								<input  type='submit' name='delete' value='Delete post'>
+							</form>
+							</div>";
+					}			
+				echo "<div class='feed-line' ><hr/ ></div>";
 
-				// view comments section: add a hint appearing by the cursor when you hover the post as well
-				echo "<div id='comments_section-{$row['image_id']}'><b>Tap post to view comments...</b></div>";
-				echo "<div style='width:100%; height:3%;'>  </div>";
 			}
 			else {
 				echo "<h4>@" . $row['username'] . "</h4>";
@@ -146,8 +156,7 @@
 				echo "<i>Posted " . $row['upload_date'] . "</i>";
 				echo '<hr />';
 			}
-			echo "<div class='feed-line' ><hr/ ></div>";
-			echo "</div>";
+			// echo "</div>";
 			echo "</div>";
 			echo "</div>";
 		}
@@ -164,70 +173,3 @@
 
   </body>
 </html>
-
-<!-- ?php
-      require '../php/db.php';
-
-      try
-      {
-        $stmt = $conn->query("SELECT * FROM feed ORDER BY upload_date DESC");
-        $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      } catch (PDOException $exception)
-      {
-        echo $sql . "<br>" . $exception->getMessage();      //dont need for final?
-        echo "<script>alert('SQL ERROR: 1')</script>";
-        exit();
-      }
-      if (!$posts)
-      {
-        echo "<h2>No posts to view here yet!</h2>";
-        exit();
-      }
-      echo "<div class=white-border>";
-      foreach ($posts as $row) {
-        $encoded_image = $row['img'];
-        $display = "<img src='data:image;base64,{$encoded_image}' width='85%' height='60%' >";
-        session_start();
-        if (isset($_SESSION['username']))
-        {
-          echo "<h4 style='position:relative; padding-left:15%; top:38px;'>@" . $row['username'] . "</h4>";
-          echo "<i style='position:relative; float:right; right:70%; top:69%;'>Posted " . $row['upload_date'] . "</i>";
-          echo "<div class='feed-img'>" . $display . "</div>";
-          // echo "<h4 style='padding-left:20.5%'>Likes " . $row['likes'] . "</h4>";
-
-          // like button
-          echo "<form action='../php/post_activity.php' method='post'>
-                  <input type='hidden' name='id' value='{$row['image_id']}'>
-                  <input style='position:relative; top:-40px; float:right; right:80.5%;' type='submit' name='like' value='Like'>
-                </form>";
-        
-          // comments
-          echo "<form action='../php/post_activity.php' method='post'>
-                  <input type='hidden' name='id' value='{$row['image_id']}'>
-                  <input style='position:relative; left:15%; width:40%; type='text' name='comment_box'>
-                  <input style='position:relative; left:15%;' type='submit' name='comment' value='Post Comment'>
-                </form>";
-
-          
-          if ($_SESSION['username'] === $row['username']) {
-            echo "<form action='../php/post_activity.php' method='post'>
-            <input type='hidden' name='id' value='{$row['image_id']}'>
-            <input style='position:relative; left:15%;' type='submit' name='delete' value='Delete post'>
-              </form>";
-          }
-
-          echo "<div style='width:100%; height:3%;'>  </div>";
-          echo "<hr />";
-        }
-        else
-        {
-          echo "<h4>@" . $row['username'] . "</h4>";
-          echo $display;
-          echo "<h4>Likes " . $row['likes'] . "</h4>";
-          echo "<i>Posted " . $row['upload_date'] . "</i>";
-          echo '<hr />';
-        }
-      }
-      echo "</div>";
-      $conn = NULL;
-    ?> -->

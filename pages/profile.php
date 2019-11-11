@@ -153,7 +153,7 @@
         </form>
       </div>
         <div class="options-blocks">
-
+<div class="text-block">
           <div class="option_block_1">
             <button onclick='drop1()' class='dropsies' id="butsize"> modify username</button>    
             <div id='dropper1' class='box_1'>
@@ -166,7 +166,8 @@
               </form>
         </div>
           </div>
-
+</div>
+<div class="text-block">
           <div class="option_block_2">
             <button onclick='drop2()' class='dropsies' id="butsize"> modify password</button>
             <div id='dropper2' class='box_2'>
@@ -179,7 +180,8 @@
               </form>
             </div>
           </div>
-
+</div>
+<div class="text-block">
           <div class="option_block_3">
             <button onclick='drop3()' class='dropsies' id="butsize"> modify personal details</button>
             <div id='dropper3' class='box_3'>
@@ -192,7 +194,8 @@
               </form>
             </div>
           </div>
-
+</div>
+<div class="text-block">
           <div class='option_block_4'>
             <button onclick='drop4()' class='dropsies' id="butsize"> change email</button>
             <div id='dropper4' class='box_4'>
@@ -205,6 +208,7 @@
               </form>
             </div>
           </div>
+</div>
           </div>
           <div class="profile-links">
           <div class="option_block_5">
