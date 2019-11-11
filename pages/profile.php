@@ -105,7 +105,6 @@
       function drop1() {
         document.getElementById("dropper1").classList.toggle("show1");
       }
-
       
     </script>
 
@@ -158,7 +157,7 @@
         <div class="options-blocks">
 <div class="text-block">
           <div class="option_block_1">
-            <button onclick='drop1()' class='dropsies' id="butsize"> modify username</button>    
+            <button onclick='drop1()' class='dropsies' id="butsize"> Change Username</button>    
             <div id='dropper1' class='box_1'>
               <form action="../php/profile_modify.php" method="post" class="position-box">
                 <div class="profile-forms">
@@ -172,7 +171,7 @@
 </div>
 <div class="text-block">
           <div class="option_block_2">
-            <button onclick='drop2()' class='dropsies' id="butsize"> modify password</button>
+            <button onclick='drop2()' class='dropsies' id="butsize"> Change Password</button>
             <div id='dropper2' class='box_2'>
               <form action="../php/profile_modify.php" method="post" class="position-box">
                 <div class="profile-forms" id="temp">
@@ -186,7 +185,7 @@
 </div>
 <div class="text-block">
           <div class="option_block_3">
-            <button onclick='drop3()' class='dropsies' id="butsize"> modify personal details</button>
+            <button onclick='drop3()' class='dropsies' id="butsize"> Change Personal Details</button>
             <div id='dropper3' class='box_3'>
               <form action="../php/profile_modify.php" method="post" class="position-box">
                 <div class="profile-forms">
@@ -200,7 +199,7 @@
 </div>
 <div class="text-block">
           <div class='option_block_4'>
-            <button onclick='drop4()' class='dropsies' id="butsize"> change email</button>
+            <button onclick='drop4()' class='dropsies' id="butsize"> Change Email</button>
             <div id='dropper4' class='box_4'>
               <form action="../php/profile_modify.php" method="post" class="position-box">
                 <div class="profile-forms">

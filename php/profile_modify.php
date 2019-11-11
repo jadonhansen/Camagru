@@ -97,6 +97,9 @@ function usrnam_modi() {
         echo "<script>window.open('../pages/profile.php','_self')</script>";
         exit();
     }
+
+    //need to update username inside feed page and comments page
+
     require 'db.php';
     session_start();
     $old_username = $_SESSION['username'];
@@ -186,7 +189,22 @@ function pic_modi() {
     $conn = NULL;
 }
 
-
+function noti_modi() {
+    require 'db.php';
+    $username = $_SESSION['username'];
+    $pref = $_POST['pref'];
+    $sql = "UPDATE users SET notifications='$pref' WHERE username='$username'";
+    $stmt = $conn->query($sql);
+    if ($stmt) {
+        echo "<script>alert('Details saved!')</script>";
+        echo "<script>window.open('../pages/profile.php','_self')</script>";
+    }
+    else {
+        echo "<script>alert('Sorry, we could not update your preferences!')</script>";
+        echo "<script>window.open('../pages/profile.php','_self')</script>";
+    }
+    $conn = NULL;
+}
 
 session_start();
 
