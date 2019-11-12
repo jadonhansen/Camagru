@@ -59,7 +59,7 @@ else {
 			<link rel="stylesheet" href="../css/head.css">
 		</head>
 
-		<body id=bground>    
+		<body class="bgsearch" id=bground>    
 		<div class="head">
 
 	<!-- the drop down button -->    

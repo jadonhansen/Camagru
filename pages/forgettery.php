@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/block.css">
   </head>
 
-  <body>    
+  <body class="bgforgettery">    
     <div class="head">
 
       <!-- Icon -->   

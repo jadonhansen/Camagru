@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="../css/footer.css">
 		<link rel="stylesheet" href="../css/body.css">
 		<link rel="stylesheet" href="../css/head.css">
+		<link rel="stylesheet" href="../css/tooltip.css">
 		<script src="./performance.js"></script>
 	</head>
 
@@ -87,7 +88,6 @@
 <!-- the feed stream coming from the DataBase -->
 <?php
 	require '../php/db.php';
-
 	try {
 		$stmt = $conn->query("SELECT * FROM feed ORDER BY upload_date DESC");
 		$posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -108,55 +108,46 @@
 			$display = "<img onclick='displayComments({$row['image_id']})' src='data:image/*;base64,{$encoded_image}' width='100%' height='100%' >";
 			session_start();
 			if (isset($_SESSION['username'])) {
-
 				// post owner
 				echo "<div class='feed-usr' >@" . $row['username'] . "</div>";
-
 				// post image
-				echo "<div class='feed-img'>" . $display . "</div>";
-			
+				echo "<div class='feed-img'>" . $display;
+				echo "<span class='tooltiptext'>Click/Tap on the post to view comments</span>";
+				echo "</div>";
 				echo"<div class='some-space'></div>";
 				// like button
 				echo "<button class='feed-like' onclick='like_img({$row['image_id']})'>Like</button>";
-
 				// post likes
 				echo "<div class='feed-likes' id='like_section-{$row['image_id']}'>
 						<p class='feed-likes'>{$row['likes']}</p>
 					</div>";
-			
 				// post comment
 				echo"<div class='comment-post'>";
 				echo "<input type='text' id='comment_box-{$row['image_id']}' >";
 				echo "<button onclick='comment_img({$row['image_id']})'>Post</button>";
 				echo"</div>";
-
 				// view comments section
 				echo "<div id='comments_section-{$row['image_id']}'>
 						<b class='feed-comment'></b>
 					</div>";
 				// echo "<div style='width:100%; height:3%;'>  </div>";
-
 				// posted date
 				echo "<div class='feed-date' >Posted " . $row['upload_date'] . "</div>";
-
 				// delete button
 				if ($_SESSION['username'] === $row['username']) {
-					echo "
-							<form class='feed-delete' action='../php/post_activity.php' method='post'>
+					echo "<form class='feed-delete' action='../php/post_activity.php' method='post'>
 								<input type='hidden' name='id' value='{$row['image_id']}'>
 								<input  type='submit' name='delete' value='Delete post'>
-							</form>
-							";
-					}		
-			echo "<div class='feed-line' ><hr/ ></div>";
-
+							</form>";
+				}
+				echo "<div class='feed-line' ><hr/ ></div>";
 			}
 			else {
-				echo "<h4>@" . $row['username'] . "</h4>";
-				echo $display;
-				echo "<h4>Likes " . $row['likes'] . "</h4>";
-				echo "<i>Posted " . $row['upload_date'] . "</i>";
-				echo '<hr />';
+				echo "<div class='feed-usr' >@" . $row['username'] . "</div>";
+				echo "<div class='feed-img'>" . $display . "</div>";
+				echo "<div class='feed-likes'><p class='feed-likes'>{$row['likes']} likes</p></div>";
+				echo "<div class='feed-date' >Posted " . $row['upload_date'] . "</div>";
+				echo "<div class='feed-line' ><hr/ ></div>";
 			}
 			// echo "</div>";
 			echo "</div>";

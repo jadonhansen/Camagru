@@ -5,14 +5,15 @@
     <link rel="stylesheet" href="../css/dropdown.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/body.css">
-    <link rel="stylesheet" href="../css/head.css">
+	<link rel="stylesheet" href="../css/head.css">
+	<link rel="stylesheet" href="../css/tooltip.css">
 	<script src="./performance.js"></script>
   </head>
 
   <body class=bg>    
     <div class="head">
 
-      <!-- the drop down button -->
+<!-- the drop down button -->
 <?php
 	session_start();
 	if(isset($_SESSION['username'])) {
@@ -96,59 +97,41 @@
 			// echo "<div class='the-box'>";
 			$encoded_image = $row['img'];
 			$display = "<img onclick='displayComments({$row['image_id']})' src='data:image/*;base64,{$encoded_image}' width='100%' height='100%' >";
-			session_start();
-			if (isset($_SESSION['username'])) {
-
-				// post owner
-				echo "<div class='feed-usr' >@" . $row['username'] . "</div>";
-
-				// post image
-				echo "<div class='feed-img'>" . $display . "</div>";
-
-				// like button
-				echo"<div class='some-space'></div>";
-				echo "<button class='feed-like' onclick='like_img({$row['image_id']})'>Like</button>";
-
-				// post likes
-				echo "<div class='feed-likes' id='like_section-{$row['image_id']}'>
-						<p class='feed-likes'>{$row['likes']}</p>
-					</div>";
-			
-				// post comment
-				echo"<div class='comment-post'>";
-				echo "<input type='text' id='comment_box-{$row['image_id']}' required>";
-				echo "<button onclick='comment_img({$row['image_id']})'>Post</button>";
-				echo"</div>";
-
-				// view comments section: add a hint appearing by the cursor when you hover the post as well
-				echo "<div id='comments_section-{$row['image_id']}'>
-						<b class='feed-comment'></b>
-					</div>";
-				// echo "<div style='width:100%; height:3%;'>  </div>";
-
-				// posted date
-				echo "<div class='feed-date' >Posted " . $row['upload_date'] . "</div>";
-
-				// delete button
-				if ($_SESSION['username'] === $row['username']) 
-				{
-					echo "<div class='feed-delete'>
-							<form class='feed-delete' action='../php/post_activity.php' method='post'>
-								<input type='hidden' name='id' value='{$row['image_id']}'>
-								<input  type='submit' name='delete' value='Delete post'>
-							</form>
-							</div>";
-				}
-				echo "<div class='feed-line' ><hr/ ></div>";
-
-			}
-			else {
-				echo "<h4>@" . $row['username'] . "</h4>";
-				echo $display;
-				echo "<h4>Likes " . $row['likes'] . "</h4>";
-				echo "<i>Posted " . $row['upload_date'] . "</i>";
-				echo '<hr />';
-			}
+			// post owner
+			echo "<div class='feed-usr' >@" . $row['username'] . "</div>";
+			// post image
+			echo "<div class='feed-img'>" . $display;
+			echo "<span class='tooltiptext'>Click/Tap on the post to view comments</span>";
+			echo "</div>";
+			echo"<div class='some-space'></div>";
+			// like button
+			echo"<div class='some-space'></div>";
+			echo "<button class='feed-like' onclick='like_img({$row['image_id']})'>Like</button>";
+			// post likes
+			echo "<div class='feed-likes' id='like_section-{$row['image_id']}'>
+					<p class='feed-likes'>{$row['likes']}</p>
+				</div>";
+			// post comment
+			echo"<div class='comment-post'>
+				<input type='text' id='comment_box-{$row['image_id']}' required>
+				<button onclick='comment_img({$row['image_id']})'>Post</button>
+				</div>";
+			// view comments section
+			echo "<div id='comments_section-{$row['image_id']}'>
+					<b class='feed-comment'></b>
+				</div>";
+			// echo "<div style='width:100%; height:3%;'>  </div>";
+			// posted date
+			echo "<div class='feed-date' >Posted " . $row['upload_date'] . "</div>";
+			// delete button
+			echo "<div class='feed-delete'>
+					<form class='feed-delete' action='../php/post_activity.php' method='post'>
+						<input type='hidden' name='id' value='{$row['image_id']}'>
+						<input  type='submit' name='delete' value='Delete post'>
+					</form>
+				</div>";
+			//post divider
+			echo "<div class='feed-line' ><hr/ ></div>";
 			// echo "</div>";
 			echo "</div>";
 			echo "</div>";

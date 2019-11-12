@@ -1,6 +1,6 @@
 Gabriel:
-        - Posts: on hover --> tooltip : Tap to view comments
         - style buttons for pref notif
+        - can't see last delete button in gallery
 
 Jadon:
-        - get bg's
+        - so apparently merging the images are done on back end with php not js
