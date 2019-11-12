@@ -38,29 +38,23 @@
     </div>
 
     <!-- drop script -->
-    <script>
-      function myFunction()
-      {
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-  
-      window.onclick = function(event)
-      {
-        if (!event.target.matches('.dropbtn')) 
-        {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++)
-          {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show'))
-            {
-              openDropdown.classList.remove('show');
-            }
+  <script>
+    function myFunction(){
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    window.onclick = function(event){
+      if (!event.target.matches('.dropbtn')){
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++){
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')){
+            openDropdown.classList.remove('show');
           }
         }
       }
-    </script>
+    }
+  </script>
 
     <!-- this is the form box -->
     <div class="box">            
@@ -70,8 +64,8 @@
       </div>
       <div class="info">
         <form action="../php/login.php" method="POST">
-          <input type="text" name="username" class="field" placeholder="Username" onfocus="this.placeholder = ''" required>
-          <input type="password" name="password" class="field" placeholder="Password" required>
+          <input type="text" name="username" class="field" placeholder="Username" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'Username'"required>
+          <input type="password" name="password" class="field" placeholder="Password" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'Password'"required>
           <input type="submit" name="submit" value="Login" class="form">
         </form>
       </div>

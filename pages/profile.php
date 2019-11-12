@@ -80,25 +80,24 @@
       ?>
     </div>
 
-    <!-- drop scriptsssss -->
-    <script>
-      function myFunction(){
-        document.getElementById("myDropdown").classList.toggle("show");
-      }
-  
-      window.onclick = function(event){
-        if (!event.target.matches('.dropbtn')){
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++){
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')){
-              openDropdown.classList.remove('show');
-            }
+  <!-- drop script -->
+  <script>
+    function myFunction(){
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+    window.onclick = function(event){
+      if (!event.target.matches('.dropbtn')){
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++){
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')){
+            openDropdown.classList.remove('show');
           }
         }
       }
-    </script>
+    }
+  </script>
 
     <script>
       function drop1() {
@@ -166,8 +165,8 @@
             <div id='dropper1' class='box_1'>
               <form action="../php/profile_modify.php" method="post" class="position-box">
                 <div class="profile-forms">
-                  <input class="profile-inputs" type="text" name="new_usr" placeholder="New username">
-                  <input class="profile-inputs" type="text" name="rep_usr" placeholder="Repeat username">
+                  <input class="profile-inputs" type="text" name="new_usr" placeholder="New username" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'New username'" required>
+                  <input class="profile-inputs" type="text" name="rep_usr" placeholder="Repeat username" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'Repeat username'" required>
                   <input class="profile-submit" type="submit" name="usrnam_mod" value="Modify username">
                 </div>
               </form>
@@ -180,8 +179,8 @@
             <div id='dropper2' class='box_2'>
               <form action="../php/profile_modify.php" method="post" class="position-box">
                 <div class="profile-forms" id="temp">
-                  <input class="profile-inputs" type="password" name="new_pass" placeholder="New password">
-                  <input class="profile-inputs" type="password" name="rep_pass" placeholder="Repeat password">
+                  <input class="profile-inputs" type="password" name="new_pass" placeholder="New password"  onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'New password'" required>
+                  <input class="profile-inputs" type="password" name="rep_pass" placeholder="Repeat password"  onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'Repeat password'" required>
                   <input class="profile-submit" type="submit" name="pass_mod" value="Modify password">
                 </div>
               </form>
@@ -194,8 +193,8 @@
             <div id='dropper3' class='box_3'>
               <form action="../php/profile_modify.php" method="post" class="position-box">
                 <div class="profile-forms">
-                  <input class="profile-inputs" type="text" name="new_nam" placeholder="Name">
-                  <input class="profile-inputs" type="text" name="new_surnam" placeholder="Surname">
+                  <input class="profile-inputs" type="text" name="new_nam" placeholder="Name" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'Name'" required>
+                  <input class="profile-inputs" type="text" name="new_surnam" placeholder="Surname" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'Surname'" required>
                   <input class="profile-submit" type="submit" name="nam_mod" value="Modify name and surname">
                 </div>
               </form>
@@ -208,8 +207,8 @@
             <div id='dropper4' class='box_4'>
               <form action="../php/profile_modify.php" method="post" class="position-box">
                 <div class="profile-forms">
-                  <input class="profile-inputs" type="email" name="new_eml" placeholder="New email">
-                  <input class="profile-inputs" type="email" name="rep_eml" placeholder="Repeat email">
+                  <input class="profile-inputs" type="email" name="new_eml" placeholder="New email" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'New Email'" required>
+                  <input class="profile-inputs" type="email" name="rep_eml" placeholder="Repeat email" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'Repeat Email'" required>
                   <input class="profile-submit" type="submit" name="eml_mod" value="Modify email">
                 </div>
               </form>
@@ -224,11 +223,11 @@
         <div class="profile-forms">
             <form action="../php/profile_modify.php" method="post">
               <input type="hidden" name="pref" value="1">
-              <input type="submit" name="pref_mod" class="profile-submit" value="YES">
+              <input type="submit" name="pref_mod" class="special-yes" class="profile-submit" class="special" value="YES">
             </form>
             <form action="../php/profile_modify.php" method="post">
               <input type="hidden" name="pref" value="0">
-              <input type="submit" name="pref_mod" class="profile-submit" value="NO">
+              <input type="submit" name="pref_mod" class="special-no" class="profile-submit" value="NO">
             </form>
         </div>
         </div>

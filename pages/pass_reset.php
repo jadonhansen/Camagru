@@ -89,7 +89,7 @@
 
 		<div class="info">
 			<form action="../php/email_prompt.php" method="POST">
-				<input type="email" name="email" class="field" placeholder="Email" required>
+				<input type="email" name="email" class="field" placeholder="Email" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'Email'" required>
 				<input type="submit" name="submit" value="Send" class="form">
 			</form>
 		</div>                

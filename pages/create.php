@@ -56,11 +56,11 @@
 	</div>
 	<div class="info">
 		<form action="../php/create.php" method="POST">
-			<input type="text" name="name" class="field" placeholder="Name" required>
-			<input type="text" name="surname" class="field" placeholder="Surname" required>
-			<input type="text" name="username" class="field" placeholder="Username" required>
-			<input type="email" name="email" class="field" placeholder="Email" required>
-			<input type="password" name="password" class="field" placeholder="Password" required>
+			<input type="text" name="name" class="field" placeholder="Name" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'Name'" required>
+			<input type="text" name="surname" class="field" placeholder="Surname" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'Surname'" required>
+			<input type="text" name="username" class="field" placeholder="Username" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'Username'" required>
+			<input type="email" name="email" class="field" placeholder="Email" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'Email'" required>
+			<input type="password" name="password" class="field" placeholder="Password" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'Password'" required>
 			<input type="submit" name="submit" value="Create" class="form">
 		</form>
 	</div>

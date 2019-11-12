@@ -27,9 +27,9 @@
       </div>
       <div class="info">
         <form action="../php/forgettery.php" method="POST">
-          <input type="text" name="login" class="field" placeholder="Username" required>
-          <input type="password" name="new_password" class="field" placeholder="New Password" required>
-          <input type="password" name="repeat" class="field" placeholder="Repeat Password" required>
+          <input type="text" name="login" class="field" placeholder="Username" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'Username'" required>
+          <input type="password" name="new_password" class="field" placeholder="New Password" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'New Password'" required>
+          <input type="password" name="repeat" class="field" placeholder="Repeat Password" onfocus="this.placeholder = ''" onfocusout="this.placeholder = 'Repeat Password'" required>
           <input type="submit" name="submit" value="Reset" class="form">
         </form>
       </div>            

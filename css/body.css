@@ -591,6 +591,28 @@
     cursor: pointer;
 }
 
+.special-yes {
+    background-color: rgb(21, 155, 0);
+    border-radius: 25px;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.special-no {
+    background-color: rgb(215, 65, 65);
+    border-radius: 25px;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
 .verify-form{
     background-color: grey;
     border: none;

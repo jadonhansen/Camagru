@@ -26,16 +26,14 @@ if (isset($_POST['search'])) {
             }
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
             if (!$result) {
-                echo "<h2>No results for the user '$param'</h2>";       //STYLING NEEDED
+                echo "<h2>No results for the user '$param'</h2>";
                 echo "<h3>Try another search..?</h3>";
                 echo "<form action='./user_search.php' method='post'><input type='text' name='search_param' placeholder='username search'></input><input type='submit' name='search' value='GO!'></input></form>";
                 exit();
             }
             $info = $result;
-            //fetch their posts
 		} catch (PDOException $exception) {
-			echo $sql . "<br>" . $exception->getMessage(); //dont need for final?
-			echo "<script>alert('SQL ERROR: 2')</script>";
+			echo "<script>alert('SQL ERROR: Could not fetch user!')</script>";
 			echo "<script>window.open('../pages/login.php','_self')</script>";
 			exit();
         }
@@ -48,19 +46,19 @@ else {
 
 ?>
 
-	<html>
-		<head>
-			<link rel="shortcut icon" type="image/png" href="../icons/4.ico"/>
-			<title>ICON | Profile</title>
-			<link rel="stylesheet" href="../css/block.css">
-			<link rel="stylesheet" href="../css/dropdown.css">
-			<link rel="stylesheet" href="../css/footer.css">
-			<link rel="stylesheet" href="../css/body.css">
-			<link rel="stylesheet" href="../css/head.css">
-		</head>
+<html>
+	<head>
+		<link rel="shortcut icon" type="image/png" href="../icons/4.ico"/>
+		<title>ICON | Profile</title>
+		<link rel="stylesheet" href="../css/block.css">
+		<link rel="stylesheet" href="../css/dropdown.css">
+		<link rel="stylesheet" href="../css/footer.css">
+		<link rel="stylesheet" href="../css/body.css">
+		<link rel="stylesheet" href="../css/head.css">
+	</head>
 
-		<body class="bgsearch" id=bground>    
-		<div class="head">
+	<body class="bgsearch" id=bground>    
+	<div class="head">
 
 	<!-- the drop down button -->    
 	<?php
