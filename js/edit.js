@@ -7,6 +7,8 @@ var original;
 
 // if a picture is selected from files it is drawn on the canvas and videoflag=TRUE
     document.getElementById('fileToUpload').onchange = function(e) {
+        original = 0;
+        context.clearRect(0, 0, canvas.width, canvas.height);
         var img = new Image();
         img.onload = draw;
         img.onerror = failed;

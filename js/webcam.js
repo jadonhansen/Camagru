@@ -63,6 +63,7 @@
 
     // once a picture is taken it is drawn onto the canvas and videoflag=TRUE
     document.getElementById("snap").addEventListener("click", function() {
+        original = 0;
         videoflag = 1;
         context.drawImage(video, 0, 0, 400, 300);
         original = context.getImageData(0, 0, 400 , 300);

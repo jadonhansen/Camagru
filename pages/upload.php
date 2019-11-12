@@ -32,7 +32,7 @@
                 </div>");
 
           echo("<div class='loggedin-user'>@"
-                 .$_SESSION['username']. 
+                 .$_SESSION['username'].
                 "</div>");
         }
         else
