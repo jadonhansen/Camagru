@@ -140,8 +140,8 @@
 		<img class="filter" src="http://localhost:8080/Camagru/filters/26.png" height="125" width="160">
 		<img class="filter" src="http://localhost:8080/Camagru/filters/24.png" height="125" width="160">
       </div>
-    <script src="./edit.js"></script>
-    <script src="./webcam.js"></script>
+    <script src="../js/edit.js"></script>
+    <script src="../js/webcam.js"></script>
     <span class="stretch"></span>
 </div>
 

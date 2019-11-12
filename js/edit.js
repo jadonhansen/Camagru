@@ -60,6 +60,7 @@ document.getElementById("clearfilters").addEventListener("click", function() {
 // clears canvas
 document.getElementById("clear").addEventListener("click", function() {
     videoflag = 0;
+    original = 0;
     context.clearRect(0, 0, canvas.width, canvas.height);
     document.getElementById("image_data").value = "";
 });

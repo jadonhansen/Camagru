@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../css/body.css">
 	<link rel="stylesheet" href="../css/head.css">
 	<link rel="stylesheet" href="../css/tooltip.css">
-	<script src="./performance.js"></script>
+	<script src="../js/performance.js"></script>
   </head>
 
   <body class=bg>    

@@ -209,8 +209,14 @@ function noti_modi() {
     $sql = "UPDATE users SET notifications='$pref' WHERE username='$username'";
     $stmt = $conn->query($sql);
     if ($stmt) {
-        echo "<script>alert('Details saved!')</script>";
-        echo "<script>window.open('../pages/profile.php','_self')</script>";
+        if ($pref == 0) {
+            echo "<script>alert('Details saved! You will not recieve any notifications.')</script>";
+            echo "<script>window.open('../pages/profile.php','_self')</script>";
+        }
+        else {
+            echo "<script>alert('Details saved! You will now recieve notifications.')</script>";
+            echo "<script>window.open('../pages/profile.php','_self')</script>";
+        }
     }
     else {
         echo "<script>alert('Sorry, we could not update your preferences!')</script>";
