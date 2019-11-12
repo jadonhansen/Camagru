@@ -8,13 +8,15 @@
     bottom: 0;
     flex: none;
     text-align: center;
+    padding-bottom: 0.4%;
 }
 
 .jadon{
     /* position: absolute;
     bottom: 30px;
-    left: 0px;
-} */
+    left: 0px; */
+} 
+
 .me{
     /* position: absolute;
     bottom: 0px;

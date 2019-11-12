@@ -24,7 +24,6 @@
   $conn = NULL;
 ?>
 
-
 <html>
   <head>
     <link rel="shortcut icon" type="image/png" href="../icons/4.ico"/>
