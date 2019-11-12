@@ -4,6 +4,3 @@ Gabriel:
 
 Jadon:
         - get bg's
-        - change save dates to time H:i:s for comments and posting
-        - fix sending of emails for commenting
-        - hcangeing username changes username in feed and commetns table

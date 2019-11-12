@@ -15,7 +15,7 @@ if (isset($_POST['email_friend'])) {
 	}
 	$result = $stmt->fetch();
 	if (!$result) {
-		echo "<script>alert('Your email address could not be found!')</script>";
+		echo "<script>alert('Message not sent: Your email address could not be found!')</script>";
 		echo "<script>window.open('../pages/user_search.php?email=notfound','_self')</script>";
 		exit();
     }

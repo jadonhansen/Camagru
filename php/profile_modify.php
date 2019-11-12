@@ -97,22 +97,19 @@ function usrnam_modi() {
         echo "<script>window.open('../pages/profile.php','_self')</script>";
         exit();
     }
-
-    //need to update username inside feed page and comments page
-
     require 'db.php';
     session_start();
     $old_username = $_SESSION['username'];
     $stmt = $conn->prepare("SELECT username FROM users WHERE username= :search");
 	$stmt->bindParam(':search', $usrnam);
 	if (!$stmt->execute()) {
-		echo "<script>alert('SQL ERROR: 1')</script>";
+        echo "<script>alert('SQL ERROR: 1')</script>";
 		echo "<script>window.open('../pages/profile.php?error=sql','_self')</script>";
 		exit();
 	}
 	$result = $stmt->fetch();
 	if ($result) {
-		echo "<script>alert('Username taken! Please use a different one.')</script>";
+        echo "<script>alert('Username taken! Please use a different one.')</script>";
 		echo "<script>window.open('../pages/profile.php?error=usernametaken','_self')</script>";
 		exit();
 	}
@@ -121,7 +118,23 @@ function usrnam_modi() {
         $stmt->bindParam(':new', $usrnam);
         $stmt->bindParam(':old', $old_username);
         if (!$stmt->execute()) {
-            echo "<script>alert('SQL ERROR: 1')</script>";
+            echo "<script>alert('Something unfortunate happened, we could not update your username! (userERR:1)')</script>";
+            echo "<script>window.open('../pages/profile.php?error=sqlerror','_self')</script>";
+            exit();
+        }
+        $stmt = $conn->prepare("UPDATE feed SET username = :new WHERE username = :old");
+        $stmt->bindParam(':new', $usrnam);
+        $stmt->bindParam(':old', $old_username);
+        if (!$stmt->execute()) {
+            echo "<script>alert('Something unfortunate happened, we could not update your username (feedERR:2)!')</script>";
+            echo "<script>window.open('../pages/profile.php?error=sqlerror','_self')</script>";
+            exit();
+        }
+        $stmt = $conn->prepare("UPDATE comments SET username = :new WHERE username = :old");
+        $stmt->bindParam(':new', $usrnam);
+        $stmt->bindParam(':old', $old_username);
+        if (!$stmt->execute()) {
+            echo "<script>alert('Something unfortunate happened, we could not update your username (commentsERR:3)!')</script>";
             echo "<script>window.open('../pages/profile.php?error=sqlerror','_self')</script>";
             exit();
         }

@@ -130,7 +130,7 @@
 				echo "<button onclick='comment_img({$row['image_id']})'>Post</button>";
 				echo"</div>";
 
-				// view comments section: add a hint appearing by the cursor when you hover the post as well
+				// view comments section
 				echo "<div id='comments_section-{$row['image_id']}'>
 						<b class='feed-comment'></b>
 					</div>";

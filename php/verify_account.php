@@ -1,5 +1,6 @@
 <html>
   <head>
+    <link rel="shortcut icon" type="image/png" href="../icons/4.ico"/>
     <title>ICON | Verify Account</title>
     <link rel="stylesheet" href="../css/dropdown.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -16,7 +17,7 @@
         $stmt = $conn->prepare("SELECT * FROM users WHERE verif_key= :verifkey");
         $stmt->bindParam(':verifkey', $key);
         if (!$stmt->execute()) {
-            echo "<h2>SQL ERROR: 1</h2>";
+            echo "<h2>SQL ERROR: Could not fetch key!</h2>";
             exit();
         }
         $result = $stmt->fetch();
@@ -24,7 +25,7 @@
             $stmt = $conn->prepare("UPDATE users SET verified=1 WHERE verif_key= :verifkey");
             $stmt->bindParam(':verifkey', $key);
             if (!$stmt->execute()) {
-                echo "<h2>SQL ERROR: 2</h2>";
+                echo "<h2>SQL ERROR: Could not update key!</h2>";
                 exit();
             }
             echo "<h2 class='verified-acc'>Account has been verified!</h2>";

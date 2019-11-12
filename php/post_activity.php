@@ -2,19 +2,28 @@
 
 function email_notif($from, $message, $img_id) {
     require 'db.php';
-    $stmt = $conn->query("SELECT username FROM feed WHERE image_id='$imd_id'");
-    $profile = $stmt->fetch(PDO::FETCH_ASSOC);
-    $usr = $profile['username'];
-    $stmt = $conn->query("SELECT notifications, email FROM users WHERE username='$usr'");
-    $results = $stmt->fetch(PDO::FETCH_ASSOC);
-    if ($results['email'] && $results['notifications'] === '1') {
-        $to = $results['email'];
-        $subject = "ICON - @$from commented on your post!";
-        $msg = "@$from commented on your post and said: " . $message;
-        $headers = "From: $from_email \r\n";
-        $headers .= "MINE-Version: 1.0"."\r\n";
-        $headers .= "Content-type:text/html;charset=UTF-8"."\r\n";
-        $res = mail($to, $subject, $msg, $headers);
+    $stmt = $conn->prepare("SELECT email FROM users WHERE username='$from'");
+    $stmt->execute();
+    $commenter = $stmt->fetch();
+    $from_email = $commenter['email'];
+    $stmt = $conn->prepare("SELECT username FROM feed WHERE image_id='$img_id'");
+    $stmt->execute();
+    $profile = $stmt->fetch();
+    if ($profile) {
+        $usr = $profile['username'];
+        $stmt = $conn->prepare("SELECT notifications, email FROM users WHERE username='$usr'");
+        $stmt->execute();
+        $results = $stmt->fetch();
+
+        if ($results && $results['notifications'] == '1') {
+            $to = $results['email'];
+            $subject = "ICON - @$from commented on your post!";
+            $msg = "@$from commented on your post and said: " . $message;
+            $headers = "From: $from_email \r\n";
+            $headers .= "MINE-Version: 1.0"."\r\n";
+            $headers .= "Content-type:text/html;charset=UTF-8"."\r\n";
+            $res = mail($to, $subject, $msg, $headers);
+        }
     }
     $conn = NULL;
 }
@@ -49,7 +58,7 @@ function comment($commt, $img_id) {
     date_default_timezone_set('Africa/Johannesburg');
     session_start();
     $username = $_SESSION['username'];
-    $dt = date("Y-m-d", time());
+    $dt = date("Y-m-d H:i:s", time());
     try {
         $stmt = $conn->prepare("INSERT INTO comments (image_id, comment, username, comm_date) values ('$img_id', :comm, '$username', '$dt')");
         $stmt->bindParam(':comm', $commt);
@@ -61,11 +70,10 @@ function comment($commt, $img_id) {
         echo "False";
         exit();
     }
-	$conn = NULL;
-    email_notif($username, $dt, $commt, $img_id);
+    $conn = NULL;
+    email_notif($username, $commt, $img_id);
 	echo "True";
 }
-
 
 function delete($img_id) {
     require 'db.php';
@@ -94,7 +102,7 @@ function playFetch($id) {
     else {
         echo"<div class='feed-comment'>";
 		foreach ($rows as $row) {
-			echo $row['comment'] . " --> Posted by " . $row['username'] . " on " . $row['comm_date'];
+			echo  "<b>@" . $row['username'] . "</b> " . $row['comment'] . "  - <i>" . $row['comm_date'] . "</i>";
 			echo "<br />";
         }
         echo"</div>";

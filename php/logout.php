@@ -7,6 +7,13 @@ function logout() {
     echo "<script>window.open('../pages/login.php','_self')</script>";
 }
 
-logout();
+session_start();
+if (isset($_SESSION['username'])) {
+        logout();
+}
+else {
+    echo "<script>window.open('../pages/login.php','_self')</script>";
+    exit();
+}
 
 ?>

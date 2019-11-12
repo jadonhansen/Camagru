@@ -54,7 +54,7 @@ function state_of_delerium() {
                 image_id int(11) AUTO_INCREMENT PRIMARY KEY NOT NULL,
                 img LONGTEXT NOT NULL,
                 username varchar(15) NOT NULL,
-                upload_date date NOT NULL,
+                upload_date datetime NOT NULL,
                 likes BIGINT)";
         $stmt = $conn->exec($sql);
         } catch (PDOException $exception) {
@@ -77,7 +77,7 @@ function judgement() {
                 image_id int(11) NOT NULL,
                 comment varchar(200) NOT NULL,
                 username varchar(15) NOT NULL,
-                comm_date date NOT NULL)";
+                comm_date datetime NOT NULL)";
         $stmt = $conn->exec($sql);
         } catch (PDOException $exception) {
             $msg = $exception->getMessage();

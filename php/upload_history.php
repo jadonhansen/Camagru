@@ -9,7 +9,7 @@ try {
     $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 catch (PDOException $exception) {
-    echo "SQL ERROR ";
+    echo "SQL ERROR: Could not load posts";
     echo $sql . "<br>" . $exception->getMessage();
 }
 if (!$posts) {
