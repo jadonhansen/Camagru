@@ -17,12 +17,17 @@ The following features are available:
     -Upload images from local files
     -Add/remove filters to an uploaded image
 
-#### Content:
+#### Built with:
     -AJAX
     -Javascript
     -PHP (using PDO method to converse with the database)
-    -CSS, HTML
-    
+    -Pure CSS, HTML
+
+#### Extra details:
+This project used MAMP(Apche2) running on an OSX environment.
+The database was created on myphpadmin.
+Localhost was used to develop with.
+
 #### Done in conjunction with Gabriel Strauss
     Backend developer: @jadonhansen
     Frontend developer: @gstruass
