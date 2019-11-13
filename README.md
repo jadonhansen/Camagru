@@ -28,6 +28,6 @@ This project used MAMP(Apche2) running on an OSX environment.
 The database was created on myphpadmin.
 Localhost was used to develop with.
 
-#### Done in conjunction with Gabriel Strauss ( https//:gtihub.com/gstrauss42 )
+#### Done in conjunction with Gabriel Strauss ( https//:github.com/gstrauss42 )
     Backend developer - @jadonhansen
     Frontend developer - @gstruass42
