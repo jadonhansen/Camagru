@@ -65,7 +65,7 @@ if (isset($_POST['submit'])) {
 	$conn = NULL;
 }
 else {
-    echo "<script>window.open('../pages/forgettery.php','_self')</script>";
+    echo "<script>window.open('../pages/pass_reset.php','_self')</script>";
     exit();
 }
 
