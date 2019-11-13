@@ -29,5 +29,6 @@ The database was created on myphpadmin.
 Localhost was used to develop with.
 
 #### Done in conjunction with Gabriel Strauss
-    Backend developer: @jadonhansen
-    Frontend developer: @gstruass
+Git Repo's for:
+    Backend developer - @jadonhansen
+    Frontend developer - @gstruass42
