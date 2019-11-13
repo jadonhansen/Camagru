@@ -24,7 +24,7 @@ The following features are available:
     -Pure CSS, HTML
 
 #### Extra details:
-This project used MAMP(Apche2) running on an OSX environment.
+This project used MAMP(Apche2) running on a Mac environment.
 The database was created on myphpadmin.
 Localhost was used to develop with.
 
