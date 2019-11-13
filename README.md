@@ -17,6 +17,12 @@ The following features are available:
     -Upload images from local files
     -Add/remove filters to an uploaded image
 
+#### Content:
+    -AJAX
+    -Javascript
+    -PHP (using PDO method to converse with the database)
+    -CSS, HTML
+    
 #### Done in conjunction with Gabriel Strauss
     Backend developer: @jadonhansen
     Frontend developer: @gstruass
