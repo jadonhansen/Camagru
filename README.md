@@ -10,7 +10,9 @@ The following features are available:
     -Create an account
     -Modify all details of ones account
     -Like, comment, view comments and delete posts(if you are the owner)
+    -Recieve notifications
     -Search for a specific users profile
+    -Message a searched user/friend
     -Post images from a webcam
     -Upload images from local files
     -Add/remove filters to an uploaded image
