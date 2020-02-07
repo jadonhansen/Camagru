@@ -1,7 +1,7 @@
 # Camagru
 WeThinkCode 42 project- Semester 2 (First Web project)
 
-#### Grade Achieved: N/A / 125
+#### Grade Achieved: 125 / 125
 
 #### DESCRIPTION:
 This web project combines features from social media the applications, Snapchat and Instagram.
