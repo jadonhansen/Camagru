@@ -35,13 +35,13 @@ Application flow can be summarized as follows:
 1. Model layer:
 	* Consists of the database where user data is stored and the functions called to instantiate it.
 	* Updates the View layer when appropriate.
-	* See config/database.php and php/db.php.
+	* See `config/database.php` and `php/db.php`.
 2. View layer:
 	* Consists of .php files containing HTML and PHP as well as HTML returned by Controller.
 	* Serves as user interface.
 	* Prompts user for input.
-	* See pages/.
+	* See `pages/`.
 3. Controller layer:
 	* Consists of PHP files containing functions that are tied to user inputs.
 	* Manipulates Model layer based on user input.
-	* See php/.
+	* See `php/`.
