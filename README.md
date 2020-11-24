@@ -1,33 +1,47 @@
 # Camagru
-WeThinkCode 42 project- Semester 2 (First Web project)
+A basic web app that allows users to take pictures using a webcam and superimpose predefined images onto them.
 
 #### Grade Achieved: 125 / 125
 
-#### DESCRIPTION:
-This web project combines features from social media the applications, Snapchat and Instagram.
-The following features are available:
+## Technologies:
+- PHP
+- MAMP
+- JavaScript
+- AJAX
+- HTML
+- CSS
+- MySQL
 
-    -Create an account
-    -Modify all details of ones account
-    -Like, comment, view comments and delete posts(if you are the owner)
-    -Recieve notifications
-    -Search for a specific users profile
-    -Message a searched user/friend
-    -Post images from a webcam
-    -Upload images from local files
-    -Add/remove filters to an uploaded image
+## Developer setup:
+1. [Install MAMP](https://www.mamp.info/en/downloads/).
+2. Make sure htdocs/ folder is empty.
+3. Clone repository into htdocs/.
+	> You'll want to name the repository 'Camagru', or filters will not be usable.
+4. Configure MySQL database credentials as follows:
+	```
+	User: root
+	Password: qwerty
+	```
+	> For security reasons, change these credentials later.
+5. Navigate to http://localhost:8080/config/database.php to create database and tables.
 
-#### Built with:
-    -AJAX
-    -Javascript
-    -PHP (using PDO method to converse with the database)
-    -Pure CSS, HTML
+## Architecture:
+The MVC design pattern was followed during development of this web app.
+Application flow can be summarized as follows:
 
-#### Extra details:
-This project used MAMP(Apche2) running on a Mac environment.
-The database was created on myphpadmin.
-Localhost was used to develop with.
+> UI -[user input]-> Controllers -[updates]-> Database
 
-#### Done in conjunction with Gabriel Strauss (https://github.com/gstrauss42)
-    Backend developer - @jadonhansen
-    Frontend developer - @gstruass42
+### Roadmap:
+1. Model layer:
+	* Consists of the database where user data is stored and the functions called to instantiate it.
+	* Updates the View layer when appropriate.
+	* See config/database.php and php/db.php.
+2. View layer:
+	* Consists of .php files containing HTML and PHP as well as HTML returned by Controller.
+	* Serves as user interface.
+	* Prompts user for input.
+	* See pages/.
+3. Controller layer:
+	* Consists of PHP files containing functions that are tied to user inputs.
+	* Manipulates Model layer based on user input.
+	* See php/.
