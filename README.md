@@ -54,4 +54,5 @@ Application flow can be summarized as follows:
 
 ## Testing:
 1. Tests ran:
-	1.
+	1. Initial checks:
+		1.
