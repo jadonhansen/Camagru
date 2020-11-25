@@ -45,3 +45,13 @@ Application flow can be summarized as follows:
 	* Consists of PHP files containing functions that are tied to user inputs.
 	* Manipulates Model layer based on user input.
 	* See `php/`.
+4. Configuration:
+	* Sets up the database.
+	* See `config/`.
+5. Assets:
+	* Application assets consisting of .jpeg and .png files used as backgrounds, overlays and logos.
+	* See `filters/`, `icons/` and `images/`.
+
+## Testing:
+1. Tests ran:
+	1.
