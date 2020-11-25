@@ -55,4 +55,22 @@ Application flow can be summarized as follows:
 ## Testing:
 1. Tests ran:
 	1. Initial checks:
-		1.
+		* Uses PHP.
+		* Uses no frameworks.
+		* Uses PDO.
+	2. Successfully start webserver.
+	3. Register an account.
+	4. Log in.
+	5. Take picture using webcam.
+	6. Superimpose predefined image onto picture.
+	7. Add likes/comments to post with another account.
+	8. Change user credentials/details.
+2. Expected outcomes:
+	1. Backend written in PHP, no frameworks used, used PDOs.
+	2. Webserver starts successfully.
+	3. Account created and persists across sessions.
+	4. Can log in with credentials entered during registration.
+	5. Able to capture picture with webcam.
+	6. Able to superimpose image onto picture taken.
+	7. Able to add likes/comments to posts. Persists across sessions.
+	8. Able to edit user credentials/details.
