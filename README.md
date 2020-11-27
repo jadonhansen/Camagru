@@ -20,10 +20,10 @@ A basic web app that allows users to take pictures using a webcam and superimpos
 4. Configure MySQL database credentials as follows:
 	```
 	User: root
-	Password: qwerty
+	Password: root
 	```
 	> For security reasons, change these credentials later.
-5. Navigate to http://localhost:8080/config/database.php to create database and tables.
+5. Navigate to http://localhost:8888/Camagru/config/database.php to create database and tables. (Port numbers, such as 8888, will vary per Mamp version)
 
 ## Architecture:
 The MVC design pattern was followed during development of this web app.
