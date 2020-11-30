@@ -2,7 +2,7 @@
 
 function email_send($email, $key) {
 	$subject = "ICON - Activate Account";
-	$message = "<a href='http://localhost:8080/Camagru/php/verify_account.php?key=$key'>Use this link to activate your account</a>";
+	$message = "<a href='http://localhost:8888/Camagru/php/verify_account.php?key=$key'>Use this link to activate your account</a>";
 	$headers = "From: icon@gmail.com \r\n";
 	$headers .= "MINE-Version: 1.0"."\r\n";
 	$headers .= "Content-type:text/html;charset=UTF-8"."\r\n";

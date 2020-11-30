@@ -133,12 +133,12 @@
 
       <!-- styles box -->
     <div class="styles-box">
-        <img class="filter" src="http://localhost:8080/Camagru/filters/21.png" height="125" width="160">
-        <img class="filter" src="http://localhost:8080/Camagru/filters/27.png" height="125" width="160">
+        <img class="filter" src="http://localhost:8888/Camagru/filters/21.png" height="125" width="160">
+        <img class="filter" src="http://localhost:8888/Camagru/filters/27.png" height="125" width="160">
         <img
-         class="filter" src="http://localhost:8080/Camagru/filters/28.png" height="125" width="160">
-		<img class="filter" src="http://localhost:8080/Camagru/filters/26.png" height="125" width="160">
-		<img class="filter" src="http://localhost:8080/Camagru/filters/24.png" height="125" width="160">
+         class="filter" src="http://localhost:8888/Camagru/filters/28.png" height="125" width="160">
+		<img class="filter" src="http://localhost:8888/Camagru/filters/26.png" height="125" width="160">
+		<img class="filter" src="http://localhost:8888/Camagru/filters/24.png" height="125" width="160">
       </div>
     <script src="../js/edit.js"></script>
     <script src="../js/webcam.js"></script>
