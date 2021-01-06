@@ -29,6 +29,7 @@ A basic web app that allows users to take pictures using a webcam and superimpos
 	> For security reasons, change these credentials later.
 5. Navigate to http://localhost:8888/Camagru/config/database.php to create database and tables. (Port numbers, such as 8888, will vary per Mamp version)
 6. Navigate to http://localhost:8888/Camagru/ to start login or create an account.
+7. If creating a new account, you will need to verify it using the link sent to the email address you used during registration.
 
 ## Architecture:
 The MVC design pattern was followed during development of this web app.
