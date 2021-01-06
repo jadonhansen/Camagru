@@ -1,6 +1,10 @@
 # Camagru
 A basic web app that allows users to take pictures using a webcam and superimpose predefined images onto them.
 
+
+[Subject File](https://github.com/wethinkcode-students/web/blob/master/1%20-%20camagru/camagru.en.pdf)
+
+
 #### Grade Achieved: 125 / 125
 
 ## Technologies:
@@ -53,7 +57,10 @@ Application flow can be summarized as follows:
 	* See `filters/`, `icons/` and `images/`.
 
 ## Testing:
-1. Tests ran:
+The [Marking Sheet](https://github.com/wethinkcode-students/web/blob/master/1%20-%20camagru/camagru.markingsheet.pdf) will be used as a testing outline. A more simplified Outline and Expected Outcomes are listed below.
+
+
+1. Outline:
 	1. Initial checks:
 		* Uses PHP.
 		* Uses no frameworks.
@@ -65,7 +72,7 @@ Application flow can be summarized as follows:
 	6. Superimpose predefined image onto picture.
 	7. Add likes/comments to post with another account.
 	8. Change user credentials/details.
-2. Expected outcomes:
+2. Expected Outcomes:
 	1. Backend written in PHP, no frameworks used, used PDOs.
 	2. Webserver starts successfully.
 	3. Account created and persists across sessions.
